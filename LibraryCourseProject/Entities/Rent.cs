@@ -18,6 +18,7 @@ namespace LibraryCourseProject.Entities
         public int Client_Id { get; set; }
         public Book Book { get; set; }
         public int Book_Id { get; set; }
-        public string Note { get; set; }
+        public DateTime RentDateTime { get; set; } = DateTime.Now;
+        public string Note { get; set; } = "empty";
     }
 }

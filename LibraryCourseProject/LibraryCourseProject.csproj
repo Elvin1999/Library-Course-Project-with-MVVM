@@ -70,7 +70,9 @@
     <Compile Include="Entities\Genre.cs" />
     <Compile Include="Entities\Permission.cs" />
     <Compile Include="Entities\Rent.cs" />
+    <Compile Include="Entities\RentReports.cs" />
     <Compile Include="Entities\Sale.cs" />
+    <Compile Include="Entities\SaleReports.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\Worker.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
