@@ -18,6 +18,7 @@ namespace LibraryCourseProject.Entities
         public int Author_Id { get; set; }
         public Genre Genre { get; set; }
         public int Genre_Id { get; set; }
+        public string Note { get; set; }
     }
 }
 

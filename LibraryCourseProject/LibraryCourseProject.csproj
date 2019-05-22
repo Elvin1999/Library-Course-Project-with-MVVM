@@ -69,6 +69,8 @@
     <Compile Include="Entities\Filial.cs" />
     <Compile Include="Entities\Genre.cs" />
     <Compile Include="Entities\Permission.cs" />
+    <Compile Include="Entities\Rent.cs" />
+    <Compile Include="Entities\Sale.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\Worker.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
