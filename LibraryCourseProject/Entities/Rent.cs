@@ -19,7 +19,7 @@ namespace LibraryCourseProject.Entities
         public Book Book { get; set; }
         public int Book_Id { get; set; }
         public DateTime RentDateTime { get; set; } = DateTime.Now;
-        public int MyProperty { get; set; }
+        public DateTime ExactDateTime { get; set; } = DateTime.Now;
         public string Note { get; set; } = "empty";
     }
 }
