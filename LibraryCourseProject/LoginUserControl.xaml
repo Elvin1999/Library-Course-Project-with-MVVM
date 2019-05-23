@@ -10,8 +10,28 @@
         <StackPanel>
 
             <Label Content="Login" FontSize="30" Margin="50"></Label>
-            <!--<Label Width="120" Height="40" Content="Username" FontSize="20" Margin="20"></Label>
-            <TextBox Width="120" Height="40"></TextBox>-->
+            <StackPanel Orientation="Vertical" Margin="0,20,0,0">
+                <StackPanel Orientation="Horizontal"  Margin="10,0,0,0">
+                    <Label Width="100" Height="40" Content="Username" FontSize="18" FontFamily="Comic Sans MS" 
+                          ></Label>
+                    <TextBox Width="120" Height="35" FontFamily="Comic Sans MS" FontSize="18">
+                        
+                    </TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10,30,0,0">
+                    <Label Width="100" Height="40" Content="Password" FontSize="18" FontFamily="Comic Sans MS" 
+                          ></Label>
+                    <PasswordBox Width="120" Height="35" FontFamily="Comic Sans MS" FontSize="18">
+                    </PasswordBox>
+                    
+                </StackPanel>
+            </StackPanel>
+            <Button Width="100" Height="35" Margin="-470,10,0,0" Content="Login" FontSize="20" FontFamily="Comic Sans MS" Background="Aqua">
+                
+            </Button>
         </StackPanel>
+        
     </Grid>
 </UserControl>
+
+    

@@ -23,3 +23,7 @@ namespace LibraryCourseProject.Entities
         public string Note { get; set; } = "empty";
     }
 }
+
+
+
+
