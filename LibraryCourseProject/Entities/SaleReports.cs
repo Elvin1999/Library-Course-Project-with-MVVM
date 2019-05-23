@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryCourseProject.Entities
 {
-    class SaleReports
+   public class SaleReports
     {
         public int Id { get; set; }
         public int No { get; set; }

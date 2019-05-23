@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryCourseProject.Entities
 {
-    class User
+   public class User
     {
         public int Id { get; set; }
         public int No { get; set; }
@@ -18,3 +18,4 @@ namespace LibraryCourseProject.Entities
         public string Note { get; set; } = "empty";
     }
 }
+

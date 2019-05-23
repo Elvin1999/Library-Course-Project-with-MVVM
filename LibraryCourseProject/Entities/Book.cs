@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryCourseProject.Entities
 {
-    class Book
+   public class Book
     {
         public int Id { get; set; }
         public int No { get; set; }

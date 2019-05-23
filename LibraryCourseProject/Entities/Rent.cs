@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryCourseProject.Entities
 {
-    class Rent
+   public class Rent
     {
         public int Id { get; set; }
         public int No { get; set; }
