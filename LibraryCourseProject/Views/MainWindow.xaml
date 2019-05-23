@@ -14,10 +14,9 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
-            <local:LoginUserControl ></local:LoginUserControl>
+            <local:LoginUserControl></local:LoginUserControl>
         </Grid>
         <Grid Grid.Column="1" Background="LightBlue">
-            
         </Grid>
     </Grid>
 </Window>
