@@ -26,9 +26,16 @@
                     
                 </StackPanel>
             </StackPanel>
-            <Button Width="100" Height="35" Margin="-470,10,0,0" Content="Login" FontSize="20" FontFamily="Comic Sans MS" Background="Aqua">
-                
-            </Button>
+            <StackPanel Orientation="Horizontal">
+
+                <Button Width="100" Height="35" Margin="20,10,0,0" Content="Login" FontSize="20" FontFamily="Comic Sans MS" Background="Aqua"
+                      Command="{Binding LoginCommand}"  >
+                </Button>
+                <Button Width="100" Height="35" Margin="50,10,0,0" Content="Register" FontSize="20" FontFamily="Comic Sans MS" Background="Aqua"
+                       Command="{Binding RegisterCommand}" >
+                </Button>
+            </StackPanel>
+            
         </StackPanel>
         
     </Grid>

@@ -21,11 +21,13 @@ namespace LibraryCourseProject
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainViewModel MainVM { get; set; }
         public MainWindow()
         {
             InitializeComponent();
-            MainViewModel mainViewModel = new MainViewModel();
-            DataContext = mainViewModel;
+            MainVM = new MainViewModel();
+            MainVM.MainGrid = MainGrid;
+            DataContext = MainVM;
         }
     }
 }
