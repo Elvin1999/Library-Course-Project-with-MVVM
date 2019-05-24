@@ -1,4 +1,5 @@
-﻿using LibraryCourseProject.Entities;
+﻿using LibraryCourseProject.Commands.UserSectionCommands;
+using LibraryCourseProject.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace LibraryCourseProject.ViewModels
 {
-    class UserViewModel:BaseViewModel
+   public class UserViewModel:BaseViewModel
     {
-        //public AddCommand AddCommand => new AddCommand(this);
+        public AddCommand AddCommand => new AddCommand(this);
         //public DeleteCommand DeleteCommand => new DeleteCommand(this);
         //public UpdateCommand UpdateCommand => new UpdateCommand(this);
         public List<User> Filials { get; set; }

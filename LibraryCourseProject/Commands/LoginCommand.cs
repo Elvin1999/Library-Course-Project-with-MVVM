@@ -1,4 +1,5 @@
 ﻿using LibraryCourseProject.ViewModels;
+using LibraryCourseProject.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,23 @@ namespace LibraryCourseProject.Commands
         }
         public void Execute(object parameter)
         {
-            MessageBox.Show(LoginViewModel.Username);
-            var passwordTxtb = parameter as PasswordBox;
-            MessageBox.Show(passwordTxtb.Password);
+      
+            var passwordFromClient = (parameter as PasswordBox).Password;
+      
+            var usernameFromClient = LoginViewModel.Username;
+            var user = LoginViewModel.Users.SingleOrDefault(x => x.Username == usernameFromClient && x.Password == passwordFromClient);
+            if (user != null)
+            {
+                MessageBox.Show("Okay");
+                UserViewModel userViewModel = new UserViewModel();
+                UserWindow userWindow = new UserWindow(userViewModel);
+                userWindow.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No");
+            }
+
         }
     }
 }

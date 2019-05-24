@@ -1,0 +1,94 @@
+﻿<Window x:Class="LibraryCourseProject.Views.UserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryCourseProject.Views"
+        mc:Ignorable="d"
+        Title="UserWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                    <Label Width="100" Height="40" Content="Username" FontSize="19" Margin="5,15,0,0"></Label>
+                    <Label Width="100" Height="40" Content="Password" FontSize="19" Margin="5,15,0,0"></Label>
+                    <Label Width="100" Height="40" Content="Email"    FontSize="19" Margin="5,15,0,0"></Label>
+                    <Label Width="100" Height="40" Content="Note"     FontSize="19" Margin="5,15,0,0"></Label>
+                </StackPanel>
+                <StackPanel  Orientation="Vertical">
+                    <TextBox Width="100" Height="40" FontSize="19" Margin="5,12" Text="{Binding CurrentUser.Username,Mode=TwoWay}">
+                        
+                    </TextBox>
+                    <PasswordBox Width="100" Height="40" FontSize="19" Margin="5,5" Name="UserPasswordTxtb"
+                                 
+                             ></PasswordBox>
+                    <TextBox Width="100" Height="40" FontSize="19" Margin="5,10"
+                             Text="{Binding CurrentUser.Email,Mode=TwoWay}"
+                             ></TextBox>
+                    <TextBox Width="100" Height="40" FontSize="19" Margin="5,8"
+                             Text="{Binding CurrentUser.Note,Mode=TwoWay}"
+                             ></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <CheckBox Width="180" Height="40" Content="CanCreateBook" FontSize="19" Margin="5,20,0,0"
+                              IsChecked="{Binding CurrentUser.Permission.CanCreateBook,Mode=TwoWay}"
+                              ></CheckBox>
+                    <CheckBox Width="180" Height="40" Content="CanCreateUser" FontSize="19" Margin="5,15,0,0"
+                               IsChecked="{Binding CurrentUser.Permission.CanCreateuser,Mode=TwoWay}"
+                              ></CheckBox>
+                    <CheckBox Width="180" Height="40" Content="CanCreateFilial"    FontSize="19" Margin="5,15,0,0"
+                               IsChecked="{Binding CurrentUser.Permission.CanCreateFilial,Mode=TwoWay}"
+                              ></CheckBox>
+                    <CheckBox Width="180" Height="40" Content="CanCreateCustomer"  FontSize="18" Margin="5,15,0,0"
+                               IsChecked="{Binding CurrentUser.Permission.CanCreateBook,Mode=TwoWay}"
+                              ></CheckBox>
+                </StackPanel>
+                <StackPanel>
+                    <Button Width="100" Height="40" Content="Add" FontSize="20" Margin="15"
+                            CommandParameter="{Binding ElementName=UserPasswordTxtb}" Command="{Binding AddCommand}"
+                            ></Button>
+                    <Button Width="100" Height="40" Content="Update" FontSize="20" Margin="15"></Button>
+                    <Button Width="100" Height="40" Content="Delete" FontSize="20" Margin="15"></Button>
+                    <Button Width="100" Height="40" Content="See all data" FontSize="18" Margin="15"></Button>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <ListView ItemsSource="{Binding AllUsers}" SelectedItem="{Binding SelectedBook}" Width="800" HorizontalAlignment="Left">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="No" Width="50">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Padding="5,0" Text="{Binding No}"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Username" Width="100">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Padding="5,0" Text="{Binding Name}"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Note" Width="150">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Padding="5,0" Text="{Binding Author.Name}"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                      
+                   
+                    </GridView>
+
+                </ListView.View>
+            </ListView>
+        </Grid>
+    </Grid>
+</Window>

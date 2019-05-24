@@ -7,15 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0" Name="MainGrid">
+     
             <local:LoginUserControl></local:LoginUserControl>
-        </Grid>
-        <Grid Grid.Column="1" Background="LightBlue">
-        </Grid>
+     
     </Grid>
 </Window>
