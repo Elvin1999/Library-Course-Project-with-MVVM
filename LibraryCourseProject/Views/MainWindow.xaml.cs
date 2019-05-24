@@ -26,7 +26,6 @@ namespace LibraryCourseProject
         {
             InitializeComponent();
             MainVM = new MainViewModel();
-            MainVM.MainGrid = MainGrid;
             DataContext = MainVM;
         }
     }

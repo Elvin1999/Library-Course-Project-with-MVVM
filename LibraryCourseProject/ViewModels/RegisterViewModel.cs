@@ -10,8 +10,5 @@ namespace LibraryCourseProject.ViewModels
 {
     public class RegisterViewModel : BaseViewModel
     {
-        public List<User> Users { get; set; }
-
-
     }
 }

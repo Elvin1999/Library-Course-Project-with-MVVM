@@ -14,26 +14,24 @@
                 <StackPanel Orientation="Horizontal"  Margin="10,0,0,0">
                     <Label Width="100" Height="40" Content="Username" FontSize="18" FontFamily="Comic Sans MS" 
                           ></Label>
-                    <TextBox Width="120" Height="35" FontFamily="Comic Sans MS" FontSize="18">
+                    <TextBox Width="120" Height="35" FontFamily="Comic Sans MS" FontSize="18" Text="{Binding Username,Mode=OneWayToSource}">
                         
                     </TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="10,30,0,0">
                     <Label Width="100" Height="40" Content="Password" FontSize="18" FontFamily="Comic Sans MS" 
                           ></Label>
-                    <PasswordBox Width="120" Height="35" FontFamily="Comic Sans MS" FontSize="18">
+                    <PasswordBox Width="120" Height="35" FontFamily="Comic Sans MS" FontSize="18" Password="admin">
                     </PasswordBox>
                     
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
 
-                <Button Width="100" Height="35" Margin="20,10,0,0" Content="Login" FontSize="20" FontFamily="Comic Sans MS" Background="Aqua"
+                <Button Width="100" Height="35" Margin="120,10,0,0" Content="Login" FontSize="20" FontFamily="Comic Sans MS" Background="Aqua"
                       Command="{Binding LoginCommand}"  >
                 </Button>
-                <Button Width="100" Height="35" Margin="50,10,0,0" Content="Register" FontSize="20" FontFamily="Comic Sans MS" Background="Aqua"
-                       Command="{Binding RegisterCommand}" >
-                </Button>
+                
             </StackPanel>
             
         </StackPanel>

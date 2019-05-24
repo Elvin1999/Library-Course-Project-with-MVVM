@@ -1,5 +1,4 @@
-﻿using LibraryCourseProject.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,14 +8,18 @@ using System.Windows.Input;
 
 namespace LibraryCourseProject.Commands
 {
-    public class LoginCommand : BaseCommand
+   public class LoginCommand : ICommand
     {
-        public LoginCommand(MainViewModel MainVM) : base(MainVM) { }
-        
+        public event EventHandler CanExecuteChanged;
 
-        public override void Execute(object parameter)
+        public bool CanExecute(object parameter)
         {
-            MessageBox.Show("TestLogin");
+            return true;
+        }
+
+        public void Execute(object parameter)
+        {
+            MessageBox.Show("Test");
         }
     }
 }

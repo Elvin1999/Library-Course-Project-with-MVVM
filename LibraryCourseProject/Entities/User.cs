@@ -16,6 +16,21 @@ namespace LibraryCourseProject.Entities
         public Permission Permission { get; set; }
         public int Permission_Id { get; set; }
         public string Note { get; set; } = "empty";
+
+        public User Clone()
+        {
+            User user = new User() {
+                 Email=this.Email,
+                  Id=this.Id,
+                   No=this.No, 
+                    Note=this.Note,
+                     Password=this.Password,
+                      Permission=this.Permission,
+                       Permission_Id=this.Permission_Id,
+                        Username=this.Username
+            };
+            return user;
+        }
     }
 }
 

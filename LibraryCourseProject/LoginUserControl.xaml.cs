@@ -24,6 +24,8 @@ namespace LibraryCourseProject
         public LoginUserControl()
         {
             InitializeComponent();
+            LoginViewModel loginViewModel = new LoginViewModel();
+            DataContext = loginViewModel;
         }
     }
 }
