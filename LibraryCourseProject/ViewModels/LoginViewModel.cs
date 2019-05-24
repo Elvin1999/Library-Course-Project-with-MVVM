@@ -12,7 +12,7 @@ namespace LibraryCourseProject.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-        public LoginCommand LoginCommand => new LoginCommand();
+        public LoginCommand LoginCommand => new LoginCommand(this);
         public List<User> Users { get; set; }
         private string username;
         public string Username

@@ -21,7 +21,7 @@
                 <StackPanel Orientation="Horizontal" Margin="10,30,0,0">
                     <Label Width="100" Height="40" Content="Password" FontSize="18" FontFamily="Comic Sans MS" 
                           ></Label>
-                    <PasswordBox Width="120" Height="35" FontFamily="Comic Sans MS" FontSize="18" Password="admin">
+                    <PasswordBox Name="MyPasswordTxtb" Width="120" Height="35" FontFamily="Comic Sans MS" FontSize="18" Password="admin">
                     </PasswordBox>
                     
                 </StackPanel>
@@ -29,7 +29,7 @@
             <StackPanel Orientation="Horizontal">
 
                 <Button Width="100" Height="35" Margin="120,10,0,0" Content="Login" FontSize="20" FontFamily="Comic Sans MS" Background="Aqua"
-                      Command="{Binding LoginCommand}"  >
+                  CommandParameter="{Binding ElementName=MyPasswordTxtb}"    Command="{Binding LoginCommand}"  >
                 </Button>
                 
             </StackPanel>
