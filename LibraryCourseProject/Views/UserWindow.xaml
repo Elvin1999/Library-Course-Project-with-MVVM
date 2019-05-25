@@ -11,7 +11,6 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-
         <Grid Grid.Row="0">
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
@@ -39,22 +38,31 @@
                               IsChecked="{Binding CurrentUser.Permission.CanCreateBook,Mode=TwoWay}"
                               ></CheckBox>
                     <CheckBox Width="180" Height="40" Content="CanCreateUser" FontSize="19" Margin="5,15,0,0"
-                               IsChecked="{Binding CurrentUser.Permission.CanCreateuser,Mode=TwoWay}"
+                               IsChecked="{Binding CurrentUser.Permission.CanCreateUser,Mode=TwoWay}"
                               ></CheckBox>
                     <CheckBox Width="180" Height="40" Content="CanCreateFilial"    FontSize="19" Margin="5,15,0,0"
                                IsChecked="{Binding CurrentUser.Permission.CanCreateFilial,Mode=TwoWay}"
                               ></CheckBox>
                     <CheckBox Width="180" Height="40" Content="CanCreateCustomer"  FontSize="18" Margin="5,15,0,0"
-                               IsChecked="{Binding CurrentUser.Permission.CanCreateBook,Mode=TwoWay}"
+                               IsChecked="{Binding CurrentUser.Permission.CanCreateCustomer,Mode=TwoWay}"
+                              ></CheckBox>
+                    <CheckBox Width="180" Height="40" Content="CanRent"  FontSize="18" Margin="5,15,0,0"
+                               IsChecked="{Binding CurrentUser.Permission.CanRent,Mode=TwoWay}"
                               ></CheckBox>
                 </StackPanel>
                 <StackPanel>
                     <Button Width="100" Height="40" Content="Add" FontSize="20" Margin="15"
                             CommandParameter="{Binding ElementName=UserPasswordTxtb}" Command="{Binding AddCommand}"
                             ></Button>
-                    <Button Width="100" Height="40" Content="Update" FontSize="20" Margin="15"></Button>
-                    <Button Width="100" Height="40" Content="Delete" FontSize="20" Margin="15"></Button>
-                    <Button Width="100" Height="40" Content="See all data" FontSize="18" Margin="15"></Button>
+                    <Button Width="100" Height="40" Content="Update" FontSize="20" Margin="15"
+                            CommandParameter="{Binding ElementName=UserPasswordTxtb}" Command="{Binding UpdateCommand}" 
+                            ></Button>
+                    <Button Width="100" Height="40" Content="Delete" FontSize="20" Margin="15"
+                              CommandParameter="{Binding ElementName=UserPasswordTxtb}" Command="{Binding DeleteCommand}" 
+                            ></Button>
+                    <Button Width="100" Height="40" Content="See all data" FontSize="18" Margin="15"
+                     
+                            ></Button>
                 </StackPanel>
             </StackPanel>
         </Grid>
@@ -72,14 +80,14 @@
                         <GridViewColumn Header="Username" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Name}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Username}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Note" Width="150">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Author.Name}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Note}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace LibraryCourseProject.ViewModels
 {
-   public class UserViewModel:BaseViewModel
+    public class UserViewModel : BaseViewModel
     {
         public AddCommand AddCommand => new AddCommand(this);
         //public DeleteCommand DeleteCommand => new DeleteCommand(this);
@@ -25,13 +25,14 @@ namespace LibraryCourseProject.ViewModels
             }
             set
             {
-                AllUsers = value;
+                allUsers = value;
                 OnPropertyChanged(new PropertyChangedEventArgs(nameof(AllUsers)));
             }
         }
         public UserViewModel()
         {
             CurrentUser = new User();
+            CurrentUser.Permission = new Permission();
         }
         private User currentUser;
         public User CurrentUser
