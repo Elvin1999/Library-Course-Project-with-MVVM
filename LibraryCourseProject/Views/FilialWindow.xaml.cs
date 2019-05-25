@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryCourseProject.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,12 @@ namespace LibraryCourseProject.Views
     /// </summary>
     public partial class FilialWindow : Window
     {
-        public FilialWindow()
+        public FilialViewModel FilialViewModel { get; set; }
+        public FilialWindow(FilialViewModel filialViewModel)
         {
+
             InitializeComponent();
+            FilialViewModel = filialViewModel;
         }
     }
 }

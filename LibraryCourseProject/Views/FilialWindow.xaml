@@ -27,9 +27,9 @@
                              Text="{Binding CurrentFilial.Address,Mode=TwoWay}"
                                  
                              ></TextBox>
-                    <DatePickerTextBox Width="130" Height="40" FontSize="16" Margin="5,10"
+                    <DatePicker Width="130" Height="40" FontSize="16" Margin="5,10"
                              Text="{Binding CurrentFilial.OpeningDate,Mode=TwoWay}"
-                             ></DatePickerTextBox>
+                             ></DatePicker>
                     <TextBox Width="100" Height="40" FontSize="19" Margin="5,8"
                              Text="{Binding CurrentFilial.Note,Mode=TwoWay}"
                              ></TextBox>
