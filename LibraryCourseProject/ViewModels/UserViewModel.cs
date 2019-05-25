@@ -13,8 +13,8 @@ namespace LibraryCourseProject.ViewModels
     public class UserViewModel : BaseViewModel
     {
         public AddCommand AddCommand => new AddCommand(this);
-        //public DeleteCommand DeleteCommand => new DeleteCommand(this);
-        //public UpdateCommand UpdateCommand => new UpdateCommand(this);
+        public DeleteCommand DeleteCommand => new DeleteCommand(this);
+        public UpdateCommand UpdateCommand => new UpdateCommand(this);
         public List<User> Filials { get; set; }
         private ObservableCollection<User> allUsers;
         public ObservableCollection<User> AllUsers

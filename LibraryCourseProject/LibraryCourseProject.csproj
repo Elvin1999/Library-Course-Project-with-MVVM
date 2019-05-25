@@ -59,6 +59,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\UserSectionCommands\AddCommand.cs" />
+    <Compile Include="Commands\UserSectionCommands\DeleteCommand.cs" />
+    <Compile Include="Commands\UserSectionCommands\UpdateCommand.cs" />
     <Compile Include="Views\UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>

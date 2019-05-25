@@ -24,10 +24,8 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
         {
             return true;
         }
-
         public void Execute(object parameter)
-        {
-            
+        {           
             var passwordFromClient = (parameter as PasswordBox).Password;
             UserViewModel.CurrentUser.Password = passwordFromClient;
             if (UserViewModel.AllUsers == null)
@@ -52,11 +50,11 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
             {
 
                 UserViewModel.AllUsers.Add(UserViewModel.CurrentUser);
-
                 MessageBoxResult add = MessageBox.Show("Added");
                 UserViewModel.CurrentUser = new User();
+                UserViewModel.CurrentUser.Password = String.Empty;
+                //UserViewModel.CurrentUser.Permission = new Permission();
                 UserViewModel.SelectedUser = new User();
-
             }
             else
             {
