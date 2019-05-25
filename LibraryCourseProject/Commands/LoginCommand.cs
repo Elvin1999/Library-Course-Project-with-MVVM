@@ -45,28 +45,7 @@ namespace LibraryCourseProject.Commands
             if (user != null)
             {
                 MessageBox.Show("Okay");
-                //UserViewModel userViewModel = new UserViewModel();
-                //userViewModel.AllUsers = new ObservableCollection<User>() {
-
-                //    new User()
-                //    {
-                //         Email="mymail@gmail.com",
-                //          Id=1,
-                //           No=1,
-                //            Note="empty",
-                //             Password="elvinelvin",
-                //              Permission=new Permission()
-                //              {
-                //                   No=1,
-                //                    Id=1,
-                //                     CanCreateBook=true
-                //              },
-                //               Username="ElvinElvin"
-                //    }
-                //};
-
-                //UserWindow userWindow = new UserWindow(userViewModel);
-                //userWindow.ShowDialog();
+              
 
                 MenuViewModel menuViewModel = new MenuViewModel();
                 MenuWindow menuWindow = new MenuWindow(menuViewModel);

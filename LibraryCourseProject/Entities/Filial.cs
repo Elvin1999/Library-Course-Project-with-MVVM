@@ -14,6 +14,20 @@ namespace LibraryCourseProject.Entities
         public string Address { get; set; }
         public DateTime Opening_Date { get; set; } = DateTime.Now;
         public string Note { get; set; } = "empty";
+
+        public Filial Clone()
+        {
+            Filial filial = new Filial()
+            {
+                 Address=this.Address,
+                  Id=this.Id,
+                   Name=this.Name,
+                    No=this.No,
+                     Note=this.Note,
+                      Opening_Date=this.Opening_Date
+            };
+            return filial;
+        }
     }
 }
 

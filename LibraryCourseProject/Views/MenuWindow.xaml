@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryCourseProject.Views"
         mc:Ignorable="d"
-        Title="MenuWindow" Height="450" Width="800">
+        Title="MenuWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel>
             <Button Width="120" Height="50" Content="Users" Command="{Binding UsersSectionCommand}"></Button>
-            <Button Width="120" Height="50" Content="Filials"></Button>
-            <Button Width="120" Height="50" Content="Workers"></Button>
-            <Button Width="120" Height="50" Content="Clients"></Button>
-            <Button Width="120" Height="50" Content="Book"></Button>
+            <Button Width="120" Height="50" Content="Filials" Command="{Binding FilialSectionCommand}"></Button>
+            <Button Width="120" Height="50" Content="Workers" Command="{Binding WorkerSectionCommand}"></Button>
+            <Button Width="120" Height="50" Content="Clients" Command="{Binding ClientSectionCommand}"></Button>
+            <Button Width="120" Height="50" Content="Book" Command="{Binding BookSectionCommand}"></Button>
         </StackPanel>
     </Grid>
 </Window>

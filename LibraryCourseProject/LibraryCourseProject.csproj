@@ -58,6 +58,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\FilialSectionCommands\AddCommand.cs" />
+    <Compile Include="Commands\FilialSectionCommands\DeleteCommand.cs" />
+    <Compile Include="Commands\FilialSectionCommands\UpdateCommand.cs" />
     <Compile Include="Commands\MenuSectionCommands\BookSectionCommand.cs" />
     <Compile Include="Commands\MenuSectionCommands\ClientSectionCommand.cs" />
     <Compile Include="Commands\MenuSectionCommands\FilialSectionCommand.cs" />
@@ -66,7 +69,11 @@
     <Compile Include="Commands\UserSectionCommands\AddCommand.cs" />
     <Compile Include="Commands\UserSectionCommands\DeleteCommand.cs" />
     <Compile Include="Commands\UserSectionCommands\UpdateCommand.cs" />
+    <Compile Include="ViewModels\FilialViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="Views\FilialWindow.xaml.cs">
+      <DependentUpon>FilialWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
     </Compile>
@@ -78,6 +85,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RegisterUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FilialWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,5 +1,4 @@
-﻿using LibraryCourseProject.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,16 +15,13 @@ using System.Windows.Shapes;
 namespace LibraryCourseProject.Views
 {
     /// <summary>
-    /// Interaction logic for MenuWindow.xaml
+    /// Interaction logic for FilialWindow.xaml
     /// </summary>
-    public partial class MenuWindow : Window
+    public partial class FilialWindow : Window
     {
-        public MenuViewModel MenuViewModel { get; set; }
-        public MenuWindow(MenuViewModel menuViewModel)
+        public FilialWindow()
         {
             InitializeComponent();
-            MenuViewModel = menuViewModel;
-            DataContext = MenuViewModel;
         }
     }
 }

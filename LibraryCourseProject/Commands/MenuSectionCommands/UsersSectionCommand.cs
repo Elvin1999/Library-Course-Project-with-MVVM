@@ -1,6 +1,9 @@
-﻿using LibraryCourseProject.ViewModels;
+﻿using LibraryCourseProject.Entities;
+using LibraryCourseProject.ViewModels;
+using LibraryCourseProject.Views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +26,28 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            UserViewModel userViewModel = new UserViewModel();
+            userViewModel.AllUsers = new ObservableCollection<User>() {
+
+                new User()
+                {
+                     Email="mymail@gmail.com",
+                      Id=1,
+                       No=1,
+                        Note="empty",
+                         Password="elvinelvin",
+                          Permission=new Permission()
+                          {
+                               No=1,
+                                Id=1,
+                                 CanCreateBook=true
+                          },
+                           Username="ElvinElvin"
+                }
+            };
+
+            UserWindow userWindow = new UserWindow(userViewModel);
+            userWindow.ShowDialog();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using LibraryCourseProject.Commands.UserSectionCommands;
+﻿using LibraryCourseProject.Commands.FilialSectionCommands;
 using LibraryCourseProject.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace LibraryCourseProject.ViewModels
 {
-    public class UserViewModel : BaseViewModel
+   public class FilialViewModel:BaseViewModel
     {
         public AddCommand AddCommand => new AddCommand(this);
         public DeleteCommand DeleteCommand => new DeleteCommand(this);
@@ -28,40 +28,40 @@ namespace LibraryCourseProject.ViewModels
                 OnPropertyChanged(new PropertyChangedEventArgs(nameof(AllUsers)));
             }
         }
-        public UserViewModel()
+        public FilialViewModel()
         {
-            CurrentUser = new User();
-            CurrentUser.Permission = new Permission();
+            CurrentFilial = new Filial();
+        
         }
-        private User currentUser;
-        public User CurrentUser
+        private Filial currentFilial;
+        public Filial CurrentFilial
         {
             get
             {
-                return currentUser;
+                return currentFilial;
             }
             set
             {
-                currentUser = value;
-                OnPropertyChanged(new PropertyChangedEventArgs(nameof(CurrentUser)));
+                currentFilial = value;
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(CurrentFilial)));
             }
         }
 
-        private User selectedUser;
-        public User SelectedUser
+        private Filial selectedFilial;
+        public Filial SelectedFilial
         {
             get
             {
-                return selectedUser;
+                return selectedFilial;
             }
             set
             {
-                selectedUser = value;
+                selectedFilial = value;
                 if (value != null)
                 {
-                    CurrentUser = SelectedUser.Clone();
+                    CurrentFilial = SelectedFilial.Clone();
                 }
-                OnPropertyChanged(new PropertyChangedEventArgs(nameof(SelectedUser)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(SelectedFilial)));
             }
         }
     }
