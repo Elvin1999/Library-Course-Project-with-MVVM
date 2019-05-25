@@ -50,6 +50,29 @@ namespace LibraryCourseProject.ViewModels
             }
             else
             {
+                User admin = new User()
+                {
+                    Email = "admin@gmail.com",
+                    Id = 1,
+                    No = 1,
+                    Note = "none",
+                    Password = "admin",
+                    Permission = new Permission()
+                    {
+                        No = 1,
+                        Id = 1,
+                        CanCreateBook = true,
+                        CanCreateCustomer = true,
+                        CanCreateFilial = true,
+                        CanCreateUser = true,
+                        CanRent = true
+                    },
+                    Permission_Id = 1,
+                    Username = "admin"
+
+                };
+                config.Users = new List<User>();
+                config.Users.Add(admin);
                 config.SeriailizeToJson();
             }
         }

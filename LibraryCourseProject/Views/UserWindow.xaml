@@ -60,9 +60,7 @@
                     <Button Width="100" Height="40" Content="Delete" FontSize="20" Margin="15"
                               CommandParameter="{Binding ElementName=UserPasswordTxtb}" Command="{Binding DeleteCommand}" 
                             ></Button>
-                    <Button Width="100" Height="40" Content="See all data" FontSize="18" Margin="15"
-                     
-                            ></Button>
+         
                 </StackPanel>
             </StackPanel>
         </Grid>

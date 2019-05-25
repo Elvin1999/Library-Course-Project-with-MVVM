@@ -58,9 +58,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\MenuSectionCommands\BookSectionCommand.cs" />
+    <Compile Include="Commands\MenuSectionCommands\ClientSectionCommand.cs" />
+    <Compile Include="Commands\MenuSectionCommands\FilialSectionCommand.cs" />
+    <Compile Include="Commands\MenuSectionCommands\UsersSectionCommand.cs" />
+    <Compile Include="Commands\MenuSectionCommands\WorkerSectionCommand.cs" />
     <Compile Include="Commands\UserSectionCommands\AddCommand.cs" />
     <Compile Include="Commands\UserSectionCommands\DeleteCommand.cs" />
     <Compile Include="Commands\UserSectionCommands\UpdateCommand.cs" />
+    <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="Views\MenuWindow.xaml.cs">
+      <DependentUpon>MenuWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
@@ -109,6 +118,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\MenuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\UserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
