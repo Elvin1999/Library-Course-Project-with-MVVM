@@ -12,7 +12,7 @@ namespace LibraryCourseProject.Entities
         public int No { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
-        public DateTime Opening_Date { get; set; } = DateTime.Now;
+        public DateTime OpeningDate { get; set; } = DateTime.Now;
         public string Note { get; set; } = "empty";
 
         public Filial Clone()
@@ -24,7 +24,7 @@ namespace LibraryCourseProject.Entities
                    Name=this.Name,
                     No=this.No,
                      Note=this.Note,
-                      Opening_Date=this.Opening_Date
+                      OpeningDate=this.OpeningDate
             };
             return filial;
         }
