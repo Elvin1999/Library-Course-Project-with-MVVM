@@ -26,7 +26,6 @@ namespace LibraryCourseProject.Commands.FilialSectionCommands
 
         public void Execute(object parameter)
         {
-            MessageBox.Show(FilialViewModel.CurrentFilial.OpeningDate.ToLongDateString());
             if (FilialViewModel.AllFilials == null)
             {
                 FilialViewModel.AllFilials = new ObservableCollection<Filial>();

@@ -1,9 +1,11 @@
-﻿using LibraryCourseProject.ViewModels;
+﻿using LibraryCourseProject.Entities;
+using LibraryCourseProject.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace LibraryCourseProject.Commands.WorkerSectionCommands
@@ -23,7 +25,21 @@ namespace LibraryCourseProject.Commands.WorkerSectionCommands
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+
+            var item = WorkerViewModel.AllWorkers.FirstOrDefault(x => x.Id == WorkerViewModel.CurrentWorker.Id);
+
+            if (item != null)
+            {
+                var index = WorkerViewModel.AllWorkers.IndexOf(item);
+                WorkerViewModel.AllWorkers[index] = WorkerViewModel.CurrentWorker;
+                MessageBoxResult update = MessageBox.Show("updated");
+                WorkerViewModel.CurrentWorker = new Worker();
+                WorkerViewModel.SelectedWorker = new Worker();
+            }
+            else
+            {
+                MessageBox.Show("You can not update this user");
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using LibraryCourseProject.ViewModels;
+﻿using LibraryCourseProject.Entities;
+using LibraryCourseProject.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,10 @@ namespace LibraryCourseProject.Commands.WorkerSectionCommands
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+
+            var item = WorkerViewModel.SelectedWorker;
+            WorkerViewModel.AllWorkers.Remove(item);
+            WorkerViewModel.SelectedWorker = new Worker();
         }
     }
 }

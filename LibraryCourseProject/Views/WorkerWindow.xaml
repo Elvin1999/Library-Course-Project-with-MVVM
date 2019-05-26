@@ -34,19 +34,19 @@
                              Text="{Binding CurrentWorker.Age,Mode=TwoWay}"
                              ></TextBox>
                     <TextBox Width="100" Height="30" FontSize="19" Margin="5,0"
-                             Text="{Binding CurrentFilial.PhoneNumber,Mode=TwoWay}"
+                             Text="{Binding CurrentWorker.PhoneNumber,Mode=TwoWay}"
                              ></TextBox>
                     <TextBox Width="100" Height="30" FontSize="19" Margin="5,5"
-                             Text="{Binding CurrentFilial.Salary,Mode=TwoWay}"
+                             Text="{Binding CurrentWorker.Salary,Mode=TwoWay}"
                              ></TextBox>
                     <ComboBox Height="30" Width="100" Margin="0,5,0,0" ItemsSource="{Binding Filials}"
                                       DisplayMemberPath="Name"
-                      SelectedValuePath="Id" SelectedValue="{Binding CurrentFilial.Filial, Mode=TwoWay}"
-                      SelectedItem="{Binding CurrentFilial.Filial}"
+                      SelectedValuePath="Id" SelectedValue="{Binding CurrentWorker.Filial, Mode=TwoWay}"
+                      SelectedItem="{Binding CurrentWorker.Filial}"
                                       ></ComboBox>
           
                     <TextBox Width="100" Height="30" FontSize="19" Margin="5,10"
-                             Text="{Binding CurrentFilial.Note,Mode=TwoWay}"
+                             Text="{Binding CurrentWorker.Note,Mode=TwoWay}"
                              ></TextBox>
                 </StackPanel>
                 <StackPanel Margin="50,0,0,0">
@@ -64,7 +64,7 @@
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">
-            <ListView ItemsSource="{Binding AllFilials}" SelectedItem="{Binding SelectedFilial}" Width="800" HorizontalAlignment="Left">
+            <ListView ItemsSource="{Binding AllWorkers}" SelectedItem="{Binding SelectedWorker}" Width="800" HorizontalAlignment="Left">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="No" Width="40">
@@ -84,35 +84,35 @@
                         <GridViewColumn Header="Surname" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Address}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Surname}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Age" Width="50">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding OpeningDate}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Age}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Phone number" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Note}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding PhoneNumber}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Salary" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Note}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Salary}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Filial" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Note}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Filial.Name}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

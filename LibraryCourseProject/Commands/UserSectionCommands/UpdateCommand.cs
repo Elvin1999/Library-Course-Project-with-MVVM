@@ -37,7 +37,7 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
             }
             else
             {
-                MessageBox.Show("You can not this user");
+                MessageBox.Show("You can not update this user");
             }
         }
     }
