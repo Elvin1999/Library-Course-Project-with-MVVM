@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-     
-            <local:LoginUserControl></local:LoginUserControl>
+
+        <local:LoginUserControl></local:LoginUserControl>
      
     </Grid>
 </Window>
