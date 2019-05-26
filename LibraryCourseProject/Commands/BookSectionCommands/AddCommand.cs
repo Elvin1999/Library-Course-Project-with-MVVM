@@ -27,7 +27,36 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
 
         public void Execute(object parameter)
         {
-           
+            if (BookViewModel.AllBooks == null)
+            {
+                BookViewModel.AllBooks = new ObservableCollection<Book>();
+            }
+            if (BookViewModel.AllBooks.Count == 0)
+            {
+                BookViewModel.CurrentBook.Id = 0;
+                BookViewModel.CurrentBook.No = 0;
+            }
+            else if (BookViewModel.AllBooks.Count != 0)
+            {
+                int index = BookViewModel.AllBooks.Count - 1;
+                int newID = BookViewModel.AllBooks[index].Id + 1;
+                BookViewModel.CurrentBook.Id = newID;
+                BookViewModel.CurrentBook.No = newID;
+            }
+            var item = BookViewModel.AllBooks.FirstOrDefault(x => x.Id == BookViewModel.CurrentBook.Id);
+
+            if (item == null)
+            {
+
+                BookViewModel.AllBooks.Add(BookViewModel.CurrentBook);
+                MessageBoxResult add = MessageBox.Show("Added");
+                BookViewModel.CurrentBook = new Book();
+                BookViewModel.SelectedBook = new Book();
+            }
+            else
+            {
+                MessageBoxResult add = MessageBox.Show("Can not add this item, you can only update and delete");
+            }
         }
     }
 }
