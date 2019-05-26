@@ -56,7 +56,7 @@
                           Command="{Binding AddCommand}"
                             ></Button>
                     <Button Width="100" Height="40" Content="Update" FontSize="20" Margin="15"
-                             Command="{Binding UpdateCommand}" 
+                             Command="{Binding UpdateCommand}"  
                             ></Button>
                     <Button Width="100" Height="40" Content="Delete" FontSize="20" Margin="15"
                        Command="{Binding DeleteCommand}" 
