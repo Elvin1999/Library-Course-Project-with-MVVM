@@ -26,6 +26,7 @@ namespace LibraryCourseProject.Views
 
             InitializeComponent();
             FilialViewModel = filialViewModel;
+            DataContext = FilialViewModel;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using LibraryCourseProject.ViewModels;
+﻿using LibraryCourseProject.Entities;
+using LibraryCourseProject.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +21,11 @@ namespace LibraryCourseProject.Commands.FilialSectionCommands
         {
             return true;
         }
-
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            var item = FilialViewModel.SelectedFilial;
+            FilialViewModel.AllFilials.Remove(item);
+            FilialViewModel.SelectedFilial = new Filial();
         }
     }
 }

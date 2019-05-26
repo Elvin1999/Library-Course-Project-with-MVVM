@@ -25,7 +25,8 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
             return true;
         }
         public void Execute(object parameter)
-        {           
+        {      
+            
             var passwordFromClient = (parameter as PasswordBox).Password;
             UserViewModel.CurrentUser.Password = passwordFromClient;
             if (UserViewModel.AllUsers == null)

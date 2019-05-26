@@ -28,7 +28,7 @@
                                  
                              ></TextBox>
                     <DatePicker Width="130" Height="40" FontSize="16" Margin="5,10"
-                             Text="{Binding CurrentFilial.OpeningDate,Mode=TwoWay}"
+                             SelectedDate="{Binding CurrentFilial.OpeningDate, Mode=TwoWay}" DisplayDate="{Binding DateTime.Now}"     
                              ></DatePicker>
                     <TextBox Width="100" Height="40" FontSize="19" Margin="5,8"
                              Text="{Binding CurrentFilial.Note,Mode=TwoWay}"
