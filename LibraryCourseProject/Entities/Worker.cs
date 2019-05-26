@@ -18,5 +18,24 @@ namespace LibraryCourseProject.Entities
         public Filial Filial { get; set; }
         public int Filial_Id { get; set; }
         public string Note { get; set; } = "empty";
+
+        public Worker Clone()
+        {
+            Worker worker = new Worker()
+            {
+                 Age=this.Age,
+                  Filial=this.Filial,
+                   Filial_Id=this.Filial_Id ,
+                    Id=this.Id,
+                     Name=this.Name,
+                      No=this.No,
+                       Note=this.Note,
+                        PhoneNumber=this.PhoneNumber,
+                         Salary=this.Salary,
+                          Surname=this.Surname
+            };
+            return worker;
+        }
     }
 }
+
