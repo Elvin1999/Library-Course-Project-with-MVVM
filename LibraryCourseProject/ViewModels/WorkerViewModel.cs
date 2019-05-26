@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace LibraryCourseProject.ViewModels
 {
-   public class WorkerViewModel:BaseViewModel
+   public class WorkerViewModel : BaseViewModel
     {
         public AddCommand AddCommand => new AddCommand(this);
         public DeleteCommand DeleteCommand => new DeleteCommand(this);

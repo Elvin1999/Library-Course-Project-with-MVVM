@@ -1,9 +1,12 @@
-﻿using LibraryCourseProject.ViewModels;
+﻿using LibraryCourseProject.Entities;
+using LibraryCourseProject.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace LibraryCourseProject.Commands.BookSectionCommands
@@ -14,7 +17,6 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
         {
             BookViewModel = bookViewModel;
         }
-
         public event EventHandler CanExecuteChanged;
         public BookViewModel BookViewModel { get; set; }
 
@@ -25,7 +27,7 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+           
         }
     }
 }
