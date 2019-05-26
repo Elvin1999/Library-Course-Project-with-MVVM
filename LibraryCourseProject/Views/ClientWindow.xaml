@@ -1,0 +1,103 @@
+﻿<Window x:Class="LibraryCourseProject.Views.ClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryCourseProject.Views"
+        mc:Ignorable="d"
+        Title="ClientWindow" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                    <Label Width="130" Height="40" Content="Name" FontSize="17" Margin="5,15,0,0"></Label>
+                    <Label Width="130" Height="40" Content="Surname" FontSize="17" Margin="5,15,0,0"></Label>
+                    <Label Width="130" Height="40" Content="Phonenumber" FontSize="17" Margin="5,15,0,0"></Label>
+                    <Label Width="130" Height="40" Content="Connection Time"    FontSize="16" Margin="5,15,0,0"></Label>
+                    <Label Width="130" Height="40" Content="Note"     FontSize="17" Margin="5,15,0,0"></Label>
+                </StackPanel>
+                <StackPanel  Orientation="Vertical">
+                    <TextBox Width="100" Height="40" FontSize="19" Margin="5,12" Text="{Binding CurrentClient.Name,Mode=TwoWay}">
+
+                    </TextBox>
+                    <TextBox Width="100" Height="40" FontSize="19" Margin="5,5" 
+                             Text="{Binding CurrentClient.Surname,Mode=TwoWay}"
+                                 
+                             ></TextBox>
+                    <TextBox Width="100" Height="40" FontSize="19" Margin="5,5" 
+                             Text="{Binding CurrentClient.PhoneNumber,Mode=TwoWay}"
+                                 
+                             ></TextBox>
+                    <DatePicker Width="130" Height="40" FontSize="16" Margin="5,15"
+                             SelectedDate="{Binding CurrentClient.ConnectionTime, Mode=TwoWay}" DisplayDate="{Binding DateTime.Now}"     
+                             ></DatePicker>
+                    <TextBox Width="100" Height="40" FontSize="19" Margin="5,8"
+                             Text="{Binding CurrentClient.Note,Mode=TwoWay}"
+                             ></TextBox>
+                </StackPanel>
+                <StackPanel Margin="50,0,0,0">
+                    <Button Width="100" Height="40" Content="Add" FontSize="20" Margin="15"
+                          Command="{Binding AddCommand}"
+                            ></Button>
+                    <Button Width="100" Height="40" Content="Update" FontSize="20" Margin="15"
+                             Command="{Binding UpdateCommand}" 
+                            ></Button>
+                    <Button Width="100" Height="40" Content="Delete" FontSize="20" Margin="15"
+                       Command="{Binding DeleteCommand}" 
+                            ></Button>
+
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <ListView ItemsSource="{Binding AllClients}" SelectedItem="{Binding SelectedClient}" Width="800" HorizontalAlignment="Left">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="No" Width="50">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Padding="5,0" Text="{Binding No}"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Name" Width="120">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Padding="5,0" Text="{Binding Name}"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Surname" Width="140">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Padding="5,0" Text="{Binding Surname}"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Connection Time" Width="140">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Padding="5,0" Text="{Binding ConnectionTime}"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Note" Width="100">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Padding="5,0" Text="{Binding Note}"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+
+                    </GridView>
+
+                </ListView.View>
+            </ListView>
+        </Grid>
+    </Grid>
+</Window>
