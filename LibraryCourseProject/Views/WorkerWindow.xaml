@@ -23,26 +23,29 @@
                     <Label Width="130" Height="35" Content="Note"     FontSize="18" Margin="5,5,0,0"></Label>
                 </StackPanel>
                 <StackPanel  Orientation="Vertical">
-                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,10" Text="{Binding CurrentFilial.Name,Mode=TwoWay}">
+                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,10" Text="{Binding CurrentWorker.Name,Mode=TwoWay}">
 
                     </TextBox>
                     <TextBox Width="100" Height="30" FontSize="19" Margin="5,-5" 
-                             Text="{Binding CurrentFilial.Address,Mode=TwoWay}"
+                             Text="{Binding CurrentWorker.Surname,Mode=TwoWay}"
                                  
                              ></TextBox>
                     <TextBox Width="100" Height="30" FontSize="19" Margin="5,8"
-                             Text="{Binding CurrentFilial.Note,Mode=TwoWay}"
+                             Text="{Binding CurrentWorker.Age,Mode=TwoWay}"
                              ></TextBox>
                     <TextBox Width="100" Height="30" FontSize="19" Margin="5,0"
-                             Text="{Binding CurrentFilial.Note,Mode=TwoWay}"
+                             Text="{Binding CurrentFilial.PhoneNumber,Mode=TwoWay}"
                              ></TextBox>
                     <TextBox Width="100" Height="30" FontSize="19" Margin="5,5"
-                             Text="{Binding CurrentFilial.Note,Mode=TwoWay}"
+                             Text="{Binding CurrentFilial.Salary,Mode=TwoWay}"
                              ></TextBox>
-                    <ComboBox Width="100" Height="30" FontSize="19" Margin="5,5"
-                             Text="{Binding CurrentFilial.Note,Mode=TwoWay}"
-                             ></ComboBox>
-                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,5"
+                    <ComboBox Height="30" Width="100" Margin="0,5,0,0" ItemsSource="{Binding Filials}"
+                                      DisplayMemberPath="Name"
+                      SelectedValuePath="Id" SelectedValue="{Binding CurrentFilial.Filial, Mode=TwoWay}"
+                      SelectedItem="{Binding CurrentFilial.Filial}"
+                                      ></ComboBox>
+          
+                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,10"
                              Text="{Binding CurrentFilial.Note,Mode=TwoWay}"
                              ></TextBox>
                 </StackPanel>

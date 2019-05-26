@@ -15,23 +15,23 @@ namespace LibraryCourseProject.ViewModels
         public AddCommand AddCommand => new AddCommand(this);
         public DeleteCommand DeleteCommand => new DeleteCommand(this);
         public UpdateCommand UpdateCommand => new UpdateCommand(this);
-        private ObservableCollection<Worker> allFilials;
-        public ObservableCollection<Worker> AllFilials
+        public List<Filial> Filials { get; set; }
+        private ObservableCollection<Worker> allWorkers;
+        public ObservableCollection<Worker> AllWorkers
         {
             get
             {
-                return allFilials;
+                return allWorkers;
             }
             set
             {
-                allFilials = value;
-                OnPropertyChanged(new PropertyChangedEventArgs(nameof(AllFilials)));
+                allWorkers = value;
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(AllWorkers)));
             }
         }
         public WorkerViewModel()
         {
             CurrentWorker = new Worker();
-
         }
         private Worker currentWorker;
         public Worker CurrentWorker
@@ -46,7 +46,7 @@ namespace LibraryCourseProject.ViewModels
                 OnPropertyChanged(new PropertyChangedEventArgs(nameof(CurrentWorker)));
             }
         }
-
+    
         private Worker selectedWorker;
         public Worker SelectedWorker
         {

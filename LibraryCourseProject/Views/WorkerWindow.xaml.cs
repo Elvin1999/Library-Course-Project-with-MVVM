@@ -25,6 +25,7 @@ namespace LibraryCourseProject.Views
         {
             InitializeComponent();
             WorkerViewModel = workerViewModel;
+            DataContext = workerViewModel;
         }
     }
 }

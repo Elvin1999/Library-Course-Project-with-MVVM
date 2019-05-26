@@ -1,4 +1,6 @@
-﻿using LibraryCourseProject.ViewModels;
+﻿using LibraryCourseProject.Entities;
+using LibraryCourseProject.ViewModels;
+using LibraryCourseProject.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +25,39 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            WorkerViewModel workerViewModel = new WorkerViewModel();
+            workerViewModel.Filials = new List<Filial>()
+            {
+                new Filial()
+                {
+                     Address="Nizami metrosu yaxinligi",
+                      Id=0,
+                       Name="Caspian plaza",
+                        No=0,
+                         Note="En boyuk filial",
+                          OpeningDate=DateTime.Now
+                },
+                new Filial()
+                {
+                     Address="Ehmedli metrosu yaxinligi",
+                      Id=0,
+                       Name="Ehmedli",
+                        No=0,
+                         Note="En kichik filial",
+                          OpeningDate=DateTime.Now
+                },
+                new Filial()
+                {
+                     Address="Gence",
+                      Id=0,
+                       Name="LIB plaza",
+                        No=0,
+                         Note="none",
+                          OpeningDate=DateTime.Now
+                }
+            };
+            WorkerWindow workerWindow = new WorkerWindow(workerViewModel);
+            workerWindow.ShowDialog();
         }
     }
 }
