@@ -49,8 +49,11 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
             
             if (item == null)
             {
-
-                UserViewModel.AllUsers.Add(UserViewModel.CurrentUser);
+                var newitem = UserViewModel.CurrentUser;
+                UserViewModel.AllUsers.Add(newitem);
+                Config config = new Config();
+                config.Users.Add(newitem);
+                config.SeriailizeToJson();
                 MessageBoxResult add = MessageBox.Show("Added");
                 UserViewModel.CurrentUser = new User();
                 UserViewModel.CurrentUser.Password = String.Empty;

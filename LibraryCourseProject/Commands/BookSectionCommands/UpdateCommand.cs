@@ -1,9 +1,11 @@
-﻿using LibraryCourseProject.ViewModels;
+﻿using LibraryCourseProject.Entities;
+using LibraryCourseProject.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace LibraryCourseProject.Commands.BookSectionCommands
@@ -24,7 +26,20 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            var item = BookViewModel.AllBooks.FirstOrDefault(x => x.Id == BookViewModel.CurrentBook.Id);
+
+            if (item != null)
+            {
+                var index = BookViewModel.AllBooks.IndexOf(item);
+                BookViewModel.AllBooks[index] = BookViewModel.CurrentBook;
+                MessageBoxResult update = MessageBox.Show("updated");
+                BookViewModel.CurrentBook = new Book();
+                BookViewModel.SelectedBook = new Book();
+            }
+            else
+            {
+                MessageBox.Show("You can not update this user");
+            }
         }
     }
 }

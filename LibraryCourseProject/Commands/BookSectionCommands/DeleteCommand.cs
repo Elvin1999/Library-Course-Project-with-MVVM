@@ -1,4 +1,5 @@
-﻿using LibraryCourseProject.ViewModels;
+﻿using LibraryCourseProject.Entities;
+using LibraryCourseProject.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,9 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            var item = BookViewModel.SelectedBook;
+            BookViewModel.AllBooks.Remove(item);
+            BookViewModel.SelectedBook = new Book();
         }
     }
 }
