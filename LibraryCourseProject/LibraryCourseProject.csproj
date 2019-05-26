@@ -75,10 +75,14 @@
     <Compile Include="Commands\WorkerSectionCommands\AddCommand.cs" />
     <Compile Include="Commands\WorkerSectionCommands\DeleteCommand.cs" />
     <Compile Include="Commands\WorkerSectionCommands\UpdateCommand.cs" />
+    <Compile Include="ViewModels\BookViewModel.cs" />
     <Compile Include="ViewModels\ClientViewModel.cs" />
     <Compile Include="ViewModels\FilialViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
     <Compile Include="ViewModels\WorkerViewModel.cs" />
+    <Compile Include="Views\BookWindow.xaml.cs">
+      <DependentUpon>BookWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ClientWindow.xaml.cs">
       <DependentUpon>ClientWindow.xaml</DependentUpon>
     </Compile>
@@ -99,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RegisterUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BookWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

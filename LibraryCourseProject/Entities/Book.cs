@@ -10,7 +10,7 @@ namespace LibraryCourseProject.Entities
     {
         public int Id { get; set; }
         public int No { get; set; }
-        public int Title { get; set; }
+        public string Title { get; set; }
         public int PageCount { get; set; }
         public double PurchasePrice { get; set; }
         public double SalePrice { get; set; }
@@ -19,6 +19,25 @@ namespace LibraryCourseProject.Entities
         public Genre Genre { get; set; }
         public int Genre_Id { get; set; }
         public string Note { get; set; }
+
+        public Book Clone()
+        {
+            Book book = new Book
+            {
+                 Author=this.Author,
+                  Author_Id=this.Author_Id,
+                   Genre=this.Genre,
+                    Genre_Id=this.Genre_Id,
+                     Id=this.Id,
+                      No=this.No,
+                       Note=this.Note,
+                        PageCount=this.PageCount,
+                         PurchasePrice=this.PurchasePrice,
+                          SalePrice=this.SalePrice,
+                           Title=this.Title
+            };
+            return book;
+        }
     }
 }
 

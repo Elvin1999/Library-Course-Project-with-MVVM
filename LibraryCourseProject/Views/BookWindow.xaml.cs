@@ -1,5 +1,4 @@
-﻿using LibraryCourseProject.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,21 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-namespace LibraryCourseProject
+
+namespace LibraryCourseProject.Views
 {
     /// <summary>
-    /// Interaction logic for LoginUserControl.xaml
+    /// Interaction logic for BookWindow.xaml
     /// </summary>
-    public partial class LoginUserControl : UserControl
+    public partial class BookWindow : Window
     {
-        public LoginUserControl()
+        public BookWindow()
         {
             InitializeComponent();
-            LoginViewModel loginViewModel = new LoginViewModel();
-            loginViewModel.SetUsers();
-            DataContext = loginViewModel;
         }
     }
 }
