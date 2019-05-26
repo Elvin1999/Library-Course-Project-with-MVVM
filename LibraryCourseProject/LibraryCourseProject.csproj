@@ -58,6 +58,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\ClientSectionCommands\AddCommand.cs" />
+    <Compile Include="Commands\ClientSectionCommands\DeleteCommand.cs" />
+    <Compile Include="Commands\ClientSectionCommands\UpdateCommand.cs" />
     <Compile Include="Commands\FilialSectionCommands\AddCommand.cs" />
     <Compile Include="Commands\FilialSectionCommands\DeleteCommand.cs" />
     <Compile Include="Commands\FilialSectionCommands\UpdateCommand.cs" />
@@ -184,8 +187,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Commands\ClientSectionCommands\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

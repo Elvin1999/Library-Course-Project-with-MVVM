@@ -15,5 +15,20 @@ namespace LibraryCourseProject.Entities
         public string PhoneNumber { get; set; }
         public DateTime ConnectionTime { get; set; } = DateTime.Now;
         public string Note { get; set; } = "empty";
+
+        public Client Clone()
+        {
+            Client client = new Client()
+            {
+                 ConnectionTime=this.ConnectionTime,
+                  Id=this.Id,
+                   Name=this.Name,
+                    No=this.No,
+                     Note=this.Note,
+                      PhoneNumber=this.PhoneNumber,
+                       Surname=this.Surname
+            };
+            return client;
+        }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryCourseProject.Views"
         mc:Ignorable="d"
-        Title="ClientWindow" Height="600" Width="800">
+        Title="ClientWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -32,10 +32,10 @@
                              Text="{Binding CurrentClient.PhoneNumber,Mode=TwoWay}"
                                  
                              ></TextBox>
-                    <DatePicker Width="130" Height="40" FontSize="16" Margin="5,15"
+                    <DatePicker Width="100" Height="40" FontSize="16" Margin="5,15"
                              SelectedDate="{Binding CurrentClient.ConnectionTime, Mode=TwoWay}" DisplayDate="{Binding DateTime.Now}"     
                              ></DatePicker>
-                    <TextBox Width="100" Height="40" FontSize="19" Margin="5,8"
+                    <TextBox Width="100" Height="40" FontSize="19" Margin="5,0"
                              Text="{Binding CurrentClient.Note,Mode=TwoWay}"
                              ></TextBox>
                 </StackPanel>
@@ -75,6 +75,13 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Surname}"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Connection Time" Width="140">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Padding="5,0" Text="{Binding PhoneNumber}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

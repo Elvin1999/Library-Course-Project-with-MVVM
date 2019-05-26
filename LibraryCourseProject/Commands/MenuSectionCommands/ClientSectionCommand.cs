@@ -1,4 +1,5 @@
 ﻿using LibraryCourseProject.ViewModels;
+using LibraryCourseProject.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,9 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            ClientViewModel clientViewModel = new ClientViewModel();
+            ClientWindow clientWindow = new ClientWindow(clientViewModel);
+            clientWindow.ShowDialog();
         }
     }
 }
