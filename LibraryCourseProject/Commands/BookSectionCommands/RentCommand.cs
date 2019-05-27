@@ -1,5 +1,4 @@
-﻿using LibraryCourseProject.Entities;
-using LibraryCourseProject.ViewModels;
+﻿using LibraryCourseProject.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +8,13 @@ using System.Windows.Input;
 
 namespace LibraryCourseProject.Commands.BookSectionCommands
 {
-    public class DeleteCommand : ICommand
+    public class RentCommand : ICommand
     {
-        public DeleteCommand(BookViewModel bookViewModel)
+        public RentCommand(BookViewModel bookViewModel)
         {
             BookViewModel = bookViewModel;
         }
+
         public event EventHandler CanExecuteChanged;
         public BookViewModel BookViewModel { get; set; }
         public bool CanExecute(object parameter)
@@ -24,10 +24,7 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
 
         public void Execute(object parameter)
         {
-            var item = BookViewModel.SelectedBook;
-            BookViewModel.AllBooks.Remove(item);
-            BookViewModel.SelectedBook = new Book();
-            BookViewModel.State = 1;
+            throw new NotImplementedException();
         }
     }
 }

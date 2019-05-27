@@ -1,4 +1,5 @@
-﻿using LibraryCourseProject.Entities;
+﻿using LibraryCourseProject.Commands.BookSectionCommands;
+using LibraryCourseProject.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,13 +10,29 @@ using System.Threading.Tasks;
 
 namespace LibraryCourseProject.ViewModels
 {
-   public class BookViewModel:BaseViewModel
+    public class BookViewModel : BaseViewModel
     {
         public List<Genre> Genres { get; set; }
         public List<Author> Authors { get; set; }
-        //public AddCommand AddCommand => new AddCommand(this);
-        //public DeleteCommand DeleteCommand => new DeleteCommand(this);
-        //public UpdateCommand UpdateCommand => new UpdateCommand(this);
+        public AddCommand AddCommand => new AddCommand(this);
+        public DeleteCommand DeleteCommand => new DeleteCommand(this);
+        public UpdateCommand UpdateCommand => new UpdateCommand(this);
+
+        private int state = 1;
+
+        public int State
+        {
+            get
+            {
+                return state;
+            }
+            set
+            {
+                state = value;
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(State)));
+            }
+        }
+
         private ObservableCollection<Book> allBooks;
         public ObservableCollection<Book> AllBooks
         {
@@ -59,7 +76,16 @@ namespace LibraryCourseProject.ViewModels
                 selectedBook = value;
                 if (value != null)
                 {
+                    
                     CurrentBook = SelectedBook.Clone();
+                }
+                if (SelectedBook != null)
+                {
+                    State = 2;
+                }
+                else
+                {
+                    State = 1;
                 }
                 OnPropertyChanged(new PropertyChangedEventArgs(nameof(SelectedBook)));
             }

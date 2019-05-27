@@ -60,6 +60,8 @@
     </ApplicationDefinition>
     <Compile Include="Commands\BookSectionCommands\AddCommand.cs" />
     <Compile Include="Commands\BookSectionCommands\DeleteCommand.cs" />
+    <Compile Include="Commands\BookSectionCommands\RentCommand.cs" />
+    <Compile Include="Commands\BookSectionCommands\SellCommand.cs" />
     <Compile Include="Commands\BookSectionCommands\UpdateCommand.cs" />
     <Compile Include="Commands\ClientSectionCommands\AddCommand.cs" />
     <Compile Include="Commands\ClientSectionCommands\DeleteCommand.cs" />

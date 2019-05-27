@@ -35,6 +35,7 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
                 MessageBoxResult update = MessageBox.Show("updated");
                 BookViewModel.CurrentBook = new Book();
                 BookViewModel.SelectedBook = new Book();
+                BookViewModel.State = 1;
             }
             else
             {

@@ -63,10 +63,45 @@
                             ></Button>
 
                 </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,65,0,0">
+                    <Button Height="40" Width="140" Content="Sell" Command="{Binding SellCommand}" FontSize="20">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="IsEnabled" Value="False"></Setter>
+
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding State, Mode=TwoWay}" Value="1">
+                                        <Setter Property="IsEnabled" Value="False"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding State, Mode=TwoWay}" Value="2">
+                                        <Setter Property="IsEnabled" Value="True"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button Height="40" Width="140" Content="Rent" Command="{Binding RentCommand}" FontSize="20" Margin="10,0,0,0">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="IsEnabled" Value="False"></Setter>
+
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding State, Mode=TwoWay}" Value="1">
+                                        <Setter Property="IsEnabled" Value="False"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding State, Mode=TwoWay}" Value="2">
+                                        <Setter Property="IsEnabled" Value="True"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+
+                </StackPanel>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">
-            <ListView ItemsSource="{Binding AllWorkers}" SelectedItem="{Binding SelectedWorker}" Width="800" HorizontalAlignment="Left">
+            <ListView ItemsSource="{Binding AllBooks}" SelectedItem="{Binding SelectedBook}" Width="800" HorizontalAlignment="Left">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="No" Width="40">
@@ -76,45 +111,45 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Name" Width="100">
+                        <GridViewColumn Header="Title" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Name}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Title}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Surname" Width="100">
+                        <GridViewColumn Header="Page count" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Surname}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding PageCount}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Age" Width="50">
+                        <GridViewColumn Header="Purchase Price" Width="120">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Age}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding PurchasePrice}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Phone number" Width="100">
+                        <GridViewColumn Header="Sale Price" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding PhoneNumber}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding SalePrice}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Salary" Width="100">
+                        <GridViewColumn Header="Author" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Salary}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Author.Name}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Filial" Width="100">
+                        <GridViewColumn Header="Genre" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Filial.Name}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Genre.Name}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

@@ -51,7 +51,6 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
                 BookViewModel.AllBooks.Add(BookViewModel.CurrentBook);
                 MessageBoxResult add = MessageBox.Show("Added");
                 BookViewModel.CurrentBook = new Book();
-                BookViewModel.SelectedBook = new Book();
             }
             else
             {
