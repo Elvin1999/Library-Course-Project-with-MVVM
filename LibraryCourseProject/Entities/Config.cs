@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace LibraryCourseProject.Entities
 {
@@ -17,9 +18,9 @@ namespace LibraryCourseProject.Entities
         }
         public void SeriailizeToJson()
         {
-            using (StreamWriter sw = new StreamWriter("config.json",true))
+            
+            using (StreamWriter sw = new StreamWriter("config.json"))
             {
-
                 var item = JsonConvert.SerializeObject(Users);
                 sw.WriteLine(item);
             }
@@ -27,23 +28,18 @@ namespace LibraryCourseProject.Entities
         public List<User> DeserializeFromJson()
         {
             List<User> items = new List<User>();
-            //var text = File.ReadAllText("config.json");
-            //
-            //try
-            //{
-
-            //items = JsonConvert.DeserializeObject<List<User>>(text);
-            //}
-            //catch (Exception)
-            //{
-            //}
-            using(StreamReader sr=new StreamReader("config.json"))
+            try
             {
-                string text = sr.ReadToEnd();
-                items = JsonConvert.DeserializeObject<List<User>>(text);
-                Users = items;
+                var context = File.ReadAllText("config.json");
+                Users = JsonConvert.DeserializeObject<List<User>>(context);
             }
-            return items;
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
+            return Users;
         }
     }
 }

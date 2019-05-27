@@ -42,11 +42,11 @@ namespace LibraryCourseProject.ViewModels
         }
         public void SetUsers()
         {
-            Config config = new Config();
+            
             string filename = "config.json";
             if (File.Exists(filename))
             {
-                Users = config.DeserializeFromJson();
+                Users = App.Config.DeserializeFromJson();
             }
             else
             {
@@ -71,9 +71,10 @@ namespace LibraryCourseProject.ViewModels
                     Username = "admin"
 
                 };
-                config.Users = new List<User>();
-                config.Users.Add(admin);
-                config.SeriailizeToJson();
+                App.Config.Users = new List<User>();
+                App.Config.Users.Add(admin);
+                Users = App.Config.Users;
+                App.Config.SeriailizeToJson();
             }
         }
     }

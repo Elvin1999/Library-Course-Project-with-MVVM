@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryCourseProject.Entities;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,9 +14,10 @@ namespace LibraryCourseProject
     /// </summary>
     public partial class App : Application
     {
+        public static Config Config;
         public App()
         {
-            
+            Config = new Config();
         }
     }
 }

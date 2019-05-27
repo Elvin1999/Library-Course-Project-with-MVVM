@@ -51,9 +51,8 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
             {
                 var newitem = UserViewModel.CurrentUser;
                 UserViewModel.AllUsers.Add(newitem);
-                Config config = new Config();
-                config.Users.Add(newitem);
-                config.SeriailizeToJson();
+                App.Config.Users.Add(newitem);
+                App.Config.SeriailizeToJson();
                 MessageBoxResult add = MessageBox.Show("Added");
                 UserViewModel.CurrentUser = new User();
                 UserViewModel.CurrentUser.Password = String.Empty;

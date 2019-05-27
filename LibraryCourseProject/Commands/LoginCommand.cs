@@ -30,7 +30,7 @@ namespace LibraryCourseProject.Commands
             var passwordFromClient = (parameter as PasswordBox).Password;
 
             var usernameFromClient = LoginViewModel.Username;
-      
+            LoginViewModel.Users = App.Config.DeserializeFromJson();
             User user = new User();
             try
             {
