@@ -1,4 +1,5 @@
 ﻿using LibraryCourseProject.Commands.MenuSectionCommands;
+using LibraryCourseProject.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,6 @@ namespace LibraryCourseProject.ViewModels
         public FilialSectionCommand FilialSectionCommand => new FilialSectionCommand(this);
         public ClientSectionCommand ClientSectionCommand => new ClientSectionCommand(this);
         public WorkerSectionCommand WorkerSectionCommand => new WorkerSectionCommand(this);
+        public User CurrentUser { get; set; }
     }
 }

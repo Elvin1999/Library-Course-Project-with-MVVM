@@ -62,10 +62,10 @@ namespace LibraryCourseProject.ViewModels
                         No = 1,
                         Id = 1,
                         CanCreateBook = true,
-                        CanCreateCustomer = true,
+                        CanCreateClient = true,
                         CanCreateFilial = true,
                         CanCreateUser = true,
-                        CanRent = true
+                        CanCreateWorker = true
                     },
                     Permission_Id = 1,
                     Username = "admin"

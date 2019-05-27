@@ -31,6 +31,8 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
             {
                 var index = UserViewModel.AllUsers.IndexOf(item);
                 UserViewModel.AllUsers[index] = UserViewModel.CurrentUser;
+                App.Config.Users = new List<User>(UserViewModel.AllUsers);
+                App.Config.SeriailizeToJson();
                 MessageBoxResult update = MessageBox.Show("updated");
                 UserViewModel.CurrentUser = new User();
                 UserViewModel.SelectedUser = new User();

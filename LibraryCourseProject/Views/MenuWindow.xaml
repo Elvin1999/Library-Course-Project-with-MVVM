@@ -8,11 +8,86 @@
         Title="MenuWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel>
-            <Button Width="120" Height="50" Content="Users" Command="{Binding UsersSectionCommand}"></Button>
-            <Button Width="120" Height="50" Content="Filials" Command="{Binding FilialSectionCommand}"></Button>
-            <Button Width="120" Height="50" Content="Workers" Command="{Binding WorkerSectionCommand}"></Button>
-            <Button Width="120" Height="50" Content="Clients" Command="{Binding ClientSectionCommand}"></Button>
-            <Button Width="120" Height="50" Content="Book" Command="{Binding BookSectionCommand}"></Button>
+            <Button Width="120" Height="50" Content="Users" Command="{Binding UsersSectionCommand}">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="IsEnabled" Value="False"></Setter>
+
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentUser.Permission.CanCreateUser, Mode=TwoWay}" Value="True">
+                                <Setter Property="IsEnabled" Value="True"></Setter>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding CurrentUser.Permission.CanCreateUser, Mode=TwoWay}" Value="False">
+                                <Setter Property="IsEnabled" Value="False"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Width="120" Height="50" Content="Filials" Command="{Binding FilialSectionCommand}">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="IsEnabled" Value="False"></Setter>
+
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentUser.Permission.CanCreateFilial, Mode=TwoWay}" Value="True">
+                                <Setter Property="IsEnabled" Value="True"></Setter>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding CurrentUser.Permission.CanCreateFilial, Mode=TwoWay}" Value="False">
+                                <Setter Property="IsEnabled" Value="False"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Width="120" Height="50" Content="Workers" Command="{Binding WorkerSectionCommand}">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="IsEnabled" Value="False"></Setter>
+
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentUser.Permission.CanCreateWorker, Mode=TwoWay}" Value="True">
+                                <Setter Property="IsEnabled" Value="True"></Setter>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding CurrentUser.Permission.CanCreateWorker, Mode=TwoWay}" Value="False">
+                                <Setter Property="IsEnabled" Value="False"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Width="120" Height="50" Content="Clients" Command="{Binding ClientSectionCommand}">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="IsEnabled" Value="False"></Setter>
+
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentUser.Permission.CanCreateClient, Mode=TwoWay}" Value="True">
+                                <Setter Property="IsEnabled" Value="True"></Setter>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding CurrentUser.Permission.CanCreateClient, Mode=TwoWay}" Value="False">
+                                <Setter Property="IsEnabled" Value="False"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Width="120" Height="50" Content="Book" Command="{Binding BookSectionCommand}">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="IsEnabled" Value="False"></Setter>
+
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentUser.Permission.CanCreateBook, Mode=TwoWay}" Value="True">
+                                <Setter Property="IsEnabled" Value="True"></Setter>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding CurrentUser.Permission.CanCreateBook, Mode=TwoWay}" Value="False">
+                                <Setter Property="IsEnabled" Value="False"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </StackPanel>
     </Grid>
 </Window>

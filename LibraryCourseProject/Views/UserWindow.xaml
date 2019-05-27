@@ -43,11 +43,11 @@
                     <CheckBox Width="180" Height="40" Content="CanCreateFilial"    FontSize="19" Margin="5,15,0,0"
                                IsChecked="{Binding CurrentUser.Permission.CanCreateFilial,Mode=TwoWay}"
                               ></CheckBox>
-                    <CheckBox Width="180" Height="40" Content="CanCreateCustomer"  FontSize="18" Margin="5,15,0,0"
-                               IsChecked="{Binding CurrentUser.Permission.CanCreateCustomer,Mode=TwoWay}"
+                    <CheckBox Width="180" Height="40" Content="CanCreateClient"  FontSize="18" Margin="5,15,0,0"
+                               IsChecked="{Binding CurrentUser.Permission.CanCreateClient,Mode=TwoWay}"
                               ></CheckBox>
-                    <CheckBox Width="180" Height="40" Content="CanRent"  FontSize="18" Margin="5,15,0,0"
-                               IsChecked="{Binding CurrentUser.Permission.CanRent,Mode=TwoWay}"
+                    <CheckBox Width="180" Height="40" Content="CanCreateWorker"  FontSize="18" Margin="5,15,0,0"
+                               IsChecked="{Binding CurrentUser.Permission.CanCreateWorker,Mode=TwoWay}"
                               ></CheckBox>
                 </StackPanel>
                 <StackPanel>
@@ -117,17 +117,17 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Create Customer" Width="80">
+                        <GridViewColumn Header="Create Client" Width="80">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Permission.CanCreateCustomer}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Permission.CanCreateClient}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Rent" Width="80">
+                        <GridViewColumn Header="Create Worker" Width="80">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Permission.CanRent}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Permission.CanCreateWorker}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

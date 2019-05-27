@@ -13,7 +13,7 @@ namespace LibraryCourseProject.Entities
         public bool CanCreateBook { get; set; }
         public bool CanCreateUser { get; set; }
         public bool CanCreateFilial { get; set; }
-        public bool CanCreateCustomer { get; set; }
-        public bool CanRent { get; set; }
+        public bool CanCreateClient { get; set; }
+        public bool CanCreateWorker { get; set; }
     }
 }

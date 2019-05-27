@@ -25,8 +25,7 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
 
         public void Execute(object parameter)
         {
-            UserViewModel userViewModel = new UserViewModel();
-            
+            UserViewModel userViewModel = new UserViewModel();            
             var items = App.Config.DeserializeFromJson();
             if (items != null)
             {

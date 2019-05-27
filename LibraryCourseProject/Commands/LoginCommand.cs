@@ -48,6 +48,7 @@ namespace LibraryCourseProject.Commands
               
 
                 MenuViewModel menuViewModel = new MenuViewModel();
+                menuViewModel.CurrentUser = user;
                 MenuWindow menuWindow = new MenuWindow(menuViewModel);
                 menuWindow.ShowDialog();
 

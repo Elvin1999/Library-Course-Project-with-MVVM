@@ -26,6 +26,8 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
         {
             var item = UserViewModel.SelectedUser;
             UserViewModel.AllUsers.Remove(item);
+            App.Config.Users = new List<User>(UserViewModel.AllUsers);
+            App.Config.SeriailizeToJson();
             UserViewModel.SelectedUser = new User();
         }
     }
