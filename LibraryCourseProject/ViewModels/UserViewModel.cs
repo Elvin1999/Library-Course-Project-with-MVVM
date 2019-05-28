@@ -15,7 +15,6 @@ namespace LibraryCourseProject.ViewModels
         public AddCommand AddCommand => new AddCommand(this);
         public DeleteCommand DeleteCommand => new DeleteCommand(this);
         public UpdateCommand UpdateCommand => new UpdateCommand(this);
-
         private ObservableCollection<User> allUsers;
         public ObservableCollection<User> AllUsers
         {

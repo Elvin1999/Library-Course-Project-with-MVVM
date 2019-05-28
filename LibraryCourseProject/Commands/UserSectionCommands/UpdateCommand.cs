@@ -27,7 +27,7 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
         {
             var item = UserViewModel.AllUsers.FirstOrDefault(x => x.Id == UserViewModel.CurrentUser.Id);
 
-            if (item != null)
+            if (item != null&&item.Id!=1)
             {
                 var index = UserViewModel.AllUsers.IndexOf(item);
                 UserViewModel.AllUsers[index] = UserViewModel.CurrentUser;

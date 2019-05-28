@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace LibraryCourseProject.Commands.UserSectionCommands
@@ -25,10 +26,18 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
         public void Execute(object parameter)
         {
             var item = UserViewModel.SelectedUser;
-            UserViewModel.AllUsers.Remove(item);
-            App.Config.Users = new List<User>(UserViewModel.AllUsers);
-            App.Config.SeriailizeToJson();
-            UserViewModel.SelectedUser = new User();
+            if (item.Id != 1)
+            {
+                UserViewModel.AllUsers.Remove(item);
+                App.Config.Users = new List<User>(UserViewModel.AllUsers);
+                App.Config.SeriailizeToJson();
+                UserViewModel.SelectedUser = new User();
+            }
+            else
+            {
+                MessageBox.Show("You can not delete *admin* ");
+            }
+
         }
     }
 }

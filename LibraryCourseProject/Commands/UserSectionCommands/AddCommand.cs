@@ -47,7 +47,7 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
             }
             var item = UserViewModel.AllUsers.FirstOrDefault(x => x.Id == UserViewModel.CurrentUser.Id);
             
-            if (item == null)
+            if (item == null&&UserViewModel.CurrentUser.Username!="admin")
             {
                 var newitem = UserViewModel.CurrentUser;
                 UserViewModel.AllUsers.Add(newitem);
@@ -61,7 +61,7 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
             }
             else
             {
-                MessageBoxResult add = MessageBox.Show("Can not add this item, you can only update and delete");
+                MessageBoxResult add = MessageBox.Show("Can not add this item");
             }
         }
     }
