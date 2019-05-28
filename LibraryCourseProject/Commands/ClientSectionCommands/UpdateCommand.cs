@@ -31,6 +31,8 @@ namespace LibraryCourseProject.Commands.ClientSectionCommands
             {
                 var index = ClientViewModel.AllClients.IndexOf(item);
                 ClientViewModel.AllClients[index] = ClientViewModel.CurrentClient;
+                App.Config.Clients = new List<Client>(ClientViewModel.AllClients);
+                App.Config.SeriailizeClientsToJson();
                 MessageBoxResult update = MessageBox.Show("updated");
                 ClientViewModel.CurrentClient = new Client();
                 ClientViewModel.SelectedClient = new Client();

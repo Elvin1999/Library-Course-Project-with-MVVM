@@ -47,8 +47,10 @@ namespace LibraryCourseProject.Commands.ClientSectionCommands
 
             if (item == null)
             {
-
-                ClientViewModel.AllClients.Add(ClientViewModel.CurrentClient);
+                var newitem = ClientViewModel.CurrentClient;
+                ClientViewModel.AllClients.Add(newitem);               
+                App.Config.Clients.Add(newitem);
+                App.Config.SeriailizeClientsToJson();
                 MessageBoxResult add = MessageBox.Show("Added");
                 ClientViewModel.CurrentClient = new Client();
                 ClientViewModel.SelectedClient = new Client();

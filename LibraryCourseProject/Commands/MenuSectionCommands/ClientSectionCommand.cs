@@ -1,10 +1,13 @@
-﻿using LibraryCourseProject.ViewModels;
+﻿using LibraryCourseProject.Entities;
+using LibraryCourseProject.ViewModels;
 using LibraryCourseProject.Views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace LibraryCourseProject.Commands.MenuSectionCommands
@@ -25,6 +28,20 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
         public void Execute(object parameter)
         {
             ClientViewModel clientViewModel = new ClientViewModel();
+            List<Client> items = new List<Client>();
+            try
+            {
+
+                items = App.Config.DeserializeClientsFromJson();
+            }
+            catch (Exception ex)
+            {
+            }
+            if (items != null)
+            {
+
+                clientViewModel.AllClients = new ObservableCollection<Entities.Client>(items);
+            }
             ClientWindow clientWindow = new ClientWindow(clientViewModel);
             clientWindow.ShowDialog();
         }

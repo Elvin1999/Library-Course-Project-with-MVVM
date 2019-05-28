@@ -28,6 +28,8 @@ namespace LibraryCourseProject.Commands.ClientSectionCommands
         {
             var item = ClientViewModel.SelectedClient;
             ClientViewModel.AllClients.Remove(item);
+            App.Config.Clients = new List<Client>(ClientViewModel.AllClients);
+            App.Config.SeriailizeClientsToJson();
             ClientViewModel.SelectedClient = new Client();
         }
     }
