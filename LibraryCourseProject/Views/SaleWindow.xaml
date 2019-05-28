@@ -71,6 +71,36 @@
               " HorizontalAlignment="Left">
 
         </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <ListView ItemsSource="{Binding AllSales}" SelectedItem="{Binding SelectedSale}" Width="590" HorizontalAlignment="Left">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="No" Width="20">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Padding="5,0" Text="{Binding No}"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Clients" Width="80">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Padding="5,0" Text="{Binding Title}"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+           
+                   
+                     
+               
+                
+                  
+                    </GridView>
+
+                </ListView.View>
+            </ListView>
+        </Grid>
+              
         <Grid Grid.Column="1" Grid.Row="1" Width="590" HorizontalAlignment="Right">
             <ListView ItemsSource="{Binding AllSales}" SelectedItem="{Binding SelectedSale}" Width="590" HorizontalAlignment="Left">
                 <ListView.View>
