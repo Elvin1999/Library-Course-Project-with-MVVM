@@ -37,28 +37,23 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
             {
                 MessageBox.Show(ex.Message);
             }
-            ClientViewModel clientViewModel = new ClientViewModel();
-            clientViewModel.AllClients = new ObservableCollection<Client>()
-            {
-                 new Client()
-                 {
-                      ConnectionTime=DateTime.Now,
-                       Id=1,
-                        Name="Yusif",
-                         No=1,
-                          Note="",
-                           PhoneNumber="+994515448487",
-                            Surname="Yusifli"
-                 }
-            };
             SaleViewModel saleViewModel = new SaleViewModel()
             {
                 AllSales = new ObservableCollection<Sale>()
             };
+            try
+            {
+                var clients = App.Config.DeserializeClientsFromJson();
+                saleViewModel.Clients = new ObservableCollection<Client>(clients);
+            }
+            catch (Exception)
+            {
+
+            }
             saleViewModel.CurrentSale = new Sale()
             {
                 Book = BookViewModel.SelectedBook,
-                Client = clientViewModel.AllClients[0],
+                //Client = clientViewModel.SelectedClient,
                 SaleDateTime = DateTime.Now,
                 Note = "",
                 No = 1,

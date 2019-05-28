@@ -60,8 +60,7 @@ namespace LibraryCourseProject.Entities
             {
 
                 MessageBox.Show(ex.Message);
-            }
-            
+            }    
             return Users;
         }
     }

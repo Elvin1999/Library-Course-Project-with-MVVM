@@ -65,24 +65,30 @@
 
         </Grid>
         <Grid Grid.Column="1" Grid.Row="1">
-            <ListView ItemsSource="{Binding AllSales}" SelectedItem="{Binding SelectedSale}" Width="590" HorizontalAlignment="Left">
+            <ListView ItemsSource="{Binding Clients}" Width="590" HorizontalAlignment="Left">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="No" Width="20">
+                        <GridViewColumn Header="No" Width="40">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding No}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Clients" Width="80">
+                        <GridViewColumn Header="Client name" Width="70">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Title}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Name}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                            
+                        <GridViewColumn Header="Client surname" Width="90">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Padding="5,0" Text="{Binding Surname}"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                     </GridView>
 
                 </ListView.View>
@@ -93,7 +99,7 @@
             <ListView ItemsSource="{Binding AllSales}" SelectedItem="{Binding SelectedSale}" Width="590" HorizontalAlignment="Left">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="No" Width="20">
+                        <GridViewColumn Header="No" Width="30">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding No}"></TextBlock>
@@ -103,49 +109,36 @@
                         <GridViewColumn Header="Book Title" Width="80">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Title}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Book.Title}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Client Id" Width="50">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Client_Id}"></TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
+
                         <GridViewColumn Header="Client" Width="80">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Client}"></TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header="User Id" Width="50">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding User.Username}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Client.Name}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="User" Width="80">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Author.Name}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding User.Username}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Real price" Width="80">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Genre.Name}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding RealPrice}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Sale price" Width="80">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Note}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding SalePrice}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

@@ -1,9 +1,12 @@
-﻿using LibraryCourseProject.ViewModels;
+﻿using LibraryCourseProject.Entities;
+using LibraryCourseProject.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace LibraryCourseProject.Commands.SaleSectionCommands
@@ -24,7 +27,36 @@ namespace LibraryCourseProject.Commands.SaleSectionCommands
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+
+            if (SaleViewModel.AllSales == null)
+            {
+                SaleViewModel.AllSales = new ObservableCollection<Sale>();
+            }
+            if (SaleViewModel.AllSales.Count == 0)
+            {
+                SaleViewModel.CurrentSale.Id = 0;
+                SaleViewModel.CurrentSale.No = 0;
+            }
+            else if (SaleViewModel.AllSales.Count != 0)
+            {
+                int index = SaleViewModel.AllSales.Count - 1;
+                int newID = SaleViewModel.AllSales[index].Id + 1;
+                SaleViewModel.CurrentSale.Id = newID;
+                SaleViewModel.CurrentSale.No = newID;
+            }
+            var item = SaleViewModel.AllSales.FirstOrDefault(x => x.Id == SaleViewModel.CurrentSale.Id);
+
+            if (item == null)
+            {
+
+                SaleViewModel.AllSales.Add(SaleViewModel.CurrentSale);
+                MessageBoxResult add = MessageBox.Show("Added");
+                SaleViewModel.CurrentSale = new Sale();
+            }
+            else
+            {
+                MessageBoxResult add = MessageBox.Show("Can not add this item, you can only update and delete");
+            }
         }
     }
 }
