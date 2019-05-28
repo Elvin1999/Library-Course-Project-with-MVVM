@@ -74,6 +74,9 @@
     <Compile Include="Commands\MenuSectionCommands\FilialSectionCommand.cs" />
     <Compile Include="Commands\MenuSectionCommands\UsersSectionCommand.cs" />
     <Compile Include="Commands\MenuSectionCommands\WorkerSectionCommand.cs" />
+    <Compile Include="Commands\SaleSectionCommands\AddCommand.cs" />
+    <Compile Include="Commands\SaleSectionCommands\DeleteCommand.cs" />
+    <Compile Include="Commands\SaleSectionCommands\UpdateCommand.cs" />
     <Compile Include="Commands\UserSectionCommands\AddCommand.cs" />
     <Compile Include="Commands\UserSectionCommands\DeleteCommand.cs" />
     <Compile Include="Commands\UserSectionCommands\UpdateCommand.cs" />

@@ -15,11 +15,11 @@
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
                     <Label Width="130" Height="30" Content="Title" FontSize="18" Margin="5,5,0,0"></Label>
-                    <Label Width="130" Height="35" Content="Page Count" FontSize="18" Margin="5,5,0,0"></Label>
-                    <Label Width="130" Height="35" Content="Purchase Price" FontSize="18" Margin="5,5,0,0"></Label>
+                    <Label Width="130" Height="35" Content="Real Price" FontSize="18" Margin="5,5,0,0"></Label>
                     <Label Width="130" Height="30" Content="Sale Price"    FontSize="18" Margin="5,5,0,0"></Label>
-                    <Label Width="130" Height="35" Content="Author" FontSize="18" Margin="5,5,0,0"></Label>
-                    <Label Width="130" Height="35" Content="Genre"     FontSize="18" Margin="5,5,0,0"></Label>
+                    <Label Width="130" Height="35" Content="User" FontSize="18" Margin="5,5,0,0"></Label>
+                    <Label Width="130" Height="35" Content="Sale Date" FontSize="18" Margin="5,5,0,0"></Label>
+                   
                     <Label Width="130" Height="35" Content="Note"     FontSize="18" Margin="5,5,0,0"></Label>
                 </StackPanel>
                 <StackPanel  Orientation="Vertical">
@@ -36,16 +36,10 @@
                     <TextBox Width="100" Height="30" FontSize="19" Margin="5,0"
                              Text="{Binding CurrentBook.SalePrice,Mode=TwoWay}"
                              ></TextBox>
-                    <ComboBox Height="30" Width="100" Margin="0,5,0,0" ItemsSource="{Binding Authors}"
-                                      DisplayMemberPath="Name"
-                      SelectedValuePath="Id" SelectedValue="{Binding CurrentBook.Author, Mode=TwoWay}"
-                      SelectedItem="{Binding CurrentBook.Author}"
-                                      ></ComboBox>
-                    <ComboBox Height="30" Width="100" Margin="0,5,0,0" ItemsSource="{Binding Genres}"
-                                      DisplayMemberPath="Name"
-                      SelectedValuePath="Id" SelectedValue="{Binding CurrentBook.Genre, Mode=TwoWay}"
-                      SelectedItem="{Binding CurrentBook.Genre}"
-                                      ></ComboBox>
+                    <DatePicker Width="100" Height="40" FontSize="16" Margin="5,0"
+                             SelectedDate="{Binding CurrentClient.ConnectionTime, Mode=TwoWay}" DisplayDate="{Binding DateTime.Now}"     
+                             ></DatePicker>
+
 
                     <TextBox Width="100" Height="30" FontSize="19" Margin="5,10"
                              Text="{Binding CurrentBook.Note,Mode=TwoWay}"
