@@ -18,7 +18,7 @@ namespace LibraryCourseProject.ViewModels
         private ObservableCollection<Client> allClients;
         public ObservableCollection<Client> AllClients
         {
-            get
+            get 
             {
                 return allClients;
             }
