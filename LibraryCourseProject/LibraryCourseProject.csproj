@@ -84,6 +84,7 @@
     <Compile Include="ViewModels\ClientViewModel.cs" />
     <Compile Include="ViewModels\FilialViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="ViewModels\SaleViewModel.cs" />
     <Compile Include="ViewModels\WorkerViewModel.cs" />
     <Compile Include="Views\BookWindow.xaml.cs">
       <DependentUpon>BookWindow.xaml</DependentUpon>
@@ -96,6 +97,9 @@
     </Compile>
     <Compile Include="Views\MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SaleWindow.xaml.cs">
+      <DependentUpon>SaleWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
@@ -161,6 +165,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\MenuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SaleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
