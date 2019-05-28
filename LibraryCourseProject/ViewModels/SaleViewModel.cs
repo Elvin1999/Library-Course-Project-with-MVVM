@@ -15,7 +15,8 @@ namespace LibraryCourseProject.ViewModels
         public AddCommand AddCommand => new AddCommand(this);
         public DeleteCommand DeleteCommand => new DeleteCommand(this);
         public UpdateCommand UpdateCommand => new UpdateCommand(this);
-        public ObservableCollection<Client> Clients { get; set; }
+        //public ObservableCollection<Client> Clients { get; set; }
+        public ClientViewModel ClientViewModel { get; set; }
         private ObservableCollection<Sale> allSales;
         public ObservableCollection<Sale> AllSales
         {

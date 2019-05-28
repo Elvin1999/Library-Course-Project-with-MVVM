@@ -3,6 +3,7 @@ using LibraryCourseProject.ViewModels;
 using LibraryCourseProject.Views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
 {
     public class BookSectionCommand : ICommand
     {
+        private object clientViewModel;
+
         public event EventHandler CanExecuteChanged;
         public MenuViewModel MenuViewModel { get; set; }
         public BookSectionCommand(MenuViewModel menuViewModel)
@@ -26,6 +29,20 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
         public void Execute(object parameter)
         {
             BookViewModel bookViewModel = new BookViewModel() { };
+            List<Book> items = new List<Book>();
+            try
+            {
+
+                items = App.Config.DeserializeBooksFromJson();
+            }
+            catch (Exception ex)
+            {
+            }
+            if (items != null)
+            {
+
+                bookViewModel.AllBooks = new ObservableCollection<Book>(items);
+            }
             bookViewModel.Authors = new List<Author>()
             {
                 new Author(){

@@ -32,6 +32,8 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
             {
                 var index = BookViewModel.AllBooks.IndexOf(item);
                 BookViewModel.AllBooks[index] = BookViewModel.CurrentBook;
+                App.Config.Books = new List<Book>(BookViewModel.AllBooks);
+                App.Config.SeriailizeBooksToJson();
                 MessageBoxResult update = MessageBox.Show("updated");
                 BookViewModel.CurrentBook = new Book();
                 BookViewModel.SelectedBook = new Book();

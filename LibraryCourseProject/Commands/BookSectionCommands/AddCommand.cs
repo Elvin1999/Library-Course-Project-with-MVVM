@@ -47,8 +47,11 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
 
             if (item == null)
             {
+                var newitem = BookViewModel.CurrentBook;
+                BookViewModel.AllBooks.Add(newitem);
+                App.Config.Books.Add(newitem);
+                App.Config.SeriailizeBooksToJson();
 
-                BookViewModel.AllBooks.Add(BookViewModel.CurrentBook);
                 MessageBoxResult add = MessageBox.Show("Added");
                 BookViewModel.CurrentBook = new Book();
             }

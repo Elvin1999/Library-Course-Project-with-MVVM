@@ -65,24 +65,24 @@
 
         </Grid>
         <Grid Grid.Column="1" Grid.Row="1">
-            <ListView ItemsSource="{Binding Clients}" Width="590" HorizontalAlignment="Left">
+            <ListView ItemsSource="{Binding ClientViewModel.AllClients}" Width="590" HorizontalAlignment="Left">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="No" Width="40">
+                        <GridViewColumn Header="No" Width="50">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding No}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Client name" Width="70">
+                        <GridViewColumn Header="Client name" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Name}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Client surname" Width="90">
+                        <GridViewColumn Header="Client surname" Width="140">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Surname}"></TextBlock>
@@ -96,7 +96,8 @@
         </Grid>
               
         <Grid Grid.Column="1" Grid.Row="1" Width="590" HorizontalAlignment="Right">
-            <ListView ItemsSource="{Binding AllSales}" SelectedItem="{Binding SelectedSale}" Width="590" HorizontalAlignment="Left">
+            <ListView ItemsSource="{Binding AllSales}" SelectedItem="{Binding SelectedSale}" 
+                      Width="515" Margin="70,0,0,0">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="No" Width="30">

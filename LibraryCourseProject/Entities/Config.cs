@@ -12,10 +12,34 @@ namespace LibraryCourseProject.Entities
     {
         public List<User> Users { get; set; }
         public List<Client> Clients { get; set; }
+        public List<Book> Books { get; set; }
         public Config()
         {
             Users = new List<User>();
             Clients = new List<Client>();
+            Books = new List<Book>();
+        }
+        public void SeriailizeBooksToJson()
+        {
+
+            using (StreamWriter sw = new StreamWriter("configBooks.json"))
+            {
+                var item = JsonConvert.SerializeObject(Books);
+                sw.WriteLine(item);
+            }
+        }
+        public List<Book> DeserializeBooksFromJson()
+        {
+            try
+            {
+                var context = File.ReadAllText("configBooks.json");
+                Books = JsonConvert.DeserializeObject<List<Book>>(context);
+            }
+            catch (Exception)
+            {
+            }
+
+            return Books;
         }
         public void SeriailizeClientsToJson()
         {

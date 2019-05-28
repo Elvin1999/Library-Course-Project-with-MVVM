@@ -43,12 +43,12 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
             };
             try
             {
+                saleViewModel.ClientViewModel = new ClientViewModel();
                 var clients = App.Config.DeserializeClientsFromJson();
-                saleViewModel.Clients = new ObservableCollection<Client>(clients);
+                saleViewModel.ClientViewModel.AllClients = new ObservableCollection<Client>(clients);
             }
             catch (Exception)
             {
-
             }
             Book book = new Book();
             book = BookViewModel.SelectedBook;
