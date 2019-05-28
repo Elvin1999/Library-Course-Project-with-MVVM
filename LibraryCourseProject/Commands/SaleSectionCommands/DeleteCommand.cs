@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryCourseProject.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,13 @@ namespace LibraryCourseProject.Commands.SaleSectionCommands
 {
     public class DeleteCommand : ICommand
     {
-        public event EventHandler CanExecuteChanged;
+        public DeleteCommand(SaleViewModel saleViewModel)
+        {
+            SaleViewModel = saleViewModel;
+        }
 
+        public event EventHandler CanExecuteChanged;
+        public SaleViewModel SaleViewModel { get; set; }
         public bool CanExecute(object parameter)
         {
             return true;

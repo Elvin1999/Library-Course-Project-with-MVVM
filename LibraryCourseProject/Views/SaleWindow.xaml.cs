@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryCourseProject.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,12 @@ namespace LibraryCourseProject.Views
     /// </summary>
     public partial class SaleWindow : Window
     {
-        public SaleWindow()
+        public SaleViewModel SaleViewModel { get; set; }
+        public SaleWindow(SaleViewModel saleViewModel)
         {
             InitializeComponent();
+            SaleViewModel = saleViewModel;
+            DataContext = SaleViewModel;
         }
     }
 }

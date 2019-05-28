@@ -23,26 +23,26 @@
                     <Label Width="130" Height="35" Content="Note"     FontSize="18" Margin="5,5,0,0"></Label>
                 </StackPanel>
                 <StackPanel  Orientation="Vertical">
-                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,10" Text="{Binding CurrentBook.Title,Mode=TwoWay}">
+                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,10" Text="{Binding CurrentSale.Book.Title,Mode=TwoWay}">
 
                     </TextBox>
                     <TextBox Width="100" Height="30" FontSize="19" Margin="5,0" 
-                             Text="{Binding CurrentBook.PageCount,Mode=TwoWay}"
+                             Text="{Binding CurrentSale.RealPrice,Mode=TwoWay}"
                                  
                              ></TextBox>
                     <TextBox Width="100" Height="30" FontSize="19" Margin="5,8"
-                             Text="{Binding CurrentBook.PurchasePrice,Mode=TwoWay}"
+                             Text="{Binding CurrentSale.SalePrice,Mode=TwoWay}"
                              ></TextBox>
                     <TextBox Width="100" Height="30" FontSize="19" Margin="5,0"
-                             Text="{Binding CurrentBook.SalePrice,Mode=TwoWay}"
+                             Text="{Binding CurrentSale.User.Username,Mode=TwoWay}"
                              ></TextBox>
                     <DatePicker Width="100" Height="40" FontSize="16" Margin="5,0"
-                             SelectedDate="{Binding CurrentClient.ConnectionTime, Mode=TwoWay}" DisplayDate="{Binding DateTime.Now}"     
+                             SelectedDate="{Binding CurrentSale.SaleDateTime, Mode=TwoWay}" DisplayDate="{Binding DateTime.Now}"     
                              ></DatePicker>
 
 
                     <TextBox Width="100" Height="30" FontSize="19" Margin="5,10"
-                             Text="{Binding CurrentBook.Note,Mode=TwoWay}"
+                             Text="{Binding CurrentSale.Note,Mode=TwoWay}"
                              ></TextBox>
                 </StackPanel>
                 <StackPanel Margin="50,0,0,0">
@@ -55,7 +55,6 @@
                     <Button Width="100" Height="40" Content="Delete" FontSize="20" Margin="15"
                        Command="{Binding DeleteCommand}" 
                             ></Button>
-
                 </StackPanel>
             </StackPanel>
         </Grid>
@@ -83,12 +82,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-           
-                   
-                     
-               
-                
-                  
+                            
                     </GridView>
 
                 </ListView.View>
