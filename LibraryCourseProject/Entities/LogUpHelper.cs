@@ -33,7 +33,7 @@ namespace LibraryCourseProject.Entities
         }
         public bool IsFullRequestingPlaces(string username,string email,string password)
         {
-            if (username != String.Empty && email != String.Empty && password != String.Empty)
+            if (username != null && email != null && password != null)
             {
                 return true;
             }
