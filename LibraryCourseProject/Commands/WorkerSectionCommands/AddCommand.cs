@@ -13,7 +13,7 @@ namespace LibraryCourseProject.Commands.WorkerSectionCommands
 {
     public class AddCommand : ICommand
     {
-        public WorkerViewModel WorkerViewModel { get; set; }       
+        public WorkerViewModel WorkerViewModel { get; set; }
         public AddCommand(WorkerViewModel workerViewModel)
         {
             WorkerViewModel = workerViewModel;
@@ -26,38 +26,50 @@ namespace LibraryCourseProject.Commands.WorkerSectionCommands
 
         public void Execute(object parameter)
         {
-            if (WorkerViewModel.AllWorkers == null)
+            WorkerHelper workerHelper = new WorkerHelper();
+            var name = WorkerViewModel.CurrentWorker.Name;
+            var surname = WorkerViewModel.CurrentWorker.Surname;
+            var isFilledRequestingPlaces = workerHelper.IsFilledRequestingPlaces(name, surname);
+            if (!isFilledRequestingPlaces)
             {
-                WorkerViewModel.AllWorkers = new ObservableCollection<Worker>();
-            }
-            if (WorkerViewModel.AllWorkers.Count == 0)
-            {
-                WorkerViewModel.CurrentWorker.Id = 0;
-                WorkerViewModel.CurrentWorker.No = 0;
-            }
-            else if (WorkerViewModel.AllWorkers.Count != 0)
-            {
-                int index = WorkerViewModel.AllWorkers.Count - 1;
-                int newID = WorkerViewModel.AllWorkers[index].Id + 1;
-                WorkerViewModel.CurrentWorker.Id = newID;
-                WorkerViewModel.CurrentWorker.No = newID;
-            }
-            var item = WorkerViewModel.AllWorkers.FirstOrDefault(x => x.Id == WorkerViewModel.CurrentWorker.Id);
-
-            if (item == null)
-            {
-                var newitem = WorkerViewModel.CurrentWorker;
-                WorkerViewModel.AllWorkers.Add(newitem);
-                App.Config.Workers.Add(newitem);
-                App.Config.SeriailizeWorkersToJson();
-                MessageBoxResult add = MessageBox.Show("Added");
-                WorkerViewModel.CurrentWorker = new Worker();
-                WorkerViewModel.SelectedWorker = new Worker();
+                MessageBox.Show("You did not fill name and surname places");
             }
             else
             {
-                MessageBoxResult add = MessageBox.Show("Can not add this item, you can only update and delete");
+                if (WorkerViewModel.AllWorkers == null)
+                {
+                    WorkerViewModel.AllWorkers = new ObservableCollection<Worker>();
+                }
+                if (WorkerViewModel.AllWorkers.Count == 0)
+                {
+                    WorkerViewModel.CurrentWorker.Id = 0;
+                    WorkerViewModel.CurrentWorker.No = 0;
+                }
+                else if (WorkerViewModel.AllWorkers.Count != 0)
+                {
+                    int index = WorkerViewModel.AllWorkers.Count - 1;
+                    int newID = WorkerViewModel.AllWorkers[index].Id + 1;
+                    WorkerViewModel.CurrentWorker.Id = newID;
+                    WorkerViewModel.CurrentWorker.No = newID;
+                }
+                var item = WorkerViewModel.AllWorkers.FirstOrDefault(x => x.Id == WorkerViewModel.CurrentWorker.Id);
+
+                if (item == null)
+                {
+                    var newitem = WorkerViewModel.CurrentWorker;
+                    WorkerViewModel.AllWorkers.Add(newitem);
+                    App.Config.Workers.Add(newitem);
+                    App.Config.SeriailizeWorkersToJson();
+                    MessageBoxResult add = MessageBox.Show("Added");
+                    WorkerViewModel.CurrentWorker = new Worker();
+                    WorkerViewModel.SelectedWorker = new Worker();
+                }
+                else
+                {
+                    MessageBoxResult add = MessageBox.Show("Can not add this item, you can only update and delete");
+                }
             }
+
         }
     }
 }

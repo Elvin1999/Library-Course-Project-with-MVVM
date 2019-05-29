@@ -8,12 +8,12 @@ namespace LibraryCourseProject.Entities
 {
    public class LogUpHelper
     {
-        private List<User> Users;
+        private List<User> users;
         public LogUpHelper()
         {
             try
             {
-                Users = App.Config.DeserializeFromJson();//for users
+                users = App.Config.DeserializeFromJson();//for users
             }
             catch (Exception)
             {
@@ -21,7 +21,7 @@ namespace LibraryCourseProject.Entities
         }
         public bool IsExistUsername(string username)
         {
-            var item = Users.FirstOrDefault(x => x.Username == username);
+            var item = users.FirstOrDefault(x => x.Username == username);
             if (item != null)
             {
                 return true;
@@ -44,7 +44,7 @@ namespace LibraryCourseProject.Entities
         }
         public bool IsExistEmail(string email)
         {
-            var item = Users.FirstOrDefault(x => x.Email == email);
+            var item = users.FirstOrDefault(x => x.Email == email);
             if (item != null)
             {
                 return true;

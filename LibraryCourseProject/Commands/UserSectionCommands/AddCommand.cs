@@ -51,7 +51,7 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
             else
             {
                 isAccessable = false;
-                MessageBox.Show("Not all places were filled .");
+                MessageBox.Show("You did not fill username,email and password places");
             }
             if (isAccessable)
             {
