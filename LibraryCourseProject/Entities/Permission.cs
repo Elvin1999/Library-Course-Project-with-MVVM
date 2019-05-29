@@ -10,11 +10,11 @@ namespace LibraryCourseProject.Entities
     {
         public int Id { get; set; }
         public int No { get; set; }
-        public bool CanCreateBook { get; set; }
-        public bool CanCreateUser { get; set; }
-        public bool CanCreateFilial { get; set; }
-        public bool CanCreateClient { get; set; }
-        public bool CanCreateWorker { get; set; }
+        public bool CanCreateBook { get; set; } = false;
+        public bool CanCreateUser { get; set; } = false;
+        public bool CanCreateFilial { get; set; } = false;
+        public bool CanCreateClient { get; set; } = false;
+        public bool CanCreateWorker { get; set; } = false;
         private string createBook;
         private string createUser;
         private string createFilial;

@@ -26,17 +26,36 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
         }
         public void Execute(object parameter)
         {
-            LoginHelper loginHelper = new LoginHelper();
+            var passwordFromClient = (parameter as PasswordBox).Password;
+            UserViewModel.CurrentUser.Password = passwordFromClient;
+            LogUpHelper logupHelper = new LogUpHelper();
             var username = UserViewModel.CurrentUser.Username;
-            var isExist = loginHelper.IsExist(username);
-            if (isExist)
+            var email = UserViewModel.CurrentUser.Email;
+            var isExistUsername = logupHelper.IsExistUsername(username);
+            var IsExistEmail = logupHelper.IsExistEmail(email);
+            bool isAccessable = true;
+            var isFullRequestingplaces = logupHelper.IsFullRequestingPlaces(username, email, passwordFromClient);
+            if (isFullRequestingplaces)
             {
-                MessageBox.Show("This username is already exist .");
+                if (IsExistEmail)
+                {
+                    MessageBox.Show("This email is already exist .");
+                    isAccessable = false;
+                }
+                if (isExistUsername)
+                {
+                    MessageBox.Show("This username is already exist .");
+                    isAccessable = false;
+                }
             }
             else
             {
-                var passwordFromClient = (parameter as PasswordBox).Password;
-                UserViewModel.CurrentUser.Password = passwordFromClient;
+                isAccessable = false;
+                MessageBox.Show("Not all places were filled .");
+            }
+            if (isAccessable)
+            {
+
                 if (UserViewModel.AllUsers == null)
                 {
                     UserViewModel.AllUsers = new ObservableCollection<User>();
