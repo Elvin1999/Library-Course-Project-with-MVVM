@@ -14,13 +14,11 @@
         <Grid Grid.Row="0">
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
-                    <Label Width="130" Height="30" Content="Title" FontSize="18" Margin="5,5,0,0"></Label>
-                    <Label Width="130" Height="35" Content="Real Price" FontSize="18" Margin="5,5,0,0"></Label>
+                    <Label Width="130" Height="30" Content="Title" FontSize="18" Margin="5,10,0,0"></Label>
+                    <Label Width="130" Height="35" Content="Real Price" FontSize="18" Margin="5,10,0,0"></Label>
                     <Label Width="130" Height="30" Content="Sale Price"    FontSize="18" Margin="5,5,0,0"></Label>
-                    <Label Width="130" Height="35" Content="User" FontSize="18" Margin="5,5,0,0"></Label>
-                    <Label Width="130" Height="35" Content="Sale Date" FontSize="18" Margin="5,5,0,0"></Label>
-                   
-                    <Label Width="130" Height="35" Content="Note"     FontSize="18" Margin="5,5,0,0"></Label>
+                    <Label Width="130" Height="35" Content="Sale Date" FontSize="18" Margin="5,8,0,0"></Label>
+                    <Label Width="130" Height="35" Content="Note"     FontSize="18" Margin="5,8,0,0"></Label>
                 </StackPanel>
                 <StackPanel  Orientation="Vertical">
                     <TextBox Width="100" Height="30" FontSize="19" Margin="5,10" Text="{Binding CurrentSale.Book.Title,Mode=TwoWay}">
@@ -33,9 +31,7 @@
                     <TextBox Width="100" Height="30" FontSize="19" Margin="5,8"
                              Text="{Binding CurrentSale.SalePrice,Mode=TwoWay}"
                              ></TextBox>
-                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,0"
-                             Text="{Binding CurrentSale.User.Username,Mode=TwoWay}"
-                             ></TextBox>
+   
                     <DatePicker Width="100" Height="40" FontSize="16" Margin="5,0"
                              SelectedDate="{Binding CurrentSale.SaleDateTime, Mode=TwoWay}" DisplayDate="{Binding DateTime.Now}"     
                              ></DatePicker>
@@ -65,7 +61,7 @@
 
         </Grid>
         <Grid Grid.Column="1" Grid.Row="1">
-            <ListView ItemsSource="{Binding ClientViewModel.AllClients}" SelectedItem="{Binding ClientViewModel.SelectedClient}" Width="590" HorizontalAlignment="Left">
+            <ListView ItemsSource="{Binding ClientViewModel.AllClients}" SelectedItem="{Binding ClientViewModel.SelectedClient}" Width="270" HorizontalAlignment="Left">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="No" Width="50">

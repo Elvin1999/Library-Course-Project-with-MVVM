@@ -13,11 +13,13 @@ namespace LibraryCourseProject.Entities
         public List<User> Users { get; set; }
         public List<Client> Clients { get; set; }
         public List<Book> Books { get; set; }
+        public List<Worker> Workers { get; set; }
         public Config()
         {
             Users = new List<User>();
             Clients = new List<Client>();
             Books = new List<Book>();
+            Workers = new List<Worker>();
         }
         public void SeriailizeBooksToJson()
         {
@@ -40,6 +42,28 @@ namespace LibraryCourseProject.Entities
             }
 
             return Books;
+        }
+        public void SeriailizeWorkersToJson()
+        {
+
+            using (StreamWriter sw = new StreamWriter("configWorkers.json"))
+            {
+                var item = JsonConvert.SerializeObject(Workers);
+                sw.WriteLine(item);
+            }
+        }
+        public List<Worker> DeserializeWorkersFromJson()
+        {
+            try
+            {
+                var context = File.ReadAllText("configWorkers.json");
+                Workers = JsonConvert.DeserializeObject<List<Worker>>(context);
+            }
+            catch (Exception)
+            {
+            }
+
+            return Workers;
         }
         public void SeriailizeClientsToJson()
         {
