@@ -1,7 +1,9 @@
-﻿using LibraryCourseProject.ViewModels;
+﻿using LibraryCourseProject.Entities;
+using LibraryCourseProject.ViewModels;
 using LibraryCourseProject.Views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +29,20 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
         public void Execute(object parameter)
         {
             FilialViewModel filialViewModel = new FilialViewModel();
+            List<Filial> items = new List<Filial>();
+            try
+            {
+
+                items = App.Config.DeserializeFilialsFromJson();
+            }
+            catch (Exception)
+            {
+            }
+            if (items != null)
+            {
+
+                filialViewModel.AllFilials = new ObservableCollection<Filial>(items);
+            }
             FilialWindow filialWindow = new FilialWindow(filialViewModel);
             filialWindow.ShowDialog();
         }

@@ -22,7 +22,6 @@ namespace LibraryCourseProject.Commands.FilialSectionCommands
         {
             return true;
         }
-
         public void Execute(object parameter)
         {
 
@@ -32,6 +31,8 @@ namespace LibraryCourseProject.Commands.FilialSectionCommands
             {
                 var index = FilialViewModel.AllFilials.IndexOf(item);
                 FilialViewModel.AllFilials[index] = FilialViewModel.CurrentFilial;
+                App.Config.Filials = new List<Filial>(FilialViewModel.AllFilials);
+                App.Config.SeriailizeFilialsToJson();
                 MessageBoxResult update = MessageBox.Show("updated");
                 FilialViewModel.CurrentFilial = new Filial();
                 FilialViewModel.SelectedFilial = new Filial();

@@ -52,18 +52,26 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
             }
             Book book = new Book();
             book = BookViewModel.SelectedBook;
-            saleViewModel.CurrentSale = new Sale()
+            try
             {
-                Book = book,
-                //Client = clientViewModel.SelectedClient,
-                SaleDateTime = DateTime.Now,
-                Note = "",
-                No = 1,
-                RealPrice = book.PurchasePrice,
-                SalePrice = book.SalePrice,
-                Id = 1,
-                User = users[1]//current user goturmek lazimdi
-            };
+                saleViewModel.CurrentSale = new Sale()
+                {
+                    Book = book,
+                    Client = saleViewModel.ClientViewModel.SelectedClient,
+                    SaleDateTime = DateTime.Now,
+                    Note = "",
+                    No = 1,
+                    RealPrice = book.PurchasePrice,
+                    SalePrice = book.SalePrice,
+                    Id = 1,
+                    User = users[0]//current user goturmek lazimdi
+                };
+            }
+            catch (Exception)
+            {
+
+            }
+
             SaleWindow saleWindow = new SaleWindow(saleViewModel);
             saleWindow.ShowDialog();
 

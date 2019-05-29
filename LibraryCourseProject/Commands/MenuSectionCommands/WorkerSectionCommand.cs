@@ -42,36 +42,51 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
 
                 workerViewModel.AllWorkers = new ObservableCollection<Worker>(items);
             }
-            workerViewModel.Filials = new List<Filial>()
+
+            List<Filial> filials = new List<Filial>();
+            try
             {
-                new Filial()
-                {
-                     Address="Nizami metrosu yaxinligi",
-                      Id=0,
-                       Name="Caspian plaza",
-                        No=0,
-                         Note="En boyuk filial",
-                          OpeningDate=DateTime.Now
-                },
-                new Filial()
-                {
-                     Address="Ehmedli metrosu yaxinligi",
-                      Id=0,
-                       Name="Ehmedli",
-                        No=0,
-                         Note="En kichik filial",
-                          OpeningDate=DateTime.Now
-                },
-                new Filial()
-                {
-                     Address="Gence",
-                      Id=0,
-                       Name="LIB plaza",
-                        No=0,
-                         Note="none",
-                          OpeningDate=DateTime.Now
-                }
-            };
+
+                filials = App.Config.DeserializeFilialsFromJson();
+            }
+            catch (Exception)
+            {
+            }
+            if (filials != null)
+            {
+
+                workerViewModel.Filials = filials;
+            }
+            //workerViewModel.Filials = new List<Filial>()
+            //{
+            //    new Filial()
+            //    {
+            //         Address="Nizami metrosu yaxinligi",
+            //          Id=0,
+            //           Name="Caspian plaza",
+            //            No=0,
+            //             Note="En boyuk filial",
+            //              OpeningDate=DateTime.Now
+            //    },
+            //    new Filial()
+            //    {
+            //         Address="Ehmedli metrosu yaxinligi",
+            //          Id=0,
+            //           Name="Ehmedli",
+            //            No=0,
+            //             Note="En kichik filial",
+            //              OpeningDate=DateTime.Now
+            //    },
+            //    new Filial()
+            //    {
+            //         Address="Gence",
+            //          Id=0,
+            //           Name="LIB plaza",
+            //            No=0,
+            //             Note="none",
+            //              OpeningDate=DateTime.Now
+            //    }
+            //};
             WorkerWindow workerWindow = new WorkerWindow(workerViewModel);
             workerWindow.ShowDialog();
         }

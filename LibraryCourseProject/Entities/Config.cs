@@ -14,12 +14,36 @@ namespace LibraryCourseProject.Entities
         public List<Client> Clients { get; set; }
         public List<Book> Books { get; set; }
         public List<Worker> Workers { get; set; }
+        public List<Filial> Filials { get; set; }
         public Config()
         {
             Users = new List<User>();
             Clients = new List<Client>();
             Books = new List<Book>();
             Workers = new List<Worker>();
+            Filials = new List<Filial>();
+        }
+        public void SeriailizeFilialsToJson()
+        {
+
+            using (StreamWriter sw = new StreamWriter("configFilials.json"))
+            {
+                var item = JsonConvert.SerializeObject(Filials);
+                sw.WriteLine(item);
+            }
+        }
+        public List<Filial> DeserializeFilialsFromJson()
+        {
+            try
+            {
+                var context = File.ReadAllText("configFilials.json");
+                Filials = JsonConvert.DeserializeObject<List<Filial>>(context);
+            }
+            catch (Exception)
+            {
+            }
+
+            return Filials;
         }
         public void SeriailizeBooksToJson()
         {
