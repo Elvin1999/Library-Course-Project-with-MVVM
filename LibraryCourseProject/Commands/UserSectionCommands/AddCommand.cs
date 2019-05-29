@@ -25,44 +25,55 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
             return true;
         }
         public void Execute(object parameter)
-        {      
-            
-            var passwordFromClient = (parameter as PasswordBox).Password;
-            UserViewModel.CurrentUser.Password = passwordFromClient;
-            if (UserViewModel.AllUsers == null)
+        {
+            LoginHelper loginHelper = new LoginHelper();
+            var username = UserViewModel.CurrentUser.Username;
+            var isExist = loginHelper.IsExist(username);
+            if (isExist)
             {
-                UserViewModel.AllUsers = new ObservableCollection<User>();
-            }
-            if (UserViewModel.AllUsers.Count == 0)
-            {
-                UserViewModel.CurrentUser.Id = 0;
-                UserViewModel.CurrentUser.No = 0;
-            }
-            else if (UserViewModel.AllUsers.Count != 0)
-            {
-                int index = UserViewModel.AllUsers.Count - 1;
-                int newID = UserViewModel.AllUsers[index].Id + 1;
-                UserViewModel.CurrentUser.Id = newID;
-                UserViewModel.CurrentUser.No = newID;
-            }
-            var item = UserViewModel.AllUsers.FirstOrDefault(x => x.Id == UserViewModel.CurrentUser.Id);
-            
-            if (item == null&&UserViewModel.CurrentUser.Username!="admin")
-            {
-                var newitem = UserViewModel.CurrentUser;
-                UserViewModel.AllUsers.Add(newitem);
-                App.Config.Users.Add(newitem);
-                App.Config.SeriailizeToJson();
-                MessageBoxResult add = MessageBox.Show("Added");
-                UserViewModel.CurrentUser = new User();
-                UserViewModel.CurrentUser.Password = String.Empty;
-                //UserViewModel.CurrentUser.Permission = new Permission();
-                UserViewModel.SelectedUser = new User();
+                MessageBox.Show("This username is already exist .");
             }
             else
             {
-                MessageBoxResult add = MessageBox.Show("Can not add this item");
+                var passwordFromClient = (parameter as PasswordBox).Password;
+                UserViewModel.CurrentUser.Password = passwordFromClient;
+                if (UserViewModel.AllUsers == null)
+                {
+                    UserViewModel.AllUsers = new ObservableCollection<User>();
+                }
+                if (UserViewModel.AllUsers.Count == 0)
+                {
+                    UserViewModel.CurrentUser.Id = 0;
+                    UserViewModel.CurrentUser.No = 0;
+                }
+                else if (UserViewModel.AllUsers.Count != 0)
+                {
+                    int index = UserViewModel.AllUsers.Count - 1;
+                    int newID = UserViewModel.AllUsers[index].Id + 1;
+                    UserViewModel.CurrentUser.Id = newID;
+                    UserViewModel.CurrentUser.No = newID;
+                }
+                var item = UserViewModel.AllUsers.FirstOrDefault(x => x.Id == UserViewModel.CurrentUser.Id);
+
+                if (item == null && UserViewModel.CurrentUser.Username != "admin")
+                {
+                    var newitem = UserViewModel.CurrentUser;
+                    UserViewModel.AllUsers.Add(newitem);
+                    App.Config.Users.Add(newitem);
+                    App.Config.SeriailizeToJson();
+                    MessageBoxResult add = MessageBox.Show("Added");
+                    UserViewModel.CurrentUser = new User();
+                    UserViewModel.CurrentUser.Password = String.Empty;
+                    //UserViewModel.CurrentUser.Permission = new Permission();
+                    UserViewModel.SelectedUser = new User();
+                }
+                else
+                {
+                    MessageBoxResult add = MessageBox.Show("Can not add this item");
+                }
             }
+
+
         }
     }
 }
