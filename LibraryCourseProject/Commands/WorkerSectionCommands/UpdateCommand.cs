@@ -32,6 +32,8 @@ namespace LibraryCourseProject.Commands.WorkerSectionCommands
             {
                 var index = WorkerViewModel.AllWorkers.IndexOf(item);
                 WorkerViewModel.AllWorkers[index] = WorkerViewModel.CurrentWorker;
+                App.Config.Workers = new List<Worker>(WorkerViewModel.AllWorkers);
+                App.Config.SeriailizeWorkersToJson();
                 MessageBoxResult update = MessageBox.Show("updated");
                 WorkerViewModel.CurrentWorker = new Worker();
                 WorkerViewModel.SelectedWorker = new Worker();
