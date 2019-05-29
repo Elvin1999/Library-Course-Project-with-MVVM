@@ -48,8 +48,9 @@ namespace LibraryCourseProject.Commands.SaleSectionCommands
 
             if (item == null)
             {
-
-                SaleViewModel.AllSales.Add(SaleViewModel.CurrentSale);
+                SaleViewModel.CurrentSale.Client = SaleViewModel.ClientViewModel.SelectedClient;
+                var saleitem = SaleViewModel.CurrentSale;
+                SaleViewModel.AllSales.Add(saleitem);
                 MessageBoxResult add = MessageBox.Show("Added");
                 SaleViewModel.CurrentSale = new Sale();
             }

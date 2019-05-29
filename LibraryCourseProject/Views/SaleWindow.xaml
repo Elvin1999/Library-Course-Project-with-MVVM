@@ -65,7 +65,7 @@
 
         </Grid>
         <Grid Grid.Column="1" Grid.Row="1">
-            <ListView ItemsSource="{Binding ClientViewModel.AllClients}" Width="590" HorizontalAlignment="Left">
+            <ListView ItemsSource="{Binding ClientViewModel.AllClients}" SelectedItem="{Binding ClientViewModel.SelectedClient}" Width="590" HorizontalAlignment="Left">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="No" Width="50">
