@@ -99,35 +99,35 @@
                         <GridViewColumn Header="Create Book" Width="80">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Permission.CanCreateBook}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Permission.CreateBook}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Create User" Width="80">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Permission.CanCreateUser}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Permission.CreateUser}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Create Filial" Width="80">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Permission.CanCreateFilial}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Permission.CreateFilial}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Create Client" Width="80">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Permission.CanCreateClient}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Permission.CreateClient}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Create Worker" Width="80">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Permission.CanCreateWorker}"></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Permission.CreateWorker}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

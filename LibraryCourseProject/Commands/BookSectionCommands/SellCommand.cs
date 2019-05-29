@@ -63,8 +63,8 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
                     No = 1,
                     RealPrice = book.PurchasePrice,
                     SalePrice = book.SalePrice,
-                    Id = 1, 
-                    User = users[0]//current user goturmek lazimdi
+                    Id = 1,
+                    User = BookViewModel.CurrentUser
                 };
             }
             catch (Exception)

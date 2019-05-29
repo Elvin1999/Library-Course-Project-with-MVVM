@@ -29,13 +29,14 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
         public void Execute(object parameter)
         {
             BookViewModel bookViewModel = new BookViewModel() { };
+            bookViewModel.CurrentUser = MenuViewModel.CurrentUser;
             List<Book> items = new List<Book>();
             try
             {
 
                 items = App.Config.DeserializeBooksFromJson();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
             if (items != null)

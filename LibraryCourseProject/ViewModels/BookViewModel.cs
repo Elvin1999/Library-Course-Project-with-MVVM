@@ -14,6 +14,7 @@ namespace LibraryCourseProject.ViewModels
     {
         public List<Genre> Genres { get; set; }
         public List<Author> Authors { get; set; }
+        public User CurrentUser { get; set; }
         public AddCommand AddCommand => new AddCommand(this);
         public DeleteCommand DeleteCommand => new DeleteCommand(this);
         public UpdateCommand UpdateCommand => new UpdateCommand(this);
