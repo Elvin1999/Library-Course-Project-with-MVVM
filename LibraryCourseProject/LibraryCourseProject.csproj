@@ -83,6 +83,8 @@
     <Compile Include="Commands\WorkerSectionCommands\AddCommand.cs" />
     <Compile Include="Commands\WorkerSectionCommands\DeleteCommand.cs" />
     <Compile Include="Commands\WorkerSectionCommands\UpdateCommand.cs" />
+    <Compile Include="Entities\BookHelper.cs" />
+    <Compile Include="Entities\ClientHelper.cs" />
     <Compile Include="Entities\FilialHelper.cs" />
     <Compile Include="Entities\LogUpHelper.cs" />
     <Compile Include="Entities\WorkerHelper.cs" />
