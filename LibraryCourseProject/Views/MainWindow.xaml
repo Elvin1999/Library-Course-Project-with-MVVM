@@ -64,12 +64,12 @@
                 </Button>
                    
             </Border>
-            <Image Source="/images\personimage.png">
+            <!--<Image Source="/images\personimage.png">
                 <Canvas.Left>230</Canvas.Left>
                 <Canvas.Top>120</Canvas.Top>
                 <Image.Width>80</Image.Width>
                 <Image.Height>70</Image.Height>
-            </Image>
+            </Image>-->
             <Label>
                 <Canvas.Left>100</Canvas.Left>
                 <Canvas.Top>120</Canvas.Top>
@@ -137,7 +137,7 @@
                 </StackPanel>
             </Border>
           
-            <Border CornerRadius="20" BorderBrush="White" BorderThickness="4" Background="{StaticResource FirstColor}"
+            <Border
                    
                     >
                 <Canvas.Left>100</Canvas.Left>
@@ -145,24 +145,14 @@
                 <Border.Width>220</Border.Width>
                 <Border.Height>40</Border.Height>
 
-                <Button Style="{StaticResource loginBtnStyle}" Command="{Binding LoginCommand}"
-                     CommandParameter="{Binding ElementName=Password}"
+                <Button Style="{StaticResource TestStyle}" Command="{Binding LoginCommand}"
+                     CommandParameter="{Binding ElementName=Password}" 
                         >
-                    <!--<Label.Width>170</Label.Width>
-                    <Label.Height>40</Label.Height>
-                    <Label.Content>Login</Label.Content>
-                    <Label.FontFamily>Comic Sans MS</Label.FontFamily>
-                    <Label.Foreground>White</Label.Foreground>
-                    <Label.FontSize>18</Label.FontSize>
-                    <Label.HorizontalContentAlignment>Center</Label.HorizontalContentAlignment>-->
                 </Button>
                 <Border.BitmapEffect>
-                    <DropShadowBitmapEffect Color="SpringGreen" ShadowDepth="8" Softness=".7">
-
+                    <DropShadowBitmapEffect Color="SpringGreen" ShadowDepth="8" Softness=".9">
                     </DropShadowBitmapEffect>
                 </Border.BitmapEffect>
-                
-
             </Border>
         </Canvas>
 
