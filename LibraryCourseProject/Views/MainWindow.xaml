@@ -64,8 +64,8 @@
                 </Button>
                    
             </Border>
-            <Image Source="/images\lock.png">
-                <Canvas.Left>50</Canvas.Left>
+            <Image Source="/images\personimage.png">
+                <Canvas.Left>230</Canvas.Left>
                 <Canvas.Top>120</Canvas.Top>
                 <Image.Width>80</Image.Width>
                 <Image.Height>70</Image.Height>
@@ -98,7 +98,7 @@
                 <Border.Height>40</Border.Height>
                 <Border.Background>#f2f3f4</Border.Background>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/images\lock.png" Margin="10,0,0,0">
+                    <Image Source="/images\Message.png" Margin="10,0,0,0">
                         <Image.Width>25</Image.Width>
                         <Image.Height>25</Image.Height>
                     </Image>
