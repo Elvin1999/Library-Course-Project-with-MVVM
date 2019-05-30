@@ -18,6 +18,8 @@ namespace LibraryCourseProject
         public App()
         {
             Config = new Config();
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("az");
         }
     }
 }
+

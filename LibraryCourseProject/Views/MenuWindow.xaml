@@ -3,12 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p = "clr-namespace:LibraryCourseProject.Properties"
         xmlns:local="clr-namespace:LibraryCourseProject.Views"
         mc:Ignorable="d"
-        Title="MenuWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+        Title="MenuWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="Transparent" WindowStyle="None">
     <Grid>
+        <Rectangle RadiusX="20" RadiusY="20" Width="700" Height="600" Fill="{StaticResource FirstColor}">
+            <Canvas.Left>
+                50
+            </Canvas.Left>
+        </Rectangle>
         <StackPanel>
-            <Button Width="120" Height="50" Content="Users" Command="{Binding UsersSectionCommand}">
+            <Button Width="120" Height="50" Content="{x:Static p:Resources.Users}" Command="{Binding UsersSectionCommand}">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="IsEnabled" Value="False"></Setter>
@@ -72,7 +78,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Width="120" Height="50" Content="Book" Command="{Binding BookSectionCommand}">
+            <Button Width="120" Height="50" Content="{x:Static p:Resources.Books}" Command="{Binding BookSectionCommand}">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="IsEnabled" Value="False"></Setter>

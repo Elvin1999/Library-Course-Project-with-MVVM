@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryCourseProject.Views"
         mc:Ignorable="d"
-        Title="BookWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+        Title="BookWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None">
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>

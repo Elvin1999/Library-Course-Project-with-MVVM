@@ -15,11 +15,6 @@ namespace LibraryCourseProject.Entities
         public bool CanCreateFilial { get; set; } = false;
         public bool CanCreateClient { get; set; } = false;
         public bool CanCreateWorker { get; set; } = false;
-        private string createBook;
-        private string createUser;
-        private string createFilial;
-        private string createClient;
-        private string createWorker;
         public string CreateBook
         {
             get
@@ -33,7 +28,6 @@ namespace LibraryCourseProject.Entities
                 {
                     return "No";
                 }
-
             }
         }
         public string CreateUser
@@ -48,7 +42,6 @@ namespace LibraryCourseProject.Entities
                 {
                     return "No";
                 }
-
             }
         }
         public string CreateFilial
