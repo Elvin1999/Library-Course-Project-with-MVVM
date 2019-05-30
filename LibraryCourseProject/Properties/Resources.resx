@@ -120,7 +120,16 @@
   <data name="Books" xml:space="preserve">
     <value>Books</value>
   </data>
+  <data name="Clients" xml:space="preserve">
+    <value>Clients</value>
+  </data>
+  <data name="Filials" xml:space="preserve">
+    <value>Filials</value>
+  </data>
   <data name="Users" xml:space="preserve">
     <value>Users</value>
+  </data>
+  <data name="Workers" xml:space="preserve">
+    <value>Workers</value>
   </data>
 </root>

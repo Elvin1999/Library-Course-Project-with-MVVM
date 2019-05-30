@@ -30,7 +30,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Width="120" Height="50" Content="Filials" Command="{Binding FilialSectionCommand}">
+            <Button Width="120" Height="50" Content="{x:Static p:Resources.Filials}" Command="{Binding FilialSectionCommand}">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="IsEnabled" Value="False"></Setter>
@@ -46,7 +46,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Width="120" Height="50" Content="Workers" Command="{Binding WorkerSectionCommand}">
+            <Button Width="120" Height="50" Content="{x:Static p:Resources.Workers}" Command="{Binding WorkerSectionCommand}">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="IsEnabled" Value="False"></Setter>
@@ -62,7 +62,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Width="120" Height="50" Content="Clients" Command="{Binding ClientSectionCommand}">
+            <Button Width="120" Height="50" Content="{x:Static p:Resources.Clients}" Command="{Binding ClientSectionCommand}">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="IsEnabled" Value="False"></Setter>

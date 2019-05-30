@@ -120,7 +120,16 @@
   <data name="Books" xml:space="preserve">
     <value>Kitablar</value>
   </data>
+  <data name="Clients" xml:space="preserve">
+    <value>Mushteriler</value>
+  </data>
+  <data name="Filials" xml:space="preserve">
+    <value>Filiallar</value>
+  </data>
   <data name="Users" xml:space="preserve">
     <value>Istifadechiler</value>
+  </data>
+  <data name="Workers" xml:space="preserve">
+    <value>Ishchiler</value>
   </data>
 </root>
