@@ -64,7 +64,7 @@
                 </Button>
                    
             </Border>
-            <Image>
+            <Image Source="/images\lock.png">
                 <Canvas.Left>50</Canvas.Left>
                 <Canvas.Top>120</Canvas.Top>
                 <Image.Width>80</Image.Width>
@@ -98,7 +98,7 @@
                 <Border.Height>40</Border.Height>
                 <Border.Background>#f2f3f4</Border.Background>
                 <StackPanel Orientation="Horizontal">
-                    <Image Margin="10,0,0,0">
+                    <Image Source="/images\lock.png" Margin="10,0,0,0">
                         <Image.Width>25</Image.Width>
                         <Image.Height>25</Image.Height>
                     </Image>
@@ -122,7 +122,7 @@
                 <Border.Height>40</Border.Height>
                 <Border.Background>#f2f3f4</Border.Background>
                 <StackPanel Orientation="Horizontal">
-                    <Image Margin="10,0,0,0">
+                    <Image Source="/images\lock.png" Margin="10,0,0,0">
                         <Image.Width>25</Image.Width>
                         <Image.Height>25</Image.Height>
                     </Image>
