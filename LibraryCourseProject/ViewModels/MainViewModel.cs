@@ -9,7 +9,6 @@ namespace LibraryCourseProject.ViewModels
 {
     public class MainViewModel:BaseViewModel
     {
-
         
     }
 }

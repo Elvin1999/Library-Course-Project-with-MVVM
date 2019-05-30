@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:LibraryCourseProject"
              StartupUri="Views\MainWindow.xaml">
+
     <Application.Resources>
-         
+        <ResourceDictionary Source="GeneralDictionary.xaml"></ResourceDictionary>
     </Application.Resources>
 </Application>

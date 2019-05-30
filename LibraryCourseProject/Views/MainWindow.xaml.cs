@@ -21,12 +21,18 @@ namespace LibraryCourseProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainViewModel MainVM { get; set; }
+    
         public MainWindow()
         {
             InitializeComponent();
-            MainVM = new MainViewModel();
-            DataContext = MainVM;
+            LoginViewModel loginViewModel = new LoginViewModel();
+            loginViewModel.SetUsers();
+            DataContext = loginViewModel;
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();//it is temporary
         }
     }
 }

@@ -5,10 +5,155 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryCourseProject"       
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None"
+        AllowsTransparency="True"  Background="Transparent">
     <Grid>
 
-        <local:LoginUserControl></local:LoginUserControl>
-     
+        <Canvas>
+            <Rectangle RadiusX="20" RadiusY="20" Width="700" Height="600" Fill="{StaticResource FirstColor}">
+                <Canvas.Left>
+                   50
+                </Canvas.Left>
+            </Rectangle>
+            <Rectangle Width="210" Height="600" Fill="White" RadiusX="20" RadiusY="20">
+                <Canvas.Left>542</Canvas.Left>
+            </Rectangle>
+            <Ellipse Width="350" Height="600" Fill="White">
+                <Canvas.Left>380</Canvas.Left>
+
+            </Ellipse>
+         
+            <TextBlock Canvas.Left="100" Canvas.Top="40" FontSize="35" FontFamily="Berlin Sans FB Demi" Foreground="White">
+                book store
+            </TextBlock>
+            <TextBlock Canvas.Left="100" Canvas.Top="85" FontSize="16" FontFamily="Berlin Sans FB Demi" Foreground="WhiteSmoke">
+                Welcome to our book store
+            </TextBlock>
+            <StackPanel Background="White" Width="300" Height="350" Canvas.Top="140" Canvas.Left="440">
+                <TextBlock Name="bookStoreTxtb" FontSize="80" FontFamily="Comic Sans MS" TextAlignment="Left" Foreground="{StaticResource FirstColor}" >
+               
+ Book
+                </TextBlock>
+
+                <TextBlock Name="bookStoreTxtb2" FontSize="80" FontFamily="Comic Sans MS"  TextAlignment="Center" Foreground="{StaticResource FirstColor}">
+                   
+  Store
+                </TextBlock>
+            </StackPanel>
+            <Border x:Name="btn" CornerRadius="10" Background="White" Width="50" Height="50" BorderThickness="2" BorderBrush="{StaticResource FirstColor}">
+
+                <Canvas.Left>
+                   670
+                </Canvas.Left>
+                <Canvas.Top>
+                   15
+                </Canvas.Top>
+
+                
+                
+                
+                <Button x:Name="Exit" Click="Exit_Click"
+                        Style="{StaticResource ExitButtonStyle}"
+                       >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+
+                    </Button.Resources>
+                </Button>
+                   
+            </Border>
+            <Image Source="Images\personimage.png">
+                <Canvas.Left>50</Canvas.Left>
+                <Canvas.Top>120</Canvas.Top>
+                <Image.Width>80</Image.Width>
+                <Image.Height>70</Image.Height>
+            </Image>
+            <Label>
+                <Canvas.Left>100</Canvas.Left>
+                <Canvas.Top>190</Canvas.Top>
+                <Label.Width>200</Label.Width>
+                <Label.Height>30</Label.Height>
+                <Label.Content>Login below to get started</Label.Content>
+                <Label.Foreground>Gray</Label.Foreground>
+                <Label.FontFamily>Comic Sans MS</Label.FontFamily>
+
+            </Label>
+
+            <Border CornerRadius="20">
+
+                <Canvas.Left>100</Canvas.Left>
+                <Canvas.Top>230</Canvas.Top>
+                <Border.Width>220</Border.Width>
+                <Border.Height>40</Border.Height>
+                <Border.Background>#f2f3f4</Border.Background>
+                <StackPanel Orientation="Horizontal">
+                    <Image Margin="10,0,0,0">
+                        <Image.Width>25</Image.Width>
+                        <Image.Height>25</Image.Height>
+                    </Image>
+                    <TextBox Name="mailTxtB" BorderThickness="0" Margin="5,0,0,0" GotFocus="MailTxtB_GotFocus" LostFocus="MailTxtB_LostFocus">
+
+                        <TextBox.Width>170</TextBox.Width>
+                        <TextBox.FontSize>15</TextBox.FontSize>
+                        <TextBox.FontFamily>Comic Sans MS</TextBox.FontFamily>
+                        <TextBox.Text>E-mail Address</TextBox.Text>
+                        <TextBox.Foreground>#c1c7c9</TextBox.Foreground>
+                        <TextBox.Height>30</TextBox.Height>
+                        <TextBox.Background>#f2f3f4</TextBox.Background>
+                    </TextBox>
+                </StackPanel>
+
+
+            </Border>
+            <Border CornerRadius="20">
+                <Canvas.Left>100</Canvas.Left>
+                <Canvas.Top>300</Canvas.Top>
+                <Border.Width>220</Border.Width>
+                <Border.Height>40</Border.Height>
+                <Border.Background>#f2f3f4</Border.Background>
+                <StackPanel Orientation="Horizontal">
+                    <Image Margin="10,0,0,0">
+                        <Image.Width>25</Image.Width>
+                        <Image.Height>25</Image.Height>
+                    </Image>
+                    <PasswordBox Name="Password" BorderThickness="0" Margin="5,0,0,0" GotFocus="Password_GotFocus" LostFocus="Password_LostFocus">
+                        <PasswordBox.Width>170</PasswordBox.Width>
+                        <PasswordBox.FontSize>15</PasswordBox.FontSize>
+                        <PasswordBox.FontFamily>Comic Sans MS</PasswordBox.FontFamily>
+                        <PasswordBox.Foreground>#c1c7c9</PasswordBox.Foreground>
+                        <PasswordBox.Height>30</PasswordBox.Height>
+                        <PasswordBox.Background>#f2f3f4</PasswordBox.Background>
+                        <PasswordBox.Password>yourpassword</PasswordBox.Password>
+                    </PasswordBox>
+                </StackPanel>
+            </Border>
+          
+            <Border CornerRadius="20" BorderBrush="White" BorderThickness="4" Background="{StaticResource FirstColor}">
+                <Canvas.Left>100</Canvas.Left>
+                <Canvas.Top>360</Canvas.Top>
+                <Border.Width>220</Border.Width>
+                <Border.Height>40</Border.Height>
+
+                <Label>
+                    <Label.Width>170</Label.Width>
+                    <Label.Height>40</Label.Height>
+                    <Label.Content>Login</Label.Content>
+                    <Label.FontFamily>Comic Sans MS</Label.FontFamily>
+                    <Label.Foreground>White</Label.Foreground>
+                    <Label.FontSize>18</Label.FontSize>
+                    <Label.HorizontalContentAlignment>Center</Label.HorizontalContentAlignment>
+                </Label>
+                <Border.BitmapEffect>
+                    <DropShadowBitmapEffect Color="Green" ShadowDepth="8" Softness=".7">
+
+                    </DropShadowBitmapEffect>
+                </Border.BitmapEffect>
+                
+
+            </Border>
+        </Canvas>
+
     </Grid>
 </Window>
