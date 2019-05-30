@@ -2,6 +2,7 @@
 using LibraryCourseProject.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,21 @@ namespace LibraryCourseProject.ViewModels
         public FilialSectionCommand FilialSectionCommand => new FilialSectionCommand(this);
         public ClientSectionCommand ClientSectionCommand => new ClientSectionCommand(this);
         public WorkerSectionCommand WorkerSectionCommand => new WorkerSectionCommand(this);
+        public LanguageCommand LanguageCommand => new LanguageCommand(this);
         public User CurrentUser { get; set; }
+        private int state = 1;
+
+        public int State
+        {
+            get
+            {
+                return state;
+            }
+            set
+            {
+                state = value;
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(State)));
+            }
+        }
     }
 }

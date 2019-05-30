@@ -72,6 +72,7 @@
     <Compile Include="Commands\MenuSectionCommands\BookSectionCommand.cs" />
     <Compile Include="Commands\MenuSectionCommands\ClientSectionCommand.cs" />
     <Compile Include="Commands\MenuSectionCommands\FilialSectionCommand.cs" />
+    <Compile Include="Commands\MenuSectionCommands\LanguageCommand.cs" />
     <Compile Include="Commands\MenuSectionCommands\UsersSectionCommand.cs" />
     <Compile Include="Commands\MenuSectionCommands\WorkerSectionCommand.cs" />
     <Compile Include="Commands\SaleSectionCommands\AddCommand.cs" />
