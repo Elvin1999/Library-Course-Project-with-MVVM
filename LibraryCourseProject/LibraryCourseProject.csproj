@@ -221,14 +221,5 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Resource Include="Images\lock.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Message.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\personimage.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

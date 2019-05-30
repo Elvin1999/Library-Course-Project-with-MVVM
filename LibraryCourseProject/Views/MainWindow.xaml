@@ -64,12 +64,21 @@
                 </Button>
                    
             </Border>
-            <Image Source="Images\personimage.png">
+            <Image>
                 <Canvas.Left>50</Canvas.Left>
                 <Canvas.Top>120</Canvas.Top>
                 <Image.Width>80</Image.Width>
                 <Image.Height>70</Image.Height>
             </Image>
+            <Label>
+                <Canvas.Left>100</Canvas.Left>
+                <Canvas.Top>120</Canvas.Top>
+                <Label.Content>Login</Label.Content>
+                <Label.FontSize>35</Label.FontSize>
+                <Label.Foreground>White</Label.Foreground>
+                <Label.FontFamily>Comic Sans MS</Label.FontFamily>
+
+            </Label>
             <Label>
                 <Canvas.Left>100</Canvas.Left>
                 <Canvas.Top>190</Canvas.Top>
@@ -93,12 +102,11 @@
                         <Image.Width>25</Image.Width>
                         <Image.Height>25</Image.Height>
                     </Image>
-                    <TextBox Name="mailTxtB" BorderThickness="0" Margin="5,0,0,0" GotFocus="MailTxtB_GotFocus" LostFocus="MailTxtB_LostFocus">
+                    <TextBox Name="mailTxtB" BorderThickness="0" Margin="5,0,0,0" Text="{Binding Username,Mode=OneWayToSource}">
 
                         <TextBox.Width>170</TextBox.Width>
                         <TextBox.FontSize>15</TextBox.FontSize>
                         <TextBox.FontFamily>Comic Sans MS</TextBox.FontFamily>
-                        <TextBox.Text>E-mail Address</TextBox.Text>
                         <TextBox.Foreground>#c1c7c9</TextBox.Foreground>
                         <TextBox.Height>30</TextBox.Height>
                         <TextBox.Background>#f2f3f4</TextBox.Background>
@@ -118,35 +126,38 @@
                         <Image.Width>25</Image.Width>
                         <Image.Height>25</Image.Height>
                     </Image>
-                    <PasswordBox Name="Password" BorderThickness="0" Margin="5,0,0,0" GotFocus="Password_GotFocus" LostFocus="Password_LostFocus">
+                    <PasswordBox Name="Password" BorderThickness="0" Margin="5,0,0,0">
                         <PasswordBox.Width>170</PasswordBox.Width>
                         <PasswordBox.FontSize>15</PasswordBox.FontSize>
                         <PasswordBox.FontFamily>Comic Sans MS</PasswordBox.FontFamily>
                         <PasswordBox.Foreground>#c1c7c9</PasswordBox.Foreground>
                         <PasswordBox.Height>30</PasswordBox.Height>
                         <PasswordBox.Background>#f2f3f4</PasswordBox.Background>
-                        <PasswordBox.Password>yourpassword</PasswordBox.Password>
                     </PasswordBox>
                 </StackPanel>
             </Border>
           
-            <Border CornerRadius="20" BorderBrush="White" BorderThickness="4" Background="{StaticResource FirstColor}">
+            <Border CornerRadius="20" BorderBrush="White" BorderThickness="4" Background="{StaticResource FirstColor}"
+                   
+                    >
                 <Canvas.Left>100</Canvas.Left>
                 <Canvas.Top>360</Canvas.Top>
                 <Border.Width>220</Border.Width>
                 <Border.Height>40</Border.Height>
 
-                <Label>
-                    <Label.Width>170</Label.Width>
+                <Button Style="{StaticResource loginBtnStyle}" Command="{Binding LoginCommand}"
+                     CommandParameter="{Binding ElementName=Password}"
+                        >
+                    <!--<Label.Width>170</Label.Width>
                     <Label.Height>40</Label.Height>
                     <Label.Content>Login</Label.Content>
                     <Label.FontFamily>Comic Sans MS</Label.FontFamily>
                     <Label.Foreground>White</Label.Foreground>
                     <Label.FontSize>18</Label.FontSize>
-                    <Label.HorizontalContentAlignment>Center</Label.HorizontalContentAlignment>
-                </Label>
+                    <Label.HorizontalContentAlignment>Center</Label.HorizontalContentAlignment>-->
+                </Button>
                 <Border.BitmapEffect>
-                    <DropShadowBitmapEffect Color="Green" ShadowDepth="8" Softness=".7">
+                    <DropShadowBitmapEffect Color="SpringGreen" ShadowDepth="8" Softness=".7">
 
                     </DropShadowBitmapEffect>
                 </Border.BitmapEffect>
