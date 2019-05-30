@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace LibraryCourseProject.ViewModels
 {
-   public class ClientViewModel:BaseViewModel
+    public class ClientViewModel : BaseViewModel
     {
         public AddCommand AddCommand => new AddCommand(this);
         public DeleteCommand DeleteCommand => new DeleteCommand(this);
@@ -18,7 +18,7 @@ namespace LibraryCourseProject.ViewModels
         private ObservableCollection<Client> allClients;
         public ObservableCollection<Client> AllClients
         {
-            get 
+            get
             {
                 return allClients;
             }
@@ -45,7 +45,20 @@ namespace LibraryCourseProject.ViewModels
                 OnPropertyChanged(new PropertyChangedEventArgs(nameof(CurrentClient)));
             }
         }
+        private int state = 1;
 
+        public int State
+        {
+            get
+            {
+                return state;
+            }
+            set
+            {
+                state = value;
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(State)));
+            }
+        }
         private Client selectedClient;
         public Client SelectedClient
         {
@@ -59,6 +72,14 @@ namespace LibraryCourseProject.ViewModels
                 if (value != null)
                 {
                     CurrentClient = SelectedClient.Clone();
+                }
+                if (SelectedClient != null)
+                {
+                    State = 2;
+                }
+                else
+                {
+                    State = 1;
                 }
                 OnPropertyChanged(new PropertyChangedEventArgs(nameof(SelectedClient)));
             }

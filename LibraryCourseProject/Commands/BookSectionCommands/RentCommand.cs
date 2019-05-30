@@ -1,4 +1,5 @@
 ﻿using LibraryCourseProject.ViewModels;
+using LibraryCourseProject.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,9 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            RentViewModel rentViewModel = new RentViewModel();
+            RentWindow rentWindow = new RentWindow(rentViewModel);
+            rentWindow.ShowDialog();
         }
     }
 }

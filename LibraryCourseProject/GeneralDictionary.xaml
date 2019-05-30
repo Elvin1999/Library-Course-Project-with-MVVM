@@ -121,7 +121,6 @@
 
         </Setter>
         <Setter Property="Background" Value="{StaticResource FirstColor}">
-
         </Setter>
         <Setter Property="Control.Template">
             <Setter.Value>

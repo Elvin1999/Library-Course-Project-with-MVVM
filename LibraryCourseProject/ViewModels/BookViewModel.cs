@@ -19,6 +19,7 @@ namespace LibraryCourseProject.ViewModels
         public DeleteCommand DeleteCommand => new DeleteCommand(this);
         public UpdateCommand UpdateCommand => new UpdateCommand(this);
         public SellCommand SellCommand => new SellCommand(this);
+        public RentCommand RentCommand => new RentCommand(this);
         private int state = 1;
 
         public int State
