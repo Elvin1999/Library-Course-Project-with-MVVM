@@ -22,8 +22,8 @@
                     <Label Width="140" Height="30" Content="Note"     FontSize="18" Margin="5,10,0,0"></Label>
                 </StackPanel>
                 <StackPanel  Orientation="Vertical">
-                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,10" Text="{Binding CurrentRent.Book.Title,Mode=TwoWay}">
-                    </TextBox>
+                    <Label Width="100" Height="30" FontSize="19" Margin="5,10" Content="{Binding CurrentRent.Book.Title,Mode=TwoWay}">
+                    </Label>
                     <TextBox Width="100" Height="30" FontSize="19" Margin="5,0" 
                              Text="{Binding CurrentRent.RealPrice,Mode=TwoWay}"                                 
                              ></TextBox>

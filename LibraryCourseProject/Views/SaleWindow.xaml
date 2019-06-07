@@ -21,14 +21,14 @@
                     <Label Width="130" Height="35" Content="Note"     FontSize="18" Margin="5,8,0,0"></Label>
                 </StackPanel>
                 <StackPanel  Orientation="Vertical">
-                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,10" Text="{Binding CurrentSale.Book.Title,Mode=TwoWay}">
+                    <Label Width="100" Height="30" FontSize="17" Margin="5,10" Content="{Binding CurrentSale.Book.Title,Mode=OneWay}">
 
-                    </TextBox>
-                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,0" 
+                    </Label>
+                    <TextBox Width="100" Height="30" FontSize="17" Margin="5,0" 
                              Text="{Binding CurrentSale.RealPrice,Mode=TwoWay}"
                                  
                              ></TextBox>
-                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,8"
+                    <TextBox Width="100" Height="30" FontSize="17" Margin="5,8"
                              Text="{Binding CurrentSale.SalePrice,Mode=TwoWay}"
                              ></TextBox>
    
@@ -37,7 +37,7 @@
                              ></DatePicker>
 
 
-                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,10"
+                    <TextBox Width="100" Height="30" FontSize="17" Margin="5,10"
                              Text="{Binding CurrentSale.Note,Mode=TwoWay}"
                              ></TextBox>
                 </StackPanel>
