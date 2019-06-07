@@ -5,20 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryCourseProject.Views"
         mc:Ignorable="d"
-        Title="ClientWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+        Title="ClientWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None">
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        <Rectangle RadiusX="20" RadiusY="20" Width="700" Height="600" Fill="{StaticResource FirstColor}">
+            <Canvas.Left>
+                50
+            </Canvas.Left>
+        </Rectangle>
+        <Canvas>
+            <Grid Grid.Row="0">
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
-                    <Label Width="130" Height="40" Content="Name" FontSize="17" Margin="5,15,0,0"></Label>
-                    <Label Width="130" Height="40" Content="Surname" FontSize="17" Margin="5,15,0,0"></Label>
-                    <Label Width="130" Height="40" Content="Phonenumber" FontSize="17" Margin="5,15,0,0"></Label>
-                    <Label Width="130" Height="40" Content="Connection Time"    FontSize="16" Margin="5,15,0,0"></Label>
-                    <Label Width="130" Height="40" Content="Note"     FontSize="17" Margin="5,15,0,0"></Label>
+                    <Label Width="130" Height="40" Content="Name" FontSize="17" Margin="55,15,0,0"></Label>
+                    <Label Width="130" Height="40" Content="Surname" FontSize="17" Margin="55,15,0,0"></Label>
+                    <Label Width="130" Height="40" Content="Phonenumber" FontSize="17" Margin="55,15,0,0"></Label>
+                    <Label Width="130" Height="40" Content="Connection Time"    FontSize="16" Margin="55,15,0,0"></Label>
+                    <Label Width="130" Height="40" Content="Note"     FontSize="17" Margin="55,15,0,0"></Label>
                 </StackPanel>
                 <StackPanel  Orientation="Vertical">
                     <TextBox Width="100" Height="40" FontSize="19" Margin="5,12" Text="{Binding CurrentClient.Name,Mode=TwoWay}">
@@ -46,15 +54,16 @@
                     <Button Width="100" Height="40" Content="Update" FontSize="20" Margin="15"
                              Command="{Binding UpdateCommand}" 
                             ></Button>
-                    <Button Width="100" Height="40" Content="Delete" FontSize="20" Margin="15"
+                        <Button Width="100" Height="40" Content="Delete" FontSize="20" Margin="15"
                        Command="{Binding DeleteCommand}" 
                             ></Button>
-
-                </StackPanel>
+                    </StackPanel>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">
-            <ListView ItemsSource="{Binding AllClients}" SelectedItem="{Binding SelectedClient}" Width="800" HorizontalAlignment="Left">
+            <ListView ItemsSource="{Binding AllClients}" SelectedItem="{Binding SelectedClient}"
+                      Width="660" Margin="60,300" Height="300" Background="{StaticResource FirstColor}" 
+                      >
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="No" Width="50">
@@ -71,21 +80,21 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Surname" Width="140">
+                        <GridViewColumn Header="Surname" Width="120">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Surname}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Connection Time" Width="140">
+                        <GridViewColumn Header="Connection Time" Width="120">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding PhoneNumber}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Connection Time" Width="140">
+                        <GridViewColumn Header="Connection Time" Width="120">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding ConnectionTime}"></TextBlock>
@@ -106,5 +115,6 @@
                 </ListView.View>
             </ListView>
         </Grid>
+        </Canvas>
     </Grid>
 </Window>

@@ -128,10 +128,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LoginUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="RegisterUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -170,9 +166,6 @@
     <Compile Include="Entities\SaleReports.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\Worker.cs" />
-    <Compile Include="LoginUserControl.xaml.cs">
-      <DependentUpon>LoginUserControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="RegisterUserControl.xaml.cs">
       <DependentUpon>RegisterUserControl.xaml</DependentUpon>
     </Compile>

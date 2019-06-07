@@ -5,19 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryCourseProject.Views"
         mc:Ignorable="d"
-        Title="FilialWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+        Title="FilialWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None"
+        >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
+        <Rectangle RadiusX="20" RadiusY="20" Width="700" Height="600" Fill="{StaticResource FirstColor}">
+            <Canvas.Left>
+                50
+            </Canvas.Left>
+        </Rectangle>
         <Grid Grid.Row="0">
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
-                    <Label Width="130" Height="40" Content="Name" FontSize="19" Margin="5,15,0,0"></Label>
-                    <Label Width="130" Height="40" Content="Address" FontSize="19" Margin="5,15,0,0"></Label>
-                    <Label Width="130" Height="40" Content="Opening Date"    FontSize="19" Margin="5,15,0,0"></Label>
-                    <Label Width="130" Height="40" Content="Note"     FontSize="19" Margin="5,15,0,0"></Label>
+                    <Label Width="130" Height="40" Content="Name" FontSize="19" Margin="55,15,0,0"></Label>
+                    <Label Width="130" Height="40" Content="Address" FontSize="19" Margin="55,15,0,0"></Label>
+                    <Label Width="130" Height="40" Content="Opening Date"    FontSize="19" Margin="55,15,0,0"></Label>
+                    <Label Width="130" Height="40" Content="Note"     FontSize="19" Margin="55,15,0,0"></Label>
                 </StackPanel>
                 <StackPanel  Orientation="Vertical">
                     <TextBox Width="100" Height="40" FontSize="19" Margin="5,12" Text="{Binding CurrentFilial.Name,Mode=TwoWay}">
@@ -48,8 +55,10 @@
                 </StackPanel>
             </StackPanel>
         </Grid>
-        <Grid Grid.Row="1">
-            <ListView ItemsSource="{Binding AllFilials}" SelectedItem="{Binding SelectedFilial}" Width="800" HorizontalAlignment="Left">
+        <Grid Grid.Row="1" Margin="0,-120,0,0">
+            <ListView ItemsSource="{Binding AllFilials}" SelectedItem="{Binding SelectedFilial}" Width="650"
+                  Background="{StaticResource FirstColor}"   Height="300"
+                      >
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="No" Width="50">
@@ -59,28 +68,28 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Name" Width="200">
+                        <GridViewColumn Header="Name" Width="120">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Name}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Address" Width="200">
+                        <GridViewColumn Header="Address" Width="120">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Address}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Opening Date" Width="200">
+                        <GridViewColumn Header="Opening Date" Width="120">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding OpeningDate}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Note" Width="135">
+                        <GridViewColumn Header="Note" Width="120">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Note}"></TextBlock>

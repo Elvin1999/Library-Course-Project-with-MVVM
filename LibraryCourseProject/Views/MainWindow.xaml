@@ -16,10 +16,10 @@
                 </Canvas.Left>
             </Rectangle>
             <Rectangle Width="210" Height="600" Fill="White" RadiusX="20" RadiusY="20">
-                <Canvas.Left>542</Canvas.Left>
+                <Canvas.Left>540</Canvas.Left>
             </Rectangle>
             <Ellipse Width="350" Height="600" Fill="White">
-                <Canvas.Left>380</Canvas.Left>
+                <Canvas.Left>370</Canvas.Left>
 
             </Ellipse>
          

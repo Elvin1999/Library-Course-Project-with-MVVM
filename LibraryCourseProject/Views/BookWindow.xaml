@@ -5,166 +5,178 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryCourseProject.Views"
         mc:Ignorable="d"
-        Title="BookWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+        Title="BookWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" >
     <Grid>
-        
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <StackPanel Orientation="Horizontal">
-                <StackPanel Orientation="Vertical">
-                    <Label Width="130" Height="30" Content="Title" FontSize="18" Margin="5,5,0,0"></Label>
-                    <Label Width="130" Height="35" Content="Page Count" FontSize="18" Margin="5,5,0,0"></Label>
-                    <Label Width="130" Height="35" Content="Purchase Price" FontSize="18" Margin="5,5,0,0"></Label>
-                    <Label Width="130" Height="30" Content="Sale Price"    FontSize="18" Margin="5,5,0,0"></Label>
-                    <Label Width="130" Height="35" Content="Author" FontSize="18" Margin="5,5,0,0"></Label>
-                    <Label Width="130" Height="35" Content="Genre"     FontSize="18" Margin="5,5,0,0"></Label>
-                    <Label Width="130" Height="35" Content="Note"     FontSize="18" Margin="5,5,0,0"></Label>
-                </StackPanel>
-                <StackPanel  Orientation="Vertical">
-                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,10" Text="{Binding CurrentBook.Title,Mode=TwoWay}">
 
-                    </TextBox>
-                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,0" 
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Rectangle RadiusX="20" RadiusY="20" Width="700" Height="600" Fill="{StaticResource FirstColor}">
+            <Canvas.Left>
+                50
+            </Canvas.Left>
+        </Rectangle>
+
+        <Canvas>
+            <Grid Grid.Row="0">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical">
+                        <Label Width="130" Height="30" Content="Title" FontSize="18" Margin="55,5,0,0"></Label>
+                        <Label Width="130" Height="35" Content="Page Count" FontSize="18" Margin="55,5,0,0"></Label>
+                        <Label Width="130" Height="35" Content="Purchase Price" FontSize="18" Margin="55,5,0,0"></Label>
+                        <Label Width="130" Height="30" Content="Sale Price"    FontSize="18" Margin="55,5,0,0"></Label>
+                        <Label Width="130" Height="35" Content="Author" FontSize="18" Margin="55,5,0,0"></Label>
+                        <Label Width="130" Height="35" Content="Genre"     FontSize="18" Margin="55,5,0,0"></Label>
+                        <Label Width="130" Height="35" Content="Note"     FontSize="18" Margin="55,5,0,0"></Label>
+                    </StackPanel>
+                    <StackPanel  Orientation="Vertical">
+                        <TextBox Width="100" Height="30" FontSize="19" Margin="5,10" Text="{Binding CurrentBook.Title,Mode=TwoWay}">
+
+                        </TextBox>
+                        <TextBox Width="100" Height="30" FontSize="19" Margin="5,0" 
                              Text="{Binding CurrentBook.PageCount,Mode=TwoWay}"
                                  
                              ></TextBox>
-                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,8"
+                        <TextBox Width="100" Height="30" FontSize="19" Margin="5,8"
                              Text="{Binding CurrentBook.PurchasePrice,Mode=TwoWay}"
                              ></TextBox>
-                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,0"
+                        <TextBox Width="100" Height="30" FontSize="19" Margin="5,0"
                              Text="{Binding CurrentBook.SalePrice,Mode=TwoWay}"
                              ></TextBox>
-                    <ComboBox Height="30" Width="100" Margin="0,5,0,0" ItemsSource="{Binding Authors}"
+                        <ComboBox Height="30" Width="100" Margin="0,5,0,0" ItemsSource="{Binding Authors}"
                                       DisplayMemberPath="Name"
                       SelectedValuePath="Id" SelectedValue="{Binding CurrentBook.Author, Mode=TwoWay}"
                       SelectedItem="{Binding CurrentBook.Author}"
                                       ></ComboBox>
-                    <ComboBox Height="30" Width="100" Margin="0,5,0,0" ItemsSource="{Binding Genres}"
+                        <ComboBox Height="30" Width="100" Margin="0,5,0,0" ItemsSource="{Binding Genres}"
                                       DisplayMemberPath="Name"
                       SelectedValuePath="Id" SelectedValue="{Binding CurrentBook.Genre, Mode=TwoWay}"
                       SelectedItem="{Binding CurrentBook.Genre}"
                                       ></ComboBox>
 
-                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,10"
+                        <TextBox Width="100" Height="30" FontSize="19" Margin="5,10"
                              Text="{Binding CurrentBook.Note,Mode=TwoWay}"
                              ></TextBox>
-                </StackPanel>
-                <StackPanel Margin="50,0,0,0">
-                    <Button Width="100" Height="40" Content="Add" FontSize="20" Margin="15"
+                    </StackPanel>
+                    <StackPanel Margin="50,0,0,0">
+                        <Button Width="100" Height="40" Content="Add" FontSize="20" Margin="15"
                           Command="{Binding AddCommand}"
                             ></Button>
-                    <Button Width="100" Height="40" Content="Update" FontSize="20" Margin="15"
+                        <Button Width="100" Height="40" Content="Update" FontSize="20" Margin="15"
                              Command="{Binding UpdateCommand}"  
                             ></Button>
-                    <Button Width="100" Height="40" Content="Delete" FontSize="20" Margin="15"
+                        <Button Width="100" Height="40" Content="Delete" FontSize="20" Margin="15"
                        Command="{Binding DeleteCommand}" 
                             ></Button>
 
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5,65,0,0">
+                        <Button Height="40" Width="80" Content="Sell" Command="{Binding SellCommand}" FontSize="20">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="IsEnabled" Value="False"></Setter>
+
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding State, Mode=TwoWay}" Value="1">
+                                            <Setter Property="IsEnabled" Value="False"></Setter>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding State, Mode=TwoWay}" Value="2">
+                                            <Setter Property="IsEnabled" Value="True"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button Height="40" Width="80" Content="Rent" Command="{Binding RentCommand}" FontSize="20" Margin="10,0,0,0">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="IsEnabled" Value="False"></Setter>
+
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding State, Mode=TwoWay}" Value="1">
+                                            <Setter Property="IsEnabled" Value="False"></Setter>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding State, Mode=TwoWay}" Value="2">
+                                            <Setter Property="IsEnabled" Value="True"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+
+                    </StackPanel>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="5,65,0,0">
-                    <Button Height="40" Width="140" Content="Sell" Command="{Binding SellCommand}" FontSize="20">
-                        <Button.Style>
-                            <Style TargetType="{x:Type Button}">
-                                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Grid>
+            <Grid Grid.Row="1">
+                <ListView ItemsSource="{Binding AllBooks}" SelectedItem="{Binding SelectedBook}" Width="650" Margin="60,300"
+                          Background="{StaticResource FirstColor}"
+                          >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="No" Width="30">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Padding="5,0" Text="{Binding No}"></TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Title" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Padding="5,0" Text="{Binding Title}"></TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Page count" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Padding="5,0" Text="{Binding PageCount}"></TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Purchase Price" Width="85">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Padding="5,0" Text="{Binding PurchasePrice}"></TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Sale Price" Width="85">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Padding="5,0" Text="{Binding SalePrice}"></TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Author" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Padding="5,0" Text="{Binding Author.Name}"></TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Genre" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Padding="5,0" Text="{Binding Genre.Name}"></TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Note" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Padding="5,0" Text="{Binding Note}"></TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
 
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding State, Mode=TwoWay}" Value="1">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding State, Mode=TwoWay}" Value="2">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                    </Button>
-                    <Button Height="40" Width="140" Content="Rent" Command="{Binding RentCommand}" FontSize="20" Margin="10,0,0,0">
-                        <Button.Style>
-                            <Style TargetType="{x:Type Button}">
-                                <Setter Property="IsEnabled" Value="False"></Setter>
-
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding State, Mode=TwoWay}" Value="1">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding State, Mode=TwoWay}" Value="2">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                    </Button>
-
-                </StackPanel>
-            </StackPanel>
-        </Grid>
-        <Grid Grid.Row="1">
-            <ListView ItemsSource="{Binding AllBooks}" SelectedItem="{Binding SelectedBook}" Width="800" HorizontalAlignment="Left">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="No" Width="40">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding No}"></TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header="Title" Width="100">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Title}"></TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header="Page count" Width="100">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding PageCount}"></TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header="Purchase Price" Width="120">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding PurchasePrice}"></TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header="Sale Price" Width="100">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding SalePrice}"></TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header="Author" Width="100">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Author.Name}"></TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header="Genre" Width="100">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Genre.Name}"></TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header="Note" Width="100">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="{Binding Note}"></TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                    </GridView>
-
-                </ListView.View>
-            </ListView>
-        </Grid>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </Canvas>
     </Grid>
 </Window>

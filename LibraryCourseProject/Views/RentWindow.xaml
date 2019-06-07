@@ -5,21 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryCourseProject.Views"
         mc:Ignorable="d"
-        Title="RentWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+        Title="RentWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen" Background="Transparent" AllowsTransparency="True"
+        WindowStyle="None">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
+
+        <Rectangle RadiusX="20" RadiusY="20" Width="700" Height="600" Fill="{StaticResource FirstColor}">
+            <Canvas.Left>
+                50
+            </Canvas.Left>
+        </Rectangle>
+
         <Grid Grid.Row="0">
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
-                    <Label Width="140" Height="30" Content="Title" FontSize="18" Margin="5,10,0,0"></Label>
-                    <Label Width="140" Height="30" Content="Real price" FontSize="17" Margin="5,10,0,0"></Label>
-                    <Label Width="140" Height="30" Content="Rent price per day"    FontSize="16" Margin="5,10,0,0"></Label>
-                    <Label Width="140" Height="30" Content="Rent Date" FontSize="18" Margin="5,10,0,0"></Label>
-                    <Label Width="140" Height="30" Content="Return date" FontSize="18" Margin="5,10,0,0"></Label>
-                    <Label Width="140" Height="30" Content="Note"     FontSize="18" Margin="5,10,0,0"></Label>
+                    <Label Width="140" Height="30" Content="Title" FontSize="18" Margin="55,10,0,0"></Label>
+                    <Label Width="140" Height="30" Content="Real price" FontSize="17" Margin="55,10,0,0"></Label>
+                    <Label Width="140" Height="30" Content="Rent price per day"    FontSize="16" Margin="55,10,0,0"></Label>
+                    <Label Width="140" Height="30" Content="Rent Date" FontSize="18" Margin="55,10,0,0"></Label>
+                    <Label Width="140" Height="30" Content="Return date" FontSize="18" Margin="55,10,0,0"></Label>
+                    <Label Width="140" Height="30" Content="Note"     FontSize="18" Margin="55,10,0,0"></Label>
                 </StackPanel>
                 <StackPanel  Orientation="Vertical">
                     <Label Width="100" Height="30" FontSize="19" Margin="5,10" Content="{Binding CurrentRent.Book.Title,Mode=TwoWay}">
@@ -40,14 +48,13 @@
                              Text="{Binding CurrentRent.Note,Mode=TwoWay}"
                              ></TextBox>
                 </StackPanel>
-                <StackPanel Margin="50,0,0,0">
+                <StackPanel Margin="50,100,0,0">
                     <Button Width="100" Height="40" Content="Add" FontSize="20" Margin="15"
                           Command="{Binding AddCommand}"
                             >
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
                                 <Setter Property="IsEnabled" Value="False"></Setter>
-
                                 <Style.Triggers>
                                     <DataTrigger Binding="{Binding ClientViewModel.State, Mode=TwoWay}" Value="1">
                                         <Setter Property="IsEnabled" Value="False"></Setter>
@@ -70,24 +77,24 @@
 
         </Grid>
         <Grid Grid.Column="1" Grid.Row="1">
-            <ListView ItemsSource="{Binding ClientViewModel.AllClients}" SelectedItem="{Binding ClientViewModel.SelectedClient}" Width="270" HorizontalAlignment="Left">
+            <ListView ItemsSource="{Binding ClientViewModel.AllClients}" Margin="60,0" SelectedItem="{Binding ClientViewModel.SelectedClient}" Width="220" HorizontalAlignment="Left">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="No" Width="50">
+                        <GridViewColumn Header="No" Width="25">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding No}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Client name" Width="100">
+                        <GridViewColumn Header="Client name" Width="80">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Name}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Client surname" Width="140">
+                        <GridViewColumn Header="Client surname" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Surname}"></TextBlock>
@@ -100,9 +107,9 @@
             </ListView>
         </Grid>
 
-        <Grid Grid.Column="1" Grid.Row="1" Width="590" HorizontalAlignment="Right">
+        <Grid Grid.Column="1" Grid.Row="1" Width="500" HorizontalAlignment="Right">
             <ListView ItemsSource="{Binding AllRents}" SelectedItem="{Binding SelectedRent}" 
-                      Width="515" Margin="70,0,0,0">
+                      Width="450" Margin="-100,0,0,0">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="No" Width="30">
@@ -120,35 +127,35 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header="Client" Width="80">
+                        <GridViewColumn Header="Client" Width="70">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Client.Name}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="User" Width="80">
+                        <GridViewColumn Header="User" Width="70">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding User.Username}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Rent price" Width="80">
+                        <GridViewColumn Header="Rent price" Width="75">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding RealPrice}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Price Per Day" Width="80">
+                        <GridViewColumn Header="Price Per Day" Width="75">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding PricePerDay}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Note" Width="80">
+                        <GridViewColumn Header="Note" Width="40" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Note}"></TextBlock>
