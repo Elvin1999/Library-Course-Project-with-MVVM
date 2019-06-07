@@ -7,14 +7,11 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace LibraryCourseProject.ViewModels
 {
    public class SaleViewModel:BaseViewModel
     {
         public AddCommand AddCommand => new AddCommand(this);
-        public DeleteCommand DeleteCommand => new DeleteCommand(this);
-        public UpdateCommand UpdateCommand => new UpdateCommand(this);
         public ClientViewModel ClientViewModel { get; set; }
         private ObservableCollection<Sale> allSales;
         public ObservableCollection<Sale> AllSales

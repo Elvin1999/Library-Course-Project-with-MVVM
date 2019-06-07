@@ -75,9 +75,8 @@
     <Compile Include="Commands\MenuSectionCommands\LanguageCommand.cs" />
     <Compile Include="Commands\MenuSectionCommands\UsersSectionCommand.cs" />
     <Compile Include="Commands\MenuSectionCommands\WorkerSectionCommand.cs" />
+    <Compile Include="Commands\RentSectionCommands\AddCommand.cs" />
     <Compile Include="Commands\SaleSectionCommands\AddCommand.cs" />
-    <Compile Include="Commands\SaleSectionCommands\DeleteCommand.cs" />
-    <Compile Include="Commands\SaleSectionCommands\UpdateCommand.cs" />
     <Compile Include="Commands\UserSectionCommands\AddCommand.cs" />
     <Compile Include="Commands\UserSectionCommands\DeleteCommand.cs" />
     <Compile Include="Commands\UserSectionCommands\UpdateCommand.cs" />
@@ -247,8 +246,6 @@
   <ItemGroup>
     <Resource Include="images\personimage.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Commands\RentSectionCommands\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

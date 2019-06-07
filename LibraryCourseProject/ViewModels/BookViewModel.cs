@@ -21,7 +21,6 @@ namespace LibraryCourseProject.ViewModels
         public SellCommand SellCommand => new SellCommand(this);
         public RentCommand RentCommand => new RentCommand(this);
         private int state = 1;
-
         public int State
         {
             get
@@ -34,7 +33,6 @@ namespace LibraryCourseProject.ViewModels
                 OnPropertyChanged(new PropertyChangedEventArgs(nameof(State)));
             }
         }
-
         private ObservableCollection<Book> allBooks;
         public ObservableCollection<Book> AllBooks
         {
@@ -65,7 +63,6 @@ namespace LibraryCourseProject.ViewModels
                 OnPropertyChanged(new PropertyChangedEventArgs(nameof(CurrentBook)));
             }
         }
-
         private Book selectedBook;
         public Book SelectedBook
         {
@@ -77,8 +74,7 @@ namespace LibraryCourseProject.ViewModels
             {
                 selectedBook = value;
                 if (value != null)
-                {
-                    
+                {                   
                     CurrentBook = SelectedBook.Clone();
                 }
                 if (SelectedBook != null)
