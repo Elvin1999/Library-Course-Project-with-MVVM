@@ -5,19 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryCourseProject.Views"
         mc:Ignorable="d"
-        Title="UserWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+        Title="UserWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen" AllowsTransparency="True"
+        WindowStyle="None"
+        Background="Transparent"  >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
+        <Rectangle RadiusX="20" RadiusY="20" Width="700" Height="600" Fill="{StaticResource FirstColor}">
+            <Canvas.Left>
+                50
+            </Canvas.Left>
+        </Rectangle>
         <Grid Grid.Row="0">
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
-                    <Label Width="100" Height="40" Content="Username" FontSize="19" Margin="5,15,0,0"></Label>
-                    <Label Width="100" Height="40" Content="Password" FontSize="19" Margin="5,15,0,0"></Label>
-                    <Label Width="100" Height="40" Content="Email"    FontSize="19" Margin="5,15,0,0"></Label>
-                    <Label Width="100" Height="40" Content="Note"     FontSize="19" Margin="5,15,0,0"></Label>
+                    <Label Width="100" Height="40" Content="Username" FontSize="19" Margin="55,15,0,0"></Label>
+                    <Label Width="100" Height="40" Content="Password" FontSize="19" Margin="55,15,0,0"></Label>
+                    <Label Width="100" Height="40" Content="Email"    FontSize="19" Margin="55,15,0,0"></Label>
+                    <Label Width="100" Height="40" Content="Note"     FontSize="19" Margin="55,15,0,0"></Label>
                 </StackPanel>
                 <StackPanel  Orientation="Vertical">
                     <TextBox Width="100" Height="40" FontSize="19" Margin="5,12" Text="{Binding CurrentUser.Username,Mode=TwoWay}">
@@ -65,59 +72,61 @@
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">
-            <ListView ItemsSource="{Binding AllUsers}" SelectedItem="{Binding SelectedUser}" Width="800" HorizontalAlignment="Left">
+            <ListView ItemsSource="{Binding AllUsers}" 
+            Background="{StaticResource FirstColor}"
+                      SelectedItem="{Binding SelectedUser}" Width="660" Height="250" Margin="0,0,0,100"  >
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="No" Width="50">
+                        <GridViewColumn Header="No" Width="30">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding No}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Username" Width="80">
+                        <GridViewColumn Header="Username" Width="70">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Username}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Email" Width="140">
+                        <GridViewColumn Header="Email" Width="80">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Email}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Note" Width="100">
+                        <GridViewColumn Header="Note" Width="75">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Note}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Create Book" Width="80">
+                        <GridViewColumn Header="Create Book" Width="75">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Permission.CreateBook}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Create User" Width="80">
+                        <GridViewColumn Header="Create User" Width="75">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Permission.CreateUser}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Create Filial" Width="80">
+                        <GridViewColumn Header="Create Filial" Width="75">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Permission.CreateFilial}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Create Client" Width="80">
+                        <GridViewColumn Header="Create Client" Width="75">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Permission.CreateClient}"></TextBlock>

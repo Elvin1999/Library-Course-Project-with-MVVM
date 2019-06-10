@@ -11,8 +11,7 @@ namespace LibraryCourseProject.ViewModels
     {
         public MainViewModel(MainWindow mainWindow)
         {
-            MainWindow = mainWindow;
-           
+            MainWindow = mainWindow;          
         }
 
         public MainWindow MainWindow { get; set; }

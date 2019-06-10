@@ -38,10 +38,7 @@ namespace LibraryCourseProject.Commands
             }
             catch (Exception)
             {
-
-            }
-
-          
+            }      
             if (user != null)
             {
                 MessageBox.Show("Okay");
@@ -51,7 +48,6 @@ namespace LibraryCourseProject.Commands
                 MenuWindow menuWindow = new MenuWindow(menuViewModel);
                 LoginViewModel.MainWindow.Close();
                 menuWindow.ShowDialog();
-
             }
             else
             {
@@ -61,6 +57,11 @@ namespace LibraryCourseProject.Commands
         }
     }
 }
+
+
+
+
+
 
 
 
