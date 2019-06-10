@@ -27,5 +27,13 @@ namespace LibraryCourseProject.Views
             MenuViewModel = menuViewModel;
             DataContext = MenuViewModel;
         }
+
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+
+            MenuViewModel.MainWindow = new MainWindow();
+            this.Close();
+            MenuViewModel.MainWindow.ShowDialog();
+        }
     }
 }

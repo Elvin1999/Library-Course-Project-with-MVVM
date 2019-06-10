@@ -12,6 +12,8 @@ namespace LibraryCourseProject.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
+        public MainWindow MainWindow { get; set; }
+
         public LoginCommand LoginCommand => new LoginCommand(this);
         public List<User> Users { get; set; }
         private string username;
@@ -28,6 +30,12 @@ namespace LibraryCourseProject.ViewModels
             }
         }
         private string password;
+
+        public LoginViewModel(MainWindow mainWindow)
+        {
+            MainWindow = mainWindow;
+        }
+
         public string Password
         {
             get

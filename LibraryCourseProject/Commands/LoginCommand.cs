@@ -45,11 +45,11 @@ namespace LibraryCourseProject.Commands
             if (user != null)
             {
                 MessageBox.Show("Okay");
-              
-
-                MenuViewModel menuViewModel = new MenuViewModel();
+                
+                MenuViewModel menuViewModel = new MenuViewModel(LoginViewModel.MainWindow);     
                 menuViewModel.CurrentUser = user;
                 MenuWindow menuWindow = new MenuWindow(menuViewModel);
+                LoginViewModel.MainWindow.Close();
                 menuWindow.ShowDialog();
 
             }

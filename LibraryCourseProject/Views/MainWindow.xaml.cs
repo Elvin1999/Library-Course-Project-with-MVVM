@@ -25,7 +25,7 @@ namespace LibraryCourseProject
         public MainWindow()
         {
             InitializeComponent();
-            LoginViewModel loginViewModel = new LoginViewModel();
+            LoginViewModel loginViewModel = new LoginViewModel(this);
             loginViewModel.SetUsers();
             DataContext = loginViewModel;
         }

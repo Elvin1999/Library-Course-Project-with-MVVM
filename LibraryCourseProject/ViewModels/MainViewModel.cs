@@ -9,6 +9,12 @@ namespace LibraryCourseProject.ViewModels
 {
     public class MainViewModel:BaseViewModel
     {
-        
+        public MainViewModel(MainWindow mainWindow)
+        {
+            MainWindow = mainWindow;
+           
+        }
+
+        public MainWindow MainWindow { get; set; }
     }
 }

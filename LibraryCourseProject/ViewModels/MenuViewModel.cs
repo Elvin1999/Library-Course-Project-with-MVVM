@@ -21,6 +21,13 @@ namespace LibraryCourseProject.ViewModels
         public User CurrentUser { get; set; }
         private int state = 1;
 
+        public MenuViewModel(MainWindow mainWindow)
+        {
+            MainWindow = mainWindow;
+        }
+
+        public MainWindow MainWindow { get; set; }
+
         public int State
         {
             get
