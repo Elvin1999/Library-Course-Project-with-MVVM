@@ -150,7 +150,7 @@
                         >
                 </Button>
                 <Border.BitmapEffect>
-                    <DropShadowBitmapEffect Color="SpringGreen" ShadowDepth="8" Softness=".9">
+                    <DropShadowBitmapEffect Color="SpringGreen" ShadowDepth="8" Softness="1">
                     </DropShadowBitmapEffect>
                 </Border.BitmapEffect>
             </Border>

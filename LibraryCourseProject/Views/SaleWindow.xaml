@@ -5,20 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryCourseProject.Views"
         mc:Ignorable="d"
-        Title="SaleWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+        Title="SaleWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen" AllowsTransparency="True"
+        Background="Transparent" WindowStyle="None"
+        >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
+        <Rectangle RadiusX="20" RadiusY="20" Width="700" Height="600" Fill="{StaticResource FirstColor}">
+            <Canvas.Left>
+                50
+            </Canvas.Left>
+        </Rectangle>
         <Grid Grid.Row="0">
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
-                    <Label Width="130" Height="30" Content="Title" FontSize="18" Margin="5,10,0,0"></Label>
-                    <Label Width="130" Height="35" Content="Real Price" FontSize="18" Margin="5,10,0,0"></Label>
-                    <Label Width="130" Height="30" Content="Sale Price"    FontSize="18" Margin="5,5,0,0"></Label>
-                    <Label Width="130" Height="35" Content="Sale Date" FontSize="18" Margin="5,8,0,0"></Label>
-                    <Label Width="130" Height="35" Content="Note"     FontSize="18" Margin="5,8,0,0"></Label>
+                    <Label Width="130" Height="30" Content="Title" FontSize="18" Margin="55,10,0,0"></Label>
+                    <Label Width="130" Height="35" Content="Real Price" FontSize="18" Margin="55,10,0,0"></Label>
+                    <Label Width="130" Height="30" Content="Sale Price"    FontSize="18" Margin="55,5,0,0"></Label>
+                    <Label Width="130" Height="35" Content="Sale Date" FontSize="18" Margin="55,8,0,0"></Label>
+                    <Label Width="130" Height="35" Content="Note"     FontSize="18" Margin="55,8,0,0"></Label>
                 </StackPanel>
                 <StackPanel  Orientation="Vertical">
                     <Label Width="100" Height="30" FontSize="17" Margin="5,10" Content="{Binding CurrentSale.Book.Title,Mode=OneWay}">
@@ -107,24 +114,27 @@
 
         </Grid>
         <Grid Grid.Column="1" Grid.Row="1">
-            <ListView ItemsSource="{Binding ClientViewModel.AllClients}" SelectedItem="{Binding ClientViewModel.SelectedClient}" Width="270" HorizontalAlignment="Left">
+            <ListView ItemsSource="{Binding ClientViewModel.AllClients}" SelectedItem="{Binding ClientViewModel.SelectedClient}"
+                      Background="{ StaticResource FirstColor}"
+                      Width="220" HorizontalAlignment="Left"
+                      Margin="52,0">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="No" Width="50">
+                        <GridViewColumn Header="No" Width="40">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding No}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Client name" Width="100">
+                        <GridViewColumn Header="Client name" Width="75">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Name}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Client surname" Width="140">
+                        <GridViewColumn Header="Client surname" Width="92">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Surname}"></TextBlock>
@@ -138,8 +148,8 @@
         </Grid>
               
         <Grid Grid.Column="1" Grid.Row="1" Width="590" HorizontalAlignment="Right">
-            <ListView ItemsSource="{Binding AllSales}" SelectedItem="{Binding SelectedSale}" 
-                      Width="515" Margin="70,0,0,0">
+            <ListView ItemsSource="{Binding AllSales}" SelectedItem="{Binding SelectedSale}" Background="{StaticResource FirstColor}"
+                      Width="460" Margin="-10,0,0,0">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="No" Width="30">
@@ -149,7 +159,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Book Title" Width="80">
+                        <GridViewColumn Header="Book Title" Width="70">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Book.Title}"></TextBlock>
@@ -157,21 +167,21 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header="Client" Width="80">
+                        <GridViewColumn Header="Client" Width="70">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Client.Name}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="User" Width="80">
+                        <GridViewColumn Header="User" Width="70">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding User.Username}"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Real price" Width="80">
+                        <GridViewColumn Header="Real price" Width="70">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding RealPrice}"></TextBlock>
@@ -185,7 +195,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Note" Width="80">
+                        <GridViewColumn Header="Note" Width="70">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Padding="5,0" Text="{Binding Note}"></TextBlock>

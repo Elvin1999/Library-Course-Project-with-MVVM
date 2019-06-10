@@ -77,7 +77,7 @@
 
         </Grid>
         <Grid Grid.Column="1" Grid.Row="1">
-            <ListView ItemsSource="{Binding ClientViewModel.AllClients}" Margin="60,0" SelectedItem="{Binding ClientViewModel.SelectedClient}" Width="220" HorizontalAlignment="Left">
+            <ListView ItemsSource="{Binding ClientViewModel.AllClients}" Background="{StaticResource FirstColor}" Margin="60,0" SelectedItem="{Binding ClientViewModel.SelectedClient}" Width="220" HorizontalAlignment="Left">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="No" Width="25">
@@ -108,7 +108,7 @@
         </Grid>
 
         <Grid Grid.Column="1" Grid.Row="1" Width="500" HorizontalAlignment="Right">
-            <ListView ItemsSource="{Binding AllRents}" SelectedItem="{Binding SelectedRent}" 
+            <ListView ItemsSource="{Binding AllRents}" SelectedItem="{Binding SelectedRent}"  Background="{StaticResource FirstColor}"
                       Width="450" Margin="-100,0,0,0">
                 <ListView.View>
                     <GridView>
