@@ -18,3 +18,4 @@ namespace LibraryCourseProject.Domain.Abstractions
         ISaleRepository SaleRepository { get; }
     }
 }
+

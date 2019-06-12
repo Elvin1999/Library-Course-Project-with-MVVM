@@ -35,11 +35,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -83,6 +92,9 @@
     <Compile Include="Commands\WorkerSectionCommands\AddCommand.cs" />
     <Compile Include="Commands\WorkerSectionCommands\DeleteCommand.cs" />
     <Compile Include="Commands\WorkerSectionCommands\UpdateCommand.cs" />
+    <Compile Include="DataAccess\EntityFrameworkServer\EFContext.cs" />
+    <Compile Include="DataAccess\EntityFrameworkServer\EFUnitOfWork.cs" />
+    <Compile Include="DataAccess\EntityFrameworkServer\EFUserRepository.cs" />
     <Compile Include="Domain\Abstractions\IBookRepository.cs" />
     <Compile Include="Domain\Abstractions\IClientRepository.cs" />
     <Compile Include="Domain\Abstractions\IFilialRepository.cs" />
@@ -249,7 +261,6 @@
     <Resource Include="images\personimage.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataAccess\EntityFrameworkServer\" />
     <Folder Include="DataAccess\OracleServer\" />
     <Folder Include="DataAccess\SqlServer\" />
   </ItemGroup>
