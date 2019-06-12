@@ -9,7 +9,7 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
 {
     class EFUnitOfWork : IUnitOfWork
     {
-        public IUserRepository UserRepository => throw new NotImplementedException();
+        public IUserRepository UserRepository => new EFUserRepository();
 
         public IWorkerRepository WorkerRepository => throw new NotImplementedException();
 

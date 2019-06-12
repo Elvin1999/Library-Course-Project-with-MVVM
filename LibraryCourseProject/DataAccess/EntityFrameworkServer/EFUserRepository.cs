@@ -23,7 +23,12 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
 
         public ObservableCollection<User> GetAllData()
         {
-            throw new NotImplementedException();
+            ObservableCollection<User> users;
+            using (EFContext db=new EFContext())
+            {
+                users = new ObservableCollection<User>(db.Users);
+            }
+            return users;
         }
 
         public User GetData(int id)
