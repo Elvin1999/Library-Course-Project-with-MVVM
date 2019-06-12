@@ -58,70 +58,70 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Commands\BookSectionCommands\AddCommand.cs" />
-    <Compile Include="Commands\BookSectionCommands\DeleteCommand.cs" />
-    <Compile Include="Commands\BookSectionCommands\RentCommand.cs" />
-    <Compile Include="Commands\BookSectionCommands\SellCommand.cs" />
-    <Compile Include="Commands\BookSectionCommands\UpdateCommand.cs" />
-    <Compile Include="Commands\ClientSectionCommands\AddCommand.cs" />
-    <Compile Include="Commands\ClientSectionCommands\DeleteCommand.cs" />
-    <Compile Include="Commands\ClientSectionCommands\UpdateCommand.cs" />
-    <Compile Include="Commands\FilialSectionCommands\AddCommand.cs" />
-    <Compile Include="Commands\FilialSectionCommands\DeleteCommand.cs" />
-    <Compile Include="Commands\FilialSectionCommands\UpdateCommand.cs" />
-    <Compile Include="Commands\MenuSectionCommands\BookSectionCommand.cs" />
-    <Compile Include="Commands\MenuSectionCommands\ClientSectionCommand.cs" />
-    <Compile Include="Commands\MenuSectionCommands\FilialSectionCommand.cs" />
-    <Compile Include="Commands\MenuSectionCommands\LanguageCommand.cs" />
-    <Compile Include="Commands\MenuSectionCommands\UsersSectionCommand.cs" />
-    <Compile Include="Commands\MenuSectionCommands\WorkerSectionCommand.cs" />
-    <Compile Include="Commands\RentSectionCommands\AddCommand.cs" />
-    <Compile Include="Commands\SaleSectionCommands\AddCommand.cs" />
-    <Compile Include="Commands\UserSectionCommands\AddCommand.cs" />
-    <Compile Include="Commands\UserSectionCommands\DeleteCommand.cs" />
-    <Compile Include="Commands\UserSectionCommands\UpdateCommand.cs" />
-    <Compile Include="Commands\WorkerSectionCommands\AddCommand.cs" />
-    <Compile Include="Commands\WorkerSectionCommands\DeleteCommand.cs" />
-    <Compile Include="Commands\WorkerSectionCommands\UpdateCommand.cs" />
-    <Compile Include="Entities\BookHelper.cs" />
-    <Compile Include="Entities\ClientHelper.cs" />
-    <Compile Include="Entities\FilialHelper.cs" />
-    <Compile Include="Entities\LogUpHelper.cs" />
-    <Compile Include="Entities\WorkerHelper.cs" />
+    <Compile Include="Domain\Commands\BookSectionCommands\AddCommand.cs" />
+    <Compile Include="Domain\Commands\BookSectionCommands\DeleteCommand.cs" />
+    <Compile Include="Domain\Commands\BookSectionCommands\RentCommand.cs" />
+    <Compile Include="Domain\Commands\BookSectionCommands\SellCommand.cs" />
+    <Compile Include="Domain\Commands\BookSectionCommands\UpdateCommand.cs" />
+    <Compile Include="Domain\Commands\ClientSectionCommands\AddCommand.cs" />
+    <Compile Include="Domain\Commands\ClientSectionCommands\DeleteCommand.cs" />
+    <Compile Include="Domain\Commands\ClientSectionCommands\UpdateCommand.cs" />
+    <Compile Include="Domain\Commands\FilialSectionCommands\AddCommand.cs" />
+    <Compile Include="Domain\Commands\FilialSectionCommands\DeleteCommand.cs" />
+    <Compile Include="Domain\Commands\FilialSectionCommands\UpdateCommand.cs" />
+    <Compile Include="Domain\Commands\MenuSectionCommands\BookSectionCommand.cs" />
+    <Compile Include="Domain\Commands\MenuSectionCommands\ClientSectionCommand.cs" />
+    <Compile Include="Domain\Commands\MenuSectionCommands\FilialSectionCommand.cs" />
+    <Compile Include="Domain\Commands\MenuSectionCommands\LanguageCommand.cs" />
+    <Compile Include="Domain\Commands\MenuSectionCommands\UsersSectionCommand.cs" />
+    <Compile Include="Domain\Commands\MenuSectionCommands\WorkerSectionCommand.cs" />
+    <Compile Include="Domain\Commands\RentSectionCommands\AddCommand.cs" />
+    <Compile Include="Domain\Commands\SaleSectionCommands\AddCommand.cs" />
+    <Compile Include="Domain\Commands\UserSectionCommands\AddCommand.cs" />
+    <Compile Include="Domain\Commands\UserSectionCommands\DeleteCommand.cs" />
+    <Compile Include="Domain\Commands\UserSectionCommands\UpdateCommand.cs" />
+    <Compile Include="Domain\Commands\WorkerSectionCommands\AddCommand.cs" />
+    <Compile Include="Domain\Commands\WorkerSectionCommands\DeleteCommand.cs" />
+    <Compile Include="Domain\Commands\WorkerSectionCommands\UpdateCommand.cs" />
+    <Compile Include="Domain\Entities\BookHelper.cs" />
+    <Compile Include="Domain\Entities\ClientHelper.cs" />
+    <Compile Include="Domain\Entities\FilialHelper.cs" />
+    <Compile Include="Domain\Entities\LogUpHelper.cs" />
+    <Compile Include="Domain\Entities\WorkerHelper.cs" />
     <Compile Include="Properties\Resources.az.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.az.resx</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\BookViewModel.cs" />
-    <Compile Include="ViewModels\ClientViewModel.cs" />
-    <Compile Include="ViewModels\FilialViewModel.cs" />
-    <Compile Include="ViewModels\MenuViewModel.cs" />
-    <Compile Include="ViewModels\RentViewModel.cs" />
-    <Compile Include="ViewModels\SaleViewModel.cs" />
-    <Compile Include="ViewModels\WorkerViewModel.cs" />
-    <Compile Include="Views\BookWindow.xaml.cs">
+    <Compile Include="Domain\ViewModels\BookViewModel.cs" />
+    <Compile Include="Domain\ViewModels\ClientViewModel.cs" />
+    <Compile Include="Domain\ViewModels\FilialViewModel.cs" />
+    <Compile Include="Domain\ViewModels\MenuViewModel.cs" />
+    <Compile Include="Domain\ViewModels\RentViewModel.cs" />
+    <Compile Include="Domain\ViewModels\SaleViewModel.cs" />
+    <Compile Include="Domain\ViewModels\WorkerViewModel.cs" />
+    <Compile Include="Domain\Views\BookWindow.xaml.cs">
       <DependentUpon>BookWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ClientWindow.xaml.cs">
+    <Compile Include="Domain\Views\ClientWindow.xaml.cs">
       <DependentUpon>ClientWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\FilialWindow.xaml.cs">
+    <Compile Include="Domain\Views\FilialWindow.xaml.cs">
       <DependentUpon>FilialWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MenuWindow.xaml.cs">
+    <Compile Include="Domain\Views\MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\RentWindow.xaml.cs">
+    <Compile Include="Domain\Views\RentWindow.xaml.cs">
       <DependentUpon>RentWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SaleWindow.xaml.cs">
+    <Compile Include="Domain\Views\SaleWindow.xaml.cs">
       <DependentUpon>SaleWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\UserWindow.xaml.cs">
+    <Compile Include="Domain\Views\UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WorkerWindow.xaml.cs">
+    <Compile Include="Domain\Views\WorkerWindow.xaml.cs">
       <DependentUpon>WorkerWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="GeneralDictionary.xaml">
@@ -132,19 +132,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\BookWindow.xaml">
+    <Page Include="Domain\Views\BookWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ClientWindow.xaml">
+    <Page Include="Domain\Views\ClientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\FilialWindow.xaml">
+    <Page Include="Domain\Views\FilialWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MainWindow.xaml">
+    <Page Include="Domain\Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -152,49 +152,49 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Commands\LoginCommand.cs" />
-    <Compile Include="Entities\Author.cs" />
-    <Compile Include="Entities\Book.cs" />
-    <Compile Include="Entities\Client.cs" />
-    <Compile Include="Entities\Config.cs" />
-    <Compile Include="Entities\Filial.cs" />
-    <Compile Include="Entities\Genre.cs" />
-    <Compile Include="Entities\Permission.cs" />
-    <Compile Include="Entities\Rent.cs" />
-    <Compile Include="Entities\RentReports.cs" />
-    <Compile Include="Entities\Sale.cs" />
-    <Compile Include="Entities\SaleReports.cs" />
-    <Compile Include="Entities\User.cs" />
-    <Compile Include="Entities\Worker.cs" />
+    <Compile Include="Domain\Commands\LoginCommand.cs" />
+    <Compile Include="Domain\Entities\Author.cs" />
+    <Compile Include="Domain\Entities\Book.cs" />
+    <Compile Include="Domain\Entities\Client.cs" />
+    <Compile Include="Domain\Entities\Config.cs" />
+    <Compile Include="Domain\Entities\Filial.cs" />
+    <Compile Include="Domain\Entities\Genre.cs" />
+    <Compile Include="Domain\Entities\Permission.cs" />
+    <Compile Include="Domain\Entities\Rent.cs" />
+    <Compile Include="Domain\Entities\RentReports.cs" />
+    <Compile Include="Domain\Entities\Sale.cs" />
+    <Compile Include="Domain\Entities\SaleReports.cs" />
+    <Compile Include="Domain\Entities\User.cs" />
+    <Compile Include="Domain\Entities\Worker.cs" />
     <Compile Include="RegisterUserControl.xaml.cs">
       <DependentUpon>RegisterUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="ViewModels\LoginViewModel.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\RegisterViewModel.cs" />
-    <Compile Include="ViewModels\UserViewModel.cs" />
-    <Compile Include="Views\MainWindow.xaml.cs">
+    <Compile Include="Domain\ViewModels\BaseViewModel.cs" />
+    <Compile Include="Domain\ViewModels\LoginViewModel.cs" />
+    <Compile Include="Domain\ViewModels\MainViewModel.cs" />
+    <Compile Include="Domain\ViewModels\RegisterViewModel.cs" />
+    <Compile Include="Domain\ViewModels\UserViewModel.cs" />
+    <Compile Include="Domain\Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\MenuWindow.xaml">
+    <Page Include="Domain\Views\MenuWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\RentWindow.xaml">
+    <Page Include="Domain\Views\RentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\SaleWindow.xaml">
+    <Page Include="Domain\Views\SaleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\UserWindow.xaml">
+    <Page Include="Domain\Views\UserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WorkerWindow.xaml">
+    <Page Include="Domain\Views\WorkerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -239,6 +239,10 @@
   <ItemGroup>
     <Resource Include="images\personimage.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DataAccess\OracleServer\" />
+    <Folder Include="DataAccess\SqlServer\" />
+    <Folder Include="Domain\Abstractions\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
