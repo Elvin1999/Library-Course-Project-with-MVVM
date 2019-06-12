@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,17 +10,21 @@ namespace LibraryCourseProject.Entities
    public class Sale
     {
         public int Id { get; set; }
+        [NotMapped]
         public int No { get; set; }
-        public Book Book { get; set; }
         public int BookId { get; set; }
-        public Client Client { get; set; }
         public int ClientId { get; set; }
-        public User User { get; set; }
         public int UserId { get; set; }
         public double RealPrice { get; set; }
         public double SalePrice { get; set; }
         public DateTime SaleDateTime { get; set; } = DateTime.Now;
         public string Note { get; set; } = "empty";
+        [NotMapped]
+        public Book Book { get; set; }
+        [NotMapped]
+        public Client Client { get; set; }
+        [NotMapped]
+        public User User { get; set; }
 
         public Sale Clone()
         {

@@ -104,11 +104,11 @@
     <Compile Include="Domain\Abstractions\IUnitOfWork.cs" />
     <Compile Include="Domain\Abstractions\IUserRepository.cs" />
     <Compile Include="Domain\Abstractions\IWorkerRepository.cs" />
-    <Compile Include="Domain\Entities\BookHelper.cs" />
-    <Compile Include="Domain\Entities\ClientHelper.cs" />
-    <Compile Include="Domain\Entities\FilialHelper.cs" />
-    <Compile Include="Domain\Entities\LogUpHelper.cs" />
-    <Compile Include="Domain\Entities\WorkerHelper.cs" />
+    <Compile Include="Domain\AdditionalClasses\BookHelper.cs" />
+    <Compile Include="Domain\AdditionalClasses\ClientHelper.cs" />
+    <Compile Include="Domain\AdditionalClasses\FilialHelper.cs" />
+    <Compile Include="Domain\AdditionalClasses\LogUpHelper.cs" />
+    <Compile Include="Domain\AdditionalClasses\WorkerHelper.cs" />
     <Compile Include="Properties\Resources.az.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -177,7 +177,7 @@
     <Compile Include="Domain\Entities\Author.cs" />
     <Compile Include="Domain\Entities\Book.cs" />
     <Compile Include="Domain\Entities\Client.cs" />
-    <Compile Include="Domain\Entities\Config.cs" />
+    <Compile Include="Domain\AdditionalClasses\Config.cs" />
     <Compile Include="Domain\Entities\Filial.cs" />
     <Compile Include="Domain\Entities\Genre.cs" />
     <Compile Include="Domain\Entities\Permission.cs" />
