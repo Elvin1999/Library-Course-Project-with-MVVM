@@ -16,7 +16,7 @@ namespace LibraryCourseProject.Entities
         public string PhoneNumber { get; set; }
         public double Salary { get; set; }
         public Filial Filial { get; set; }
-        public int Filial_Id { get; set; }
+        public int FilialId { get; set; }
         public string Note { get; set; } = "empty";
 
         public Worker Clone()
@@ -25,7 +25,7 @@ namespace LibraryCourseProject.Entities
             {
                  Age=this.Age,
                   Filial=this.Filial,
-                   Filial_Id=this.Filial_Id ,
+                   FilialId=this.FilialId ,
                     Id=this.Id,
                      Name=this.Name,
                       No=this.No,

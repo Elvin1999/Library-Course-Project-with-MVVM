@@ -75,7 +75,7 @@ namespace LibraryCourseProject.ViewModels
                         CanCreateUser = true,
                         CanCreateWorker = true
                     },
-                    Permission_Id = 1,
+                    PermissionId = 1,
                     Username = "admin"
 
                 };

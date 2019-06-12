@@ -11,11 +11,11 @@ namespace LibraryCourseProject.Entities
         public int Id { get; set; }
         public int No { get; set; }
         public Book Book { get; set; }
-        public int Book_Id { get; set; }
+        public int BookId { get; set; }
         public Client Client { get; set; }
-        public int Client_Id { get; set; }
+        public int ClientId { get; set; }
         public User User { get; set; }
-        public int User_Id { get; set; }
+        public int UserId { get; set; }
         public double RealPrice { get; set; }
         public double SalePrice { get; set; }
         public DateTime SaleDateTime { get; set; } = DateTime.Now;
@@ -26,9 +26,9 @@ namespace LibraryCourseProject.Entities
             Sale sale = new Sale()
             {
                  Book=this.Book,
-                  Book_Id=this.Book_Id,
+                  BookId=this.BookId,
                    Client=this.Client,
-                    Client_Id=this.Client_Id,
+                    ClientId=this.ClientId,
                      Id=this.Id,
                       No=this.No,
                        Note=this.Note,
@@ -36,7 +36,7 @@ namespace LibraryCourseProject.Entities
                          SaleDateTime=this.SaleDateTime,
                           SalePrice=this.SalePrice,
                            User=this.User,
-                            User_Id=this.User_Id
+                            UserId=this.UserId
             };
             return sale;
         }

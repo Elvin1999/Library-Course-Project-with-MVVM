@@ -12,9 +12,9 @@ namespace LibraryCourseProject.Entities
         public int No { get; set; }
         public double PricePerDay { get; set; }
         public double RealPrice { get; set; }
-        public int User_Id { get; set; }
-        public int Book_Id { get; set; }
-        public int Client_Id { get; set; }
+        public int UserId { get; set; }
+        public int BookId { get; set; }
+        public int ClientId { get; set; }
         public DateTime RentDateTime { get; set; } = DateTime.Now;
         public DateTime ExactDateTime { get; set; } = DateTime.Now;
         public string Note { get; set; } = "empty";
@@ -26,9 +26,9 @@ namespace LibraryCourseProject.Entities
             Rent rent = new Rent()
             {
                  Book=this.Book,
-                  Book_Id=this.Book_Id,
+                  BookId=this.BookId,
                    Client=this.Client,
-                    Client_Id=this.Client_Id,
+                    ClientId=this.ClientId,
                      ExactDateTime=this.ExactDateTime,
                       Id=this.Id,
                        No=this.No,
@@ -37,7 +37,7 @@ namespace LibraryCourseProject.Entities
                           RealPrice=this.RealPrice,
                            RentDateTime=this.RentDateTime,
                             User=this.User,
-                             User_Id=this.User_Id
+                             UserId=this.UserId
             };
 
             return rent;

@@ -14,7 +14,7 @@ namespace LibraryCourseProject.Entities
         public string Email { get; set; }
         public string Password { get; set; }
         public Permission Permission { get; set; }
-        public int Permission_Id { get; set; }
+        public int PermissionId { get; set; }
         public string Note { get; set; } = "empty";
         public User Clone()
         {
@@ -25,7 +25,7 @@ namespace LibraryCourseProject.Entities
                     Note=this.Note,
                      Password=this.Password,
                       Permission=this.Permission,
-                       Permission_Id=this.Permission_Id,
+                       PermissionId=this.PermissionId,
                         Username=this.Username
             };
             return user;

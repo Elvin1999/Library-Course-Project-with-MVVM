@@ -58,31 +58,40 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Domain\Commands\BookSectionCommands\AddCommand.cs" />
-    <Compile Include="Domain\Commands\BookSectionCommands\DeleteCommand.cs" />
-    <Compile Include="Domain\Commands\BookSectionCommands\RentCommand.cs" />
-    <Compile Include="Domain\Commands\BookSectionCommands\SellCommand.cs" />
-    <Compile Include="Domain\Commands\BookSectionCommands\UpdateCommand.cs" />
-    <Compile Include="Domain\Commands\ClientSectionCommands\AddCommand.cs" />
-    <Compile Include="Domain\Commands\ClientSectionCommands\DeleteCommand.cs" />
-    <Compile Include="Domain\Commands\ClientSectionCommands\UpdateCommand.cs" />
-    <Compile Include="Domain\Commands\FilialSectionCommands\AddCommand.cs" />
-    <Compile Include="Domain\Commands\FilialSectionCommands\DeleteCommand.cs" />
-    <Compile Include="Domain\Commands\FilialSectionCommands\UpdateCommand.cs" />
-    <Compile Include="Domain\Commands\MenuSectionCommands\BookSectionCommand.cs" />
-    <Compile Include="Domain\Commands\MenuSectionCommands\ClientSectionCommand.cs" />
-    <Compile Include="Domain\Commands\MenuSectionCommands\FilialSectionCommand.cs" />
-    <Compile Include="Domain\Commands\MenuSectionCommands\LanguageCommand.cs" />
-    <Compile Include="Domain\Commands\MenuSectionCommands\UsersSectionCommand.cs" />
-    <Compile Include="Domain\Commands\MenuSectionCommands\WorkerSectionCommand.cs" />
-    <Compile Include="Domain\Commands\RentSectionCommands\AddCommand.cs" />
-    <Compile Include="Domain\Commands\SaleSectionCommands\AddCommand.cs" />
-    <Compile Include="Domain\Commands\UserSectionCommands\AddCommand.cs" />
-    <Compile Include="Domain\Commands\UserSectionCommands\DeleteCommand.cs" />
-    <Compile Include="Domain\Commands\UserSectionCommands\UpdateCommand.cs" />
-    <Compile Include="Domain\Commands\WorkerSectionCommands\AddCommand.cs" />
-    <Compile Include="Domain\Commands\WorkerSectionCommands\DeleteCommand.cs" />
-    <Compile Include="Domain\Commands\WorkerSectionCommands\UpdateCommand.cs" />
+    <Compile Include="Commands\BookSectionCommands\AddCommand.cs" />
+    <Compile Include="Commands\BookSectionCommands\DeleteCommand.cs" />
+    <Compile Include="Commands\BookSectionCommands\RentCommand.cs" />
+    <Compile Include="Commands\BookSectionCommands\SellCommand.cs" />
+    <Compile Include="Commands\BookSectionCommands\UpdateCommand.cs" />
+    <Compile Include="Commands\ClientSectionCommands\AddCommand.cs" />
+    <Compile Include="Commands\ClientSectionCommands\DeleteCommand.cs" />
+    <Compile Include="Commands\ClientSectionCommands\UpdateCommand.cs" />
+    <Compile Include="Commands\FilialSectionCommands\AddCommand.cs" />
+    <Compile Include="Commands\FilialSectionCommands\DeleteCommand.cs" />
+    <Compile Include="Commands\FilialSectionCommands\UpdateCommand.cs" />
+    <Compile Include="Commands\MenuSectionCommands\BookSectionCommand.cs" />
+    <Compile Include="Commands\MenuSectionCommands\ClientSectionCommand.cs" />
+    <Compile Include="Commands\MenuSectionCommands\FilialSectionCommand.cs" />
+    <Compile Include="Commands\MenuSectionCommands\LanguageCommand.cs" />
+    <Compile Include="Commands\MenuSectionCommands\UsersSectionCommand.cs" />
+    <Compile Include="Commands\MenuSectionCommands\WorkerSectionCommand.cs" />
+    <Compile Include="Commands\RentSectionCommands\AddCommand.cs" />
+    <Compile Include="Commands\SaleSectionCommands\AddCommand.cs" />
+    <Compile Include="Commands\UserSectionCommands\AddCommand.cs" />
+    <Compile Include="Commands\UserSectionCommands\DeleteCommand.cs" />
+    <Compile Include="Commands\UserSectionCommands\UpdateCommand.cs" />
+    <Compile Include="Commands\WorkerSectionCommands\AddCommand.cs" />
+    <Compile Include="Commands\WorkerSectionCommands\DeleteCommand.cs" />
+    <Compile Include="Commands\WorkerSectionCommands\UpdateCommand.cs" />
+    <Compile Include="Domain\Abstractions\IBookRepository.cs" />
+    <Compile Include="Domain\Abstractions\IClientRepository.cs" />
+    <Compile Include="Domain\Abstractions\IFilialRepository.cs" />
+    <Compile Include="Domain\Abstractions\IRentRepository.cs" />
+    <Compile Include="Domain\Abstractions\IRepository.cs" />
+    <Compile Include="Domain\Abstractions\ISaleRepository.cs" />
+    <Compile Include="Domain\Abstractions\IUnitOfWork.cs" />
+    <Compile Include="Domain\Abstractions\IUserRepository.cs" />
+    <Compile Include="Domain\Abstractions\IWorkerRepository.cs" />
     <Compile Include="Domain\Entities\BookHelper.cs" />
     <Compile Include="Domain\Entities\ClientHelper.cs" />
     <Compile Include="Domain\Entities\FilialHelper.cs" />
@@ -152,7 +161,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Domain\Commands\LoginCommand.cs" />
+    <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Domain\Entities\Author.cs" />
     <Compile Include="Domain\Entities\Book.cs" />
     <Compile Include="Domain\Entities\Client.cs" />
@@ -240,9 +249,9 @@
     <Resource Include="images\personimage.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DataAccess\EntityFrameworkServer\" />
     <Folder Include="DataAccess\OracleServer\" />
     <Folder Include="DataAccess\SqlServer\" />
-    <Folder Include="Domain\Abstractions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

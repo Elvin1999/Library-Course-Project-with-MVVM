@@ -15,9 +15,9 @@ namespace LibraryCourseProject.Entities
         public double PurchasePrice { get; set; }
         public double SalePrice { get; set; }
         public Author Author { get; set; }
-        public int Author_Id { get; set; }
+        public int AuthorId { get; set; }
         public Genre Genre { get; set; }
-        public int Genre_Id { get; set; }
+        public int GenreId { get; set; }
         public string Note { get; set; }
 
         public Book Clone()
@@ -25,9 +25,9 @@ namespace LibraryCourseProject.Entities
             Book book = new Book
             {
                  Author=this.Author,
-                  Author_Id=this.Author_Id,
+                  AuthorId=this.AuthorId,
                    Genre=this.Genre,
-                    Genre_Id=this.Genre_Id,
+                    GenreId=this.GenreId,
                      Id=this.Id,
                       No=this.No,
                        Note=this.Note,
