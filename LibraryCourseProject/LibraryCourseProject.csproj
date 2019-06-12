@@ -107,6 +107,7 @@
     <Compile Include="Domain\AdditionalClasses\BookHelper.cs" />
     <Compile Include="Domain\AdditionalClasses\ClientHelper.cs" />
     <Compile Include="Domain\AdditionalClasses\FilialHelper.cs" />
+    <Compile Include="Domain\AdditionalClasses\HashHelper.cs" />
     <Compile Include="Domain\AdditionalClasses\LogUpHelper.cs" />
     <Compile Include="Domain\AdditionalClasses\WorkerHelper.cs" />
     <Compile Include="Properties\Resources.az.Designer.cs">
@@ -182,9 +183,9 @@
     <Compile Include="Domain\Entities\Genre.cs" />
     <Compile Include="Domain\Entities\Permission.cs" />
     <Compile Include="Domain\Entities\Rent.cs" />
-    <Compile Include="Domain\Entities\RentReports.cs" />
+    <Compile Include="Domain\AdditionalClasses\RentReports.cs" />
     <Compile Include="Domain\Entities\Sale.cs" />
-    <Compile Include="Domain\Entities\SaleReports.cs" />
+    <Compile Include="Domain\AdditionalClasses\SaleReports.cs" />
     <Compile Include="Domain\Entities\User.cs" />
     <Compile Include="Domain\Entities\Worker.cs" />
     <Compile Include="RegisterUserControl.xaml.cs">

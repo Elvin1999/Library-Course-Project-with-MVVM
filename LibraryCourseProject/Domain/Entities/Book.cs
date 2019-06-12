@@ -20,10 +20,10 @@ namespace LibraryCourseProject.Entities
         public Author Author { get; set; }
         public ICollection<Rent> Rents { get; set; }
         public ICollection<Sale> Sales { get; set; }
-        public int AuthorId { get; set; }
+        public int? AuthorId { get; set; }
         [NotMapped]
         public Genre Genre { get; set; }
-        public int GenreId { get; set; }
+        public int? GenreId { get; set; }
         public string Note { get; set; }
 
         public Book Clone()

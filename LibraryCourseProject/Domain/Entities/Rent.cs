@@ -14,9 +14,9 @@ namespace LibraryCourseProject.Entities
         public int No { get; set; }
         public double PricePerDay { get; set; }
         public double RealPrice { get; set; }
-        public int UserId { get; set; }
-        public int BookId { get; set; }
-        public int ClientId { get; set; }
+        public int? UserId { get; set; }
+        public int? BookId { get; set; }
+        public int? ClientId { get; set; }
         public DateTime RentDateTime { get; set; } = DateTime.Now;
         public DateTime ExactDateTime { get; set; } = DateTime.Now;
         public string Note { get; set; } = "empty";

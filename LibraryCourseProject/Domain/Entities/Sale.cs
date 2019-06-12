@@ -12,9 +12,9 @@ namespace LibraryCourseProject.Entities
         public int Id { get; set; }
         [NotMapped]
         public int No { get; set; }
-        public int BookId { get; set; }
-        public int ClientId { get; set; }
-        public int UserId { get; set; }
+        public int? BookId { get; set; }
+        public int? ClientId { get; set; }
+        public int? UserId { get; set; }
         public double RealPrice { get; set; }
         public double SalePrice { get; set; }
         public DateTime SaleDateTime { get; set; } = DateTime.Now;

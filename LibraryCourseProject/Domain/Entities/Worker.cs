@@ -19,7 +19,7 @@ namespace LibraryCourseProject.Entities
         public double Salary { get; set; }
         [NotMapped]
         public Filial Filial { get; set; }
-        public int FilialId { get; set; }
+        public int? FilialId { get; set; }
         public string Note { get; set; } = "empty";
 
         public Worker Clone()

@@ -15,7 +15,7 @@ namespace LibraryCourseProject.Entities
         public string Username { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public int PermissionId { get; set; }
+        public int? PermissionId { get; set; }
         public string Note { get; set; } = "empty";
         public ICollection<Rent> Rents { get; set; }
         public ICollection<Sale> Sales { get; set; }
