@@ -20,13 +20,17 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
         {
             throw new NotImplementedException();
         }
-
+        public int No { get; set; } = 0;
         public ObservableCollection<User> GetAllData()
         {
             ObservableCollection<User> users;
             using (EFContext db=new EFContext())
             {
                 users = new ObservableCollection<User>(db.Users);
+            }
+            for (int i = 0; i < users.Count; i++)
+            {
+                users[i].No = i + 1;
             }
             return users;
         }
