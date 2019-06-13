@@ -3,6 +3,8 @@ using LibraryCourseProject.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,15 +18,30 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
             throw new NotImplementedException();
         }
 
-        public void DeleteData(User data)
+        public void DeleteData(User item)
         {
-            throw new NotImplementedException();
+
+            using (EFContext db = new EFContext())
+            {
+                bool oldvalid = db.Configuration.ValidateOnSaveEnabled;
+                try
+                {
+                    db.Configuration.ValidateOnSaveEnabled = false;
+                    db.Users.Attach(item);
+                    db.Entry(item).State = EntityState.Deleted;
+                    db.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+
+                }
+            }
         }
         public int No { get; set; } = 0;
+        ObservableCollection<User> users;
         public ObservableCollection<User> GetAllData()
         {
-            ObservableCollection<User> users;
-            using (EFContext db=new EFContext())
+            using (EFContext db = new EFContext())
             {
                 users = new ObservableCollection<User>(db.Users);
             }

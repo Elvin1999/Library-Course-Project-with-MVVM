@@ -26,17 +26,21 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
         public void Execute(object parameter)
         {
             var item = UserViewModel.SelectedUser;
-            if (item.Id != 1)
-            {
-                UserViewModel.AllUsers.Remove(item);
-                App.Config.Users = new List<User>(UserViewModel.AllUsers);
-                App.Config.SeriailizeToJson();
+            //  if (item.Id != 1)
+            //  {
+            
+            App.DB.UserRepository.DeleteData(item);
+            UserViewModel.AllUsers = App.DB.UserRepository.GetAllData();
+
+                //App.Config.Users = new List<User>(UserViewModel.AllUsers);
+                //App.Config.SeriailizeToJson();
+                //App.DB.UserRepository.DeleteData(item);
                 UserViewModel.SelectedUser = new User();
-            }
-            else
-            {
-                MessageBox.Show("You can not delete *admin* ");
-            }
+           // }
+          //  else
+          //  {
+          //      MessageBox.Show("You can not delete *admin* ");
+//}
 
         }
     }

@@ -8,7 +8,6 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
 {
     using LibraryCourseProject.Entities;
     using System.Data.Entity;
-
     public class EFContext : DbContext
     {
         // Your context has been configured to use a 'LibraryDbContext' connection string from your application's 
@@ -21,10 +20,8 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
             : base("name=LibraryDbContext2")
         {
         }
-
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
-
         public virtual DbSet<Filial> Filials { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Book> Books { get; set; }
@@ -36,5 +33,7 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
         public virtual DbSet<Sale> Sales { get; set; }
         public virtual DbSet<Worker> Workers { get; set; }
     }
-
 }
+
+
+
