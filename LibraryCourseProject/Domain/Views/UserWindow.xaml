@@ -9,17 +9,12 @@
         WindowStyle="None"
         Background="Transparent"  >
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
+   
         <Rectangle RadiusX="20" RadiusY="20" Width="700" Height="600" Fill="{StaticResource FirstColor}">
-            <Canvas.Left>
-                50
-            </Canvas.Left>
+
         </Rectangle>
-        <Grid Grid.Row="0">
-            <StackPanel Orientation="Horizontal">
+        <StackPanel>
+                <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
                     <Label Width="100" Height="40" Content="Username" FontSize="19" Margin="55,15,0,0"></Label>
                     <Label Width="100" Height="40" Content="Password" FontSize="19" Margin="55,15,0,0"></Label>
@@ -28,7 +23,7 @@
                 </StackPanel>
                 <StackPanel  Orientation="Vertical">
                     <TextBox Width="100" Height="40" FontSize="19" Margin="5,12" Text="{Binding CurrentUser.Username,Mode=TwoWay}">
-                        
+
                     </TextBox>
                     <PasswordBox Width="100" Height="40" FontSize="19" Margin="5,5" Name="UserPasswordTxtb"
                                  
@@ -67,14 +62,12 @@
                     <Button Width="100" Height="40" Content="Delete" FontSize="20" Margin="15"
                               CommandParameter="{Binding ElementName=UserPasswordTxtb}" Command="{Binding DeleteCommand}" 
                             ></Button>
-         
+
                 </StackPanel>
             </StackPanel>
-        </Grid>
-        <Grid Grid.Row="1">
             <ListView ItemsSource="{Binding AllUsers}" 
             Background="{StaticResource FirstColor}"
-                      SelectedItem="{Binding SelectedUser}" Width="660" Height="250" Margin="0,0,0,100"  >
+                      SelectedItem="{Binding SelectedUser}" Width="660" Height="250" Margin="70,0,70,50" Grid.ColumnSpan="2"  >
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="No" Width="30">
@@ -144,6 +137,8 @@
 
                 </ListView.View>
             </ListView>
-        </Grid>
+        </StackPanel>
+
+   
     </Grid>
 </Window>

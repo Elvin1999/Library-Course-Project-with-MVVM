@@ -26,9 +26,7 @@ namespace LibraryCourseProject.Commands
         }
         public void Execute(object parameter)
         {
-
             var passwordFromClient = (parameter as PasswordBox).Password;
-
             var usernameFromClient = LoginViewModel.Username;
             LoginViewModel.Users = App.Config.DeserializeFromJson();
             User user = new User();
@@ -61,13 +59,3 @@ namespace LibraryCourseProject.Commands
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
