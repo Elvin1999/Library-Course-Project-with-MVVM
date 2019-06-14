@@ -29,7 +29,7 @@ namespace LibraryCourseProject.Entities
                    No=this.No, 
                     Note=this.Note,
                      Password=this.Password,
-                      //Permission=this.Permission,
+                      Permission=this.Permission,
                        PermissionId=this.PermissionId,
                         Username=this.Username
             };
