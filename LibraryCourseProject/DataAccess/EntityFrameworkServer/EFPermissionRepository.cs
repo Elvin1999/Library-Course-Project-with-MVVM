@@ -3,6 +3,7 @@ using LibraryCourseProject.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
@@ -72,7 +73,12 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
 
         public void UpdateData(Permission data)
         {
-            throw new NotImplementedException();
+            using (EFContext db = new EFContext())
+            {
+
+                db.Entry(data).State = EntityState.Modified;
+                db.SaveChanges();
+            }
         }
     }
 }

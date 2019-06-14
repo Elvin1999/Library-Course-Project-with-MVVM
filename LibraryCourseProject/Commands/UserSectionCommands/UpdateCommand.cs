@@ -25,14 +25,12 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
 
         public void Execute(object parameter)
         {
-            var item = UserViewModel.AllUsers.FirstOrDefault(x => x.Id == UserViewModel.CurrentUser.Id);
-
-            if (item != null&&item.Id!=1)
+            var item = UserViewModel.CurrentUser;
+            if (item != null)
             {
-                var index = UserViewModel.AllUsers.IndexOf(item);
-                UserViewModel.AllUsers[index] = UserViewModel.CurrentUser;
-                App.Config.Users = new List<User>(UserViewModel.AllUsers);
-                App.Config.SeriailizeToJson();
+                App.DB.UserRepository.UpdateData(item);
+                App.DB.PermissionRepository.UpdateData(item.Permission);
+                UserViewModel.AllUsers = App.DB.UserRepository.GetAllData();
                 MessageBoxResult update = MessageBox.Show("updated");
                 UserViewModel.CurrentUser = new User();
                 UserViewModel.SelectedUser = new User();

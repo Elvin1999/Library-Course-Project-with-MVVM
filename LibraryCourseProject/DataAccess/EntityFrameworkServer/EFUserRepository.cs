@@ -35,7 +35,6 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
                         }
                     }
                 }
-
             }
         }
 
@@ -64,6 +63,7 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
         {
             using (EFContext db = new EFContext())
             {
+                db.Configuration.LazyLoadingEnabled = false;
                 var permissions = db.Permissions
                         .Include(b => b.Users)
                         .ToList();
@@ -86,7 +86,12 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
 
         public void UpdateData(User data)
         {
-            throw new NotImplementedException();
+            using (EFContext db = new EFContext())
+            {
+
+                db.Entry(data).State = EntityState.Modified;
+                db.SaveChanges();                
+            }
         }
     }
 }
