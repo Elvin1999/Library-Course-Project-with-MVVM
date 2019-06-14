@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
 {
     using LibraryCourseProject.Entities;
+    using LibraryCourseProject.Migrations;
     using System.Data.Entity;
     public class EFContext : DbContext
     {
@@ -19,6 +20,7 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
         public EFContext()
             : base("name=LibraryDbContext2")
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<EFContext, Configuration>());
         }
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.

@@ -17,8 +17,8 @@ namespace LibraryCourseProject.Entities
         public int Age { get; set; }
         public string PhoneNumber { get; set; }
         public double Salary { get; set; }
-        [NotMapped]
-        public Filial Filial { get; set; }
+        [ForeignKey("FilialId")]
+        public virtual Filial Filial { get; set; }
         public int? FilialId { get; set; }
         public string Note { get; set; } = "empty";
 

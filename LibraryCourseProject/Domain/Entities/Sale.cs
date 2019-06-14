@@ -19,12 +19,12 @@ namespace LibraryCourseProject.Entities
         public double SalePrice { get; set; }
         public DateTime SaleDateTime { get; set; } = DateTime.Now;
         public string Note { get; set; } = "empty";
-        [NotMapped]
-        public Book Book { get; set; }
-        [NotMapped]
-        public Client Client { get; set; }
-        [NotMapped]
-        public User User { get; set; }
+        [ForeignKey("BookId")]
+        public virtual Book Book { get; set; }
+        [ForeignKey("ClientId")]
+        public virtual Client Client { get; set; }
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
 
         public Sale Clone()
         {

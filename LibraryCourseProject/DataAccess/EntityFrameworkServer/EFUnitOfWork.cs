@@ -11,7 +11,7 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
     {
         public IUserRepository UserRepository => new EFUserRepository();
         public IPermissionRepository PermissionRepository => new EFPermissionRepository();
-        public IWorkerRepository WorkerRepository => throw new NotImplementedException();
+        public IWorkerRepository WorkerRepository => new EFWorkerRepository();
 
         public IClientRepository ClientRepository => throw new NotImplementedException();
 

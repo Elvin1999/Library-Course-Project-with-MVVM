@@ -16,13 +16,13 @@ namespace LibraryCourseProject.Entities
         public int PageCount { get; set; }
         public double PurchasePrice { get; set; }
         public double SalePrice { get; set; }
-        [NotMapped]
-        public Author Author { get; set; }
-        public ICollection<Rent> Rents { get; set; }
-        public ICollection<Sale> Sales { get; set; }
+        public virtual ICollection<Rent> Rents { get; set; }
+        public virtual ICollection<Sale> Sales { get; set; }
         public int? AuthorId { get; set; }
-        [NotMapped]
-        public Genre Genre { get; set; }
+        [ForeignKey("AuthorId")]
+        public virtual Author Author { get; set; }
+        [ForeignKey("GenreId")]
+        public virtual Genre Genre { get; set; }
         public int? GenreId { get; set; }
         public string Note { get; set; }
 

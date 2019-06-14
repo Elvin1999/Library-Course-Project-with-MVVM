@@ -16,8 +16,8 @@ namespace LibraryCourseProject.Entities
         public string Surname { get; set; }
         public string PhoneNumber { get; set; }
         public DateTime ConnectionTime { get; set; } = DateTime.Now;
-        public ICollection<Rent> Rents { get; set; }
-        public ICollection<Sale> Sales { get; set; }
+        public virtual ICollection<Rent> Rents { get; set; }
+        public virtual ICollection<Sale> Sales { get; set; }
         public string Note { get; set; } = "empty";
 
         public Client Clone()

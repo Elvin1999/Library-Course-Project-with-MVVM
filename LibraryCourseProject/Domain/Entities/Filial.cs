@@ -16,17 +16,17 @@ namespace LibraryCourseProject.Entities
         public string Address { get; set; }
         public DateTime OpeningDate { get; set; } = DateTime.Now;
         public string Note { get; set; } = "empty";
-        public ICollection<Worker> Workers { get; set; }
+        public virtual ICollection<Worker> Workers { get; set; }
         public Filial Clone()
         {
             Filial filial = new Filial()
             {
-                 Address=this.Address,
-                  Id=this.Id,
-                   Name=this.Name,
-                    No=this.No,
-                     Note=this.Note,
-                      OpeningDate=this.OpeningDate
+                Address = this.Address,
+                Id = this.Id,
+                Name = this.Name,
+                No = this.No,
+                Note = this.Note,
+                OpeningDate = this.OpeningDate
             };
             return filial;
         }

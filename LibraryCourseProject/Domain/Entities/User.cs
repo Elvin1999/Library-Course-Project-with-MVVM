@@ -17,10 +17,10 @@ namespace LibraryCourseProject.Entities
         public string Password { get; set; }
         public int? PermissionId { get; set; }
         public string Note { get; set; } = "empty";
-        public ICollection<Rent> Rents { get; set; }
-        public ICollection<Sale> Sales { get; set; }
-        [NotMapped]
-        public Permission Permission { get; set; }
+        public virtual ICollection<Rent> Rents { get; set; }
+        public virtual ICollection<Sale> Sales { get; set; }
+        [ForeignKey("PermissionId")]
+        public virtual Permission Permission { get; set; }
         public User Clone()
         {
             User user = new User() {

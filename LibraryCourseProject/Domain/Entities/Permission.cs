@@ -17,7 +17,7 @@ namespace LibraryCourseProject.Entities
         public bool CanCreateFilial { get; set; } = false;
         public bool CanCreateClient { get; set; } = false;
         public bool CanCreateWorker { get; set; } = false;
-        public ICollection<User> Users { get; set; }
+        public virtual ICollection<User> Users { get; set; }
         [NotMapped]
         public string CreateBook
         {

@@ -28,15 +28,18 @@ namespace LibraryCourseProject.Commands
         {
             var passwordFromClient = (parameter as PasswordBox).Password;
             var usernameFromClient = LoginViewModel.Username;
-            LoginViewModel.Users = App.Config.DeserializeFromJson();
             User user = new User();
             try
             {
                 var items = App.DB.UserRepository.GetAllData();
-                LoginViewModel.Users = new List<User>(items);
-                user = LoginViewModel.Users.SingleOrDefault(x => x.Username == usernameFromClient && x.Password == passwordFromClient);
-                Permission permission = App.DB.PermissionRepository.GetData(Convert.ToInt32(user.PermissionId));
-                user.Permission = permission;
+                if (items != null)
+                {
+                    LoginViewModel.Users = new List<User>(items);
+                    user = LoginViewModel.Users.SingleOrDefault(x => x.Username == usernameFromClient && x.Password == passwordFromClient);
+                    Permission permission = App.DB.PermissionRepository.GetData(Convert.ToInt32(user.PermissionId));
+                    user.Permission = permission;
+
+                }
             }
             catch (Exception)
             {
@@ -44,7 +47,7 @@ namespace LibraryCourseProject.Commands
             if (user != null)
             {
                 MessageBox.Show("Okay");
-
+         
                 MenuViewModel menuViewModel = new MenuViewModel(LoginViewModel.MainWindow);
                 menuViewModel.CurrentUser = user;
                 MenuWindow menuWindow = new MenuWindow(menuViewModel);

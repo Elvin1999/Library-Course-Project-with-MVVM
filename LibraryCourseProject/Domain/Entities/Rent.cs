@@ -20,12 +20,12 @@ namespace LibraryCourseProject.Entities
         public DateTime RentDateTime { get; set; } = DateTime.Now;
         public DateTime ExactDateTime { get; set; } = DateTime.Now;
         public string Note { get; set; } = "empty";
-        [NotMapped]
-        public Client Client { get; set; }
-        [NotMapped]
-        public Book Book { get; set; }
-        [NotMapped]
-        public User User { get; set; }
+        [ForeignKey("ClientId")]
+        public virtual Client Client { get; set; }
+        [ForeignKey("BookId")]
+        public virtual Book Book { get; set; }
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
         public Rent Clone()
         {
             Rent rent = new Rent()

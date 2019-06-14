@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace LibraryCourseProject.Commands.MenuSectionCommands
@@ -28,35 +29,18 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
         {
             WorkerViewModel workerViewModel = new WorkerViewModel();
 
-            List<Worker> items = new List<Worker>();
+
+
             try
             {
 
-                items = App.Config.DeserializeWorkersFromJson();
+            workerViewModel.AllWorkers = App.DB.WorkerRepository.GetAllData();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-            }
-            if (items != null)
-            {
-
-                workerViewModel.AllWorkers = new ObservableCollection<Worker>(items);
+                MessageBox.Show(ex.Message);
             }
 
-            List<Filial> filials = new List<Filial>();
-            try
-            {
-
-                filials = App.Config.DeserializeFilialsFromJson();
-            }
-            catch (Exception)
-            {
-            }
-            if (filials != null)
-            {
-
-                workerViewModel.Filials = filials;
-            }
             //workerViewModel.Filials = new List<Filial>()
             //{
             //    new Filial()

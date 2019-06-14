@@ -96,6 +96,7 @@
     <Compile Include="DataAccess\EntityFrameworkServer\EFPermissionRepository.cs" />
     <Compile Include="DataAccess\EntityFrameworkServer\EFUnitOfWork.cs" />
     <Compile Include="DataAccess\EntityFrameworkServer\EFUserRepository.cs" />
+    <Compile Include="DataAccess\EntityFrameworkServer\EFWorkerRepository.cs" />
     <Compile Include="Domain\Abstractions\IBookRepository.cs" />
     <Compile Include="Domain\Abstractions\IClientRepository.cs" />
     <Compile Include="Domain\Abstractions\IFilialRepository.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="Domain\AdditionalClasses\HashHelper.cs" />
     <Compile Include="Domain\AdditionalClasses\LogUpHelper.cs" />
     <Compile Include="Domain\AdditionalClasses\WorkerHelper.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\Resources.az.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

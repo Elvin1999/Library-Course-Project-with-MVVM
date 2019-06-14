@@ -14,7 +14,7 @@ namespace LibraryCourseProject.Entities
         public int No { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public ICollection<Book> Books { get; set; }
+        public virtual ICollection<Book> Books { get; set; }
     }
 }
 

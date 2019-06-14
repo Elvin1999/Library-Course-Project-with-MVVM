@@ -8,6 +8,7 @@ using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
 {
@@ -22,7 +23,7 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
                 try
                 {
                     db.Users.Add(data);
-                    db.SaveChanges();                  
+                    db.SaveChanges();
                 }
                 catch (DbEntityValidationException ex)
                 {
@@ -64,13 +65,23 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
             using (EFContext db = new EFContext())
             {
                 db.Configuration.LazyLoadingEnabled = false;
-                var permissions = db.Permissions
-                        .Include(b => b.Users)
-                        .ToList();
-                var permissions2 = db.Permissions
-                        .Include("Users")
-                        .ToList();
+                try
+                {
+                    //var permissions = db.Permissions
+                    //                        .Include(b => b.Users)
+                    //                        .ToList();
+                    //var permissions2 = db.Permissions
+                    //        .Include("Users")
+                    //        .ToList();
+                   
                 users = new ObservableCollection<User>(db.Users);
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
             }
             for (int i = 0; i < users.Count; i++)
             {
@@ -90,7 +101,7 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
             {
 
                 db.Entry(data).State = EntityState.Modified;
-                db.SaveChanges();                
+                db.SaveChanges();
             }
         }
     }
