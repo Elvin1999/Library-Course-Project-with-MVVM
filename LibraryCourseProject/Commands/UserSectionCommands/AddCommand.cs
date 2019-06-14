@@ -76,14 +76,17 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
 
                 if (item == null && UserViewModel.CurrentUser.Username != "admin")
                 {
+                    Permission permission = UserViewModel.CurrentUser.Permission;
+                    App.DB.PermissionRepository.AddData(permission);
                     var newitem = UserViewModel.CurrentUser;
-                    UserViewModel.AllUsers.Add(newitem);
-                    App.Config.Users.Add(newitem);
-                    App.Config.SeriailizeToJson();
+                    var index = App.DB.PermissionRepository.GetAllData().Count-1;
+                    newitem.PermissionId = App.DB.PermissionRepository.GetAllData()[index].Id;
+                    App.DB.UserRepository.AddData(newitem);
+                    UserViewModel.AllUsers = App.DB.UserRepository.GetAllData();
+                    UserViewModel.SelectedUser = new User();
                     MessageBoxResult add = MessageBox.Show("Added");
                     UserViewModel.CurrentUser = new User();
                     UserViewModel.CurrentUser.Password = String.Empty;
-                    //UserViewModel.CurrentUser.Permission = new Permission();
                     UserViewModel.SelectedUser = new User();
                 }
                 else

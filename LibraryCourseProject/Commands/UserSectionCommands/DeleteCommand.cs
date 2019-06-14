@@ -31,7 +31,6 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
             
             App.DB.UserRepository.DeleteData(item);
             UserViewModel.AllUsers = App.DB.UserRepository.GetAllData();
-
                 //App.Config.Users = new List<User>(UserViewModel.AllUsers);
                 //App.Config.SeriailizeToJson();
                 //App.DB.UserRepository.DeleteData(item);
