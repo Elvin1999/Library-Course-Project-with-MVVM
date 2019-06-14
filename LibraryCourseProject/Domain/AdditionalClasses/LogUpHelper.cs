@@ -13,7 +13,7 @@ namespace LibraryCourseProject.Entities
         {
             try
             {
-                users = App.Config.DeserializeFromJson();//for users
+                users = new List<User>(App.DB.UserRepository.GetAllData());
             }
             catch (Exception)
             {

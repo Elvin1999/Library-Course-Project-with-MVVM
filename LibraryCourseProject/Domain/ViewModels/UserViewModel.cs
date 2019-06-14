@@ -56,8 +56,7 @@ namespace LibraryCourseProject.ViewModels
             }
             set
             {                
-                selectedUser = value;
-                selectedUser.Permission = App.DB.PermissionRepository.GetData(Convert.ToInt32(selectedUser.PermissionId));
+                selectedUser = value;              
                 if (value != null)
                 {
                     CurrentUser = SelectedUser.Clone();

@@ -62,26 +62,11 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
         ObservableCollection<User> users;
         public ObservableCollection<User> GetAllData()
         {
+            users = new ObservableCollection<User>();
             using (EFContext db = new EFContext())
             {
                 db.Configuration.LazyLoadingEnabled = false;
-                try
-                {
-                    //var permissions = db.Permissions
-                    //                        .Include(b => b.Users)
-                    //                        .ToList();
-                    //var permissions2 = db.Permissions
-                    //        .Include("Users")
-                    //        .ToList();
-                   
-                users = new ObservableCollection<User>(db.Users);
-                    
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                
+                users = new ObservableCollection<User>(db.Users.Include("Permission").ToList());
             }
             for (int i = 0; i < users.Count; i++)
             {
@@ -99,9 +84,15 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
         {
             using (EFContext db = new EFContext())
             {
+                try
+                {
+                    db.Entry(data).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                }
 
-                db.Entry(data).State = EntityState.Modified;
-                db.SaveChanges();
             }
         }
     }

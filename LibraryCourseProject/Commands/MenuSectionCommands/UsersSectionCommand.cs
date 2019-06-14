@@ -29,15 +29,6 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
             UserViewModel userViewModel = new UserViewModel();
             var items = App.DB.UserRepository.GetAllData();
             userViewModel.AllUsers = items;
-            //var items = App.Config.DeserializeFromJson();
-            //if (items != null)
-            //{
-            //    userViewModel.AllUsers = new ObservableCollection<User>(items);
-            //}
-            //else
-            //{
-            //    userViewModel.AllUsers = new ObservableCollection<User>();
-            //}
             UserWindow userWindow = new UserWindow(userViewModel);
             userWindow.ShowDialog();
         }
