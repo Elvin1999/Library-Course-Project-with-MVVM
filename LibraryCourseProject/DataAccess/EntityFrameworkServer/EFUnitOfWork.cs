@@ -22,7 +22,7 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
         public IRentRepository RentRepository => new EFRentRepository();
 
         public ISaleRepository SaleRepository => new EFSaleRepository();
-
+        
         public void SaveChanges()
         {
             

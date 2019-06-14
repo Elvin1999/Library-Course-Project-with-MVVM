@@ -24,16 +24,16 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
         }
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
-        public virtual DbSet<Filial> Filials { get; set; }
-        public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Book> Books { get; set; }
-        public virtual DbSet<Client> Clients { get; set; }
+        public virtual DbSet<Filial> Filials { get; set; }//
+        public virtual DbSet<User> Users { get; set; }//
+        public virtual DbSet<Book> Books { get; set; }//
+        public virtual DbSet<Client> Clients { get; set; }//
         public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<Genre> Genres { get; set; }
-        public virtual DbSet<Permission> Permissions { get; set; }
-        public virtual DbSet<Rent> Rents { get; set; }
-        public virtual DbSet<Sale> Sales { get; set; }
-        public virtual DbSet<Worker> Workers { get; set; }
+        public virtual DbSet<Permission> Permissions { get; set; }//
+        public virtual DbSet<Rent> Rents { get; set; }//
+        public virtual DbSet<Sale> Sales { get; set; }//
+        public virtual DbSet<Worker> Workers { get; set; }//
     }
 }
 
