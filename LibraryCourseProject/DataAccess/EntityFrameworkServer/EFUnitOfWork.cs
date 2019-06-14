@@ -15,7 +15,7 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
 
         public IClientRepository ClientRepository => throw new NotImplementedException();
 
-        public IFilialRepository FilialRepository => throw new NotImplementedException();
+        public IFilialRepository FilialRepository => new EFFilialRepository();
 
         public IBookRepository BookRepository => throw new NotImplementedException();
 

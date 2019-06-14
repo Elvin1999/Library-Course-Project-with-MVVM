@@ -35,6 +35,7 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
             {
 
             workerViewModel.AllWorkers = App.DB.WorkerRepository.GetAllData();
+                workerViewModel.Filials = new List<Filial>(App.DB.FilialRepository.GetAllData());
             }
             catch (Exception ex)
             {
