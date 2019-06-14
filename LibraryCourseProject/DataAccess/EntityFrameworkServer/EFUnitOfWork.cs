@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
 {
-    class EFUnitOfWork : IUnitOfWork
+   public class EFUnitOfWork : IUnitOfWork
     {
         public IUserRepository UserRepository => new EFUserRepository();
-
+        public IPermissionRepository PermissionRepository => new EFPermissionRepository();
         public IWorkerRepository WorkerRepository => throw new NotImplementedException();
 
         public IClientRepository ClientRepository => throw new NotImplementedException();

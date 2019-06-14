@@ -57,9 +57,11 @@ namespace LibraryCourseProject.ViewModels
             set
             {                
                 selectedUser = value;
+                selectedUser.Permission = App.DB.PermissionRepository.GetData(Convert.ToInt32(selectedUser.PermissionId));
                 if (value != null)
                 {
                     CurrentUser = SelectedUser.Clone();
+                    
                 }
                 OnPropertyChanged(new PropertyChangedEventArgs(nameof(SelectedUser)));
             }

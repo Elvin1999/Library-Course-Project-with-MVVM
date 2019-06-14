@@ -16,6 +16,7 @@ namespace LibraryCourseProject.Domain.Abstractions
         IBookRepository BookRepository { get; }
         IRentRepository RentRepository { get; }
         ISaleRepository SaleRepository { get; }
+        IPermissionRepository PermissionRepository { get; }
     }
 }
 

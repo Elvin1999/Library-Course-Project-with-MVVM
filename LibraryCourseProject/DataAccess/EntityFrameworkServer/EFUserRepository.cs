@@ -43,6 +43,12 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
         {
             using (EFContext db = new EFContext())
             {
+                var permissions = db.Permissions
+                        .Include(b => b.Users)
+                        .ToList();
+                var permissions2 = db.Permissions
+                        .Include("Users")
+                        .ToList();
                 users = new ObservableCollection<User>(db.Users);
             }
             for (int i = 0; i < users.Count; i++)
