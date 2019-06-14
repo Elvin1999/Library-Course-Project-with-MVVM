@@ -92,9 +92,13 @@
     <Compile Include="Commands\WorkerSectionCommands\AddCommand.cs" />
     <Compile Include="Commands\WorkerSectionCommands\DeleteCommand.cs" />
     <Compile Include="Commands\WorkerSectionCommands\UpdateCommand.cs" />
+    <Compile Include="DataAccess\EntityFrameworkServer\EFBookRepository.cs" />
+    <Compile Include="DataAccess\EntityFrameworkServer\EFClientRepository.cs" />
     <Compile Include="DataAccess\EntityFrameworkServer\EFContext.cs" />
     <Compile Include="DataAccess\EntityFrameworkServer\EFFilialRepository.cs" />
     <Compile Include="DataAccess\EntityFrameworkServer\EFPermissionRepository.cs" />
+    <Compile Include="DataAccess\EntityFrameworkServer\EFRentRepository.cs" />
+    <Compile Include="DataAccess\EntityFrameworkServer\EFSaleRepository.cs" />
     <Compile Include="DataAccess\EntityFrameworkServer\EFUnitOfWork.cs" />
     <Compile Include="DataAccess\EntityFrameworkServer\EFUserRepository.cs" />
     <Compile Include="DataAccess\EntityFrameworkServer\EFWorkerRepository.cs" />

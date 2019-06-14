@@ -13,15 +13,15 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
         public IPermissionRepository PermissionRepository => new EFPermissionRepository();
         public IWorkerRepository WorkerRepository => new EFWorkerRepository();
 
-        public IClientRepository ClientRepository => throw new NotImplementedException();
+        public IClientRepository ClientRepository => new EFClientRepository();
 
         public IFilialRepository FilialRepository => new EFFilialRepository();
 
-        public IBookRepository BookRepository => throw new NotImplementedException();
+        public IBookRepository BookRepository => new EFBookRepository();
 
-        public IRentRepository RentRepository => throw new NotImplementedException();
+        public IRentRepository RentRepository => new EFRentRepository();
 
-        public ISaleRepository SaleRepository => throw new NotImplementedException();
+        public ISaleRepository SaleRepository => new EFSaleRepository();
 
         public void SaveChanges()
         {
