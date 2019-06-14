@@ -12,7 +12,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 namespace LibraryCourseProject.Commands
 {
-   public class LoginCommand : ICommand
+    public class LoginCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
         public LoginViewModel LoginViewModel { get; set; }
@@ -34,16 +34,20 @@ namespace LibraryCourseProject.Commands
             User user = new User();
             try
             {
-               user = LoginViewModel.Users.SingleOrDefault(x => x.Username == usernameFromClient && x.Password == passwordFromClient);
+                var items = App.DB.UserRepository.GetAllData();
+                LoginViewModel.Users = new List<User>(items);
+                user = LoginViewModel.Users.SingleOrDefault(x => x.Username == usernameFromClient && x.Password == passwordFromClient);
+                Permission permission = App.DB.PermissionRepository.GetData(Convert.ToInt32(user.PermissionId));
+                user.Permission = permission;
             }
             catch (Exception)
             {
-            }      
+            }
             if (user != null)
             {
                 MessageBox.Show("Okay");
-                
-                MenuViewModel menuViewModel = new MenuViewModel(LoginViewModel.MainWindow);     
+
+                MenuViewModel menuViewModel = new MenuViewModel(LoginViewModel.MainWindow);
                 menuViewModel.CurrentUser = user;
                 MenuWindow menuWindow = new MenuWindow(menuViewModel);
                 LoginViewModel.MainWindow.Close();
