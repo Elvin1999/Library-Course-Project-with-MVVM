@@ -125,6 +125,7 @@ namespace LibraryCourseProject
                         RealPrice = 100
                     };
                     db.Sales.Add(sale);
+                    db.SaveChanges();
                 }
             }
 
