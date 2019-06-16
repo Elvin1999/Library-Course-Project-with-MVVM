@@ -79,8 +79,9 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
                     Permission permission = UserViewModel.CurrentUser.Permission;
                     App.DB.PermissionRepository.AddData(permission);
                     var newitem = UserViewModel.CurrentUser;
-                    var index = App.DB.PermissionRepository.GetAllData().Count-1;
-                    newitem.PermissionId = App.DB.PermissionRepository.GetAllData()[index].Id;
+                    newitem.PermissionId = UserViewModel.CurrentUser.Permission.Id;
+                    newitem.Permission = null;
+       
                     App.DB.UserRepository.AddData(newitem);
                     UserViewModel.AllUsers = App.DB.UserRepository.GetAllData();
                     UserViewModel.SelectedUser = new User();

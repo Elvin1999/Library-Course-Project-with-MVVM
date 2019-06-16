@@ -66,7 +66,6 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
                     newitem.Genre = null;
                     App.DB.BookRepository.AddData(newitem);
                     BookViewModel.AllBooks = App.DB.BookRepository.GetAllData();
-
                     MessageBoxResult add = MessageBox.Show("Added");
                     BookViewModel.CurrentBook = new Book();
                 }

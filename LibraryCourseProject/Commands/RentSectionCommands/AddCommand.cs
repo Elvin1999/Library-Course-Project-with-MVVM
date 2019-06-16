@@ -49,6 +49,12 @@ namespace LibraryCourseProject.Commands.RentSectionCommands
             {
                 RentViewModel.CurrentRent.Client = RentViewModel.ClientViewModel.SelectedClient;
                 var rentitem = RentViewModel.CurrentRent;
+                rentitem.BookId = RentViewModel.CurrentRent.Book.Id;
+                rentitem.Book = null;
+                rentitem.UserId = RentViewModel.CurrentRent.User.Id;
+                rentitem.User = null;
+                rentitem.ClientId = RentViewModel.CurrentRent.Client.Id;
+                rentitem.Client = null;
                 App.DB.RentRepository.AddData(rentitem);
                 RentViewModel.AllRents = App.DB.RentRepository.GetAllData();
                 MessageBoxResult add = MessageBox.Show("Added");
