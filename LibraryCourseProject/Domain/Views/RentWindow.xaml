@@ -30,12 +30,12 @@
                     <Label Width="140" Height="30" Content="Note"     FontSize="18" Margin="55,10,0,0"></Label>
                 </StackPanel>
                 <StackPanel  Orientation="Vertical">
-                    <Label Width="100" Height="30" FontSize="19" Margin="5,10" Content="{Binding CurrentRent.Book.Title,Mode=OneWay}">
+                    <Label Width="100" Height="30" FontSize="17" Margin="5,10" Content="{Binding CurrentRent.Book.Title,Mode=OneWay}">
                     </Label>
-                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,0" 
+                    <TextBox Width="100" Height="30" FontSize="17" Margin="5,0" 
                              Text="{Binding CurrentRent.RealPrice,Mode=TwoWay}"                                 
                              ></TextBox>
-                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,10"
+                    <TextBox Width="100" Height="30" FontSize="17" Margin="5,10"
                              Text="{Binding CurrentRent.PricePerDay,Mode=TwoWay}"
                              ></TextBox>
                     <DatePicker Width="100" Height="30" FontSize="16" Margin="5,0"
@@ -44,7 +44,7 @@
                     <DatePicker Width="100" Height="30" FontSize="16" Margin="5,15"
                              SelectedDate="{Binding CurrentRent.ExactDateTime, Mode=TwoWay}" DisplayDate="{Binding DateTime.Now}"     
                              ></DatePicker>
-                    <TextBox Width="100" Height="30" FontSize="19" Margin="5,-5"
+                    <TextBox Width="100" Height="30" FontSize="17" Margin="5,-5"
                              Text="{Binding CurrentRent.Note,Mode=TwoWay}"
                              ></TextBox>
                 </StackPanel>
