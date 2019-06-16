@@ -64,8 +64,7 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
                     RentDateTime = DateTime.Now,
                     ExactDateTime = DateTime.Now,
                     Note = "",
-                    No = 1,
-                    
+                    No = 1,                    
                     Id = 1,
                     User = BookViewModel.CurrentUser
                 };
