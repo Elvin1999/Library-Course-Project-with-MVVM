@@ -43,12 +43,11 @@
                              SelectedDate="{Binding CurrentSale.SaleDateTime, Mode=TwoWay}" DisplayDate="{Binding DateTime.Now}"     
                              ></DatePicker>
 
-
                     <TextBox Width="100" Height="30" FontSize="17" Margin="5,10"
                              Text="{Binding CurrentSale.Note,Mode=TwoWay}"
                              ></TextBox>
                 </StackPanel>
-                <StackPanel Margin="50,0,0,0">
+                <StackPanel Margin="50,100,0,0">
                     <Button Width="100" Height="40" Content="Add" FontSize="20" Margin="15"
                           Command="{Binding AddCommand}"
                             >
@@ -67,43 +66,8 @@
                             </Style>
                         </Button.Style>
                     </Button>
-                    <Button Width="100" Height="40" Content="Update" FontSize="20" Margin="15"
-                             Command="{Binding UpdateCommand}"  
-                            >
-                        <Button.Style>
-                            <Style TargetType="{x:Type Button}">
-                                <Setter Property="IsEnabled" Value="False"></Setter>
-
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding ClientViewModel.State, Mode=TwoWay}" Value="1">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding ClientViewModel.State, Mode=TwoWay}" Value="2">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-
-                    </Button>
-                    <Button Width="100" Height="40" Content="Delete" FontSize="20" Margin="15"
-                       Command="{Binding DeleteCommand}" 
-                            >
-                        <Button.Style>
-                            <Style TargetType="{x:Type Button}">
-                                <Setter Property="IsEnabled" Value="False"></Setter>
-
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding ClientViewModel.State, Mode=TwoWay}" Value="1">
-                                        <Setter Property="IsEnabled" Value="False"></Setter>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding ClientViewModel.State, Mode=TwoWay}" Value="2">
-                                        <Setter Property="IsEnabled" Value="True"></Setter>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                    </Button>
+               
+             
                 </StackPanel>
             </StackPanel>
         </Grid>
