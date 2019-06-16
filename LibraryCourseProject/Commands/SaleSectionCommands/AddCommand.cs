@@ -57,7 +57,7 @@ namespace LibraryCourseProject.Commands.SaleSectionCommands
             }
             else
             {
-                MessageBoxResult add = MessageBox.Show("Can not add this item, you can only update and delete");
+                MessageBoxResult add = MessageBox.Show("Can not add this item");
             }
         }
     }

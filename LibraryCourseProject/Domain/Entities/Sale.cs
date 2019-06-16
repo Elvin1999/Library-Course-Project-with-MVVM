@@ -25,7 +25,6 @@ namespace LibraryCourseProject.Entities
         public virtual Client Client { get; set; }
         [ForeignKey("UserId")]
         public virtual User User { get; set; }
-
         public Sale Clone()
         {
             Sale sale = new Sale()
