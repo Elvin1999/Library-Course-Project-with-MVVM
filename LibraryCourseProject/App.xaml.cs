@@ -21,7 +21,7 @@ namespace LibraryCourseProject
         private App()
         {
             //Config = new Config();
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("az");
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("");
             DB = new EFUnitOfWork();
             if (DB.UserRepository.GetAllData().Count == 0)
             {
@@ -125,7 +125,7 @@ namespace LibraryCourseProject
                         RealPrice = 100
                     };
                     db.Sales.Add(sale);
-                    db.SaveChanges();
+                   // db.SaveChanges();
                 }
             }
 

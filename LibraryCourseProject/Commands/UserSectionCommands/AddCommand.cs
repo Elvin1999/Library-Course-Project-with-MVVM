@@ -1,4 +1,5 @@
-﻿using LibraryCourseProject.Entities;
+﻿using LibraryCourseProject.Domain.AdditionalClasses;
+using LibraryCourseProject.Entities;
 using LibraryCourseProject.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,10 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
         public void Execute(object parameter)
         {
             var passwordFromClient = (parameter as PasswordBox).Password;
-            UserViewModel.CurrentUser.Password = passwordFromClient;
+            HashHelper hashHelper = new HashHelper();
+            var hashpassword = hashHelper.GetHashOfString(passwordFromClient);
+            MessageBox.Show(hashpassword);
+            UserViewModel.CurrentUser.Password = hashpassword;
             LogUpHelper logupHelper = new LogUpHelper();
             var username = UserViewModel.CurrentUser.Username;
             var email = UserViewModel.CurrentUser.Email;
@@ -74,14 +78,11 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
                 }
                 var item = UserViewModel.AllUsers.FirstOrDefault(x => x.Id == UserViewModel.CurrentUser.Id);
 
-                if (item == null && UserViewModel.CurrentUser.Username != "admin")
+                if (item == null)
                 {
                     Permission permission = UserViewModel.CurrentUser.Permission;
                     App.DB.PermissionRepository.AddData(permission);
-                    var newitem = UserViewModel.CurrentUser;
-                    //newitem.PermissionId = UserViewModel.CurrentUser.Permission.Id;
-                    //newitem.Permission = null;
-       
+                    var newitem = UserViewModel.CurrentUser;     
                     App.DB.UserRepository.AddData(newitem);
                     UserViewModel.AllUsers = App.DB.UserRepository.GetAllData();
                     UserViewModel.SelectedUser = new User();

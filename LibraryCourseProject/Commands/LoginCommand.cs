@@ -1,4 +1,5 @@
-﻿using LibraryCourseProject.Entities;
+﻿using LibraryCourseProject.Domain.AdditionalClasses;
+using LibraryCourseProject.Entities;
 using LibraryCourseProject.ViewModels;
 using LibraryCourseProject.Views;
 using System;
@@ -27,6 +28,8 @@ namespace LibraryCourseProject.Commands
         public void Execute(object parameter)
         {
             var passwordFromClient = (parameter as PasswordBox).Password;
+            HashHelper hashHelper = new HashHelper();          
+            var passwordFC = hashHelper.GetHashOfString(passwordFromClient);
             var usernameFromClient = LoginViewModel.Username;
             User user = new User();
             try
@@ -35,7 +38,7 @@ namespace LibraryCourseProject.Commands
                 if (items != null)
                 {
                     LoginViewModel.Users = new List<User>(items);
-                    user = LoginViewModel.Users.FirstOrDefault(x => x.Username == usernameFromClient && x.Password == passwordFromClient);
+                    user = LoginViewModel.Users.FirstOrDefault(x => x.Username == usernameFromClient && x.Password == passwordFC);
                     Permission permission = App.DB.PermissionRepository.GetData(Convert.ToInt32(user.PermissionId));
                     user.Permission = permission;
 
