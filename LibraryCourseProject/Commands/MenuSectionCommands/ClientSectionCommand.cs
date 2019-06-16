@@ -32,7 +32,7 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
             try
             {
 
-                items = App.Config.DeserializeClientsFromJson();
+                items = new List<Client>(App.DB.ClientRepository.GetAllData());
             }
             catch (Exception ex)
             {

@@ -27,9 +27,9 @@ namespace LibraryCourseProject.Commands.ClientSectionCommands
         public void Execute(object parameter)
         {
             var item = ClientViewModel.SelectedClient;
-            ClientViewModel.AllClients.Remove(item);
-            App.Config.Clients = new List<Client>(ClientViewModel.AllClients);
-            App.Config.SeriailizeClientsToJson();
+
+            App.DB.ClientRepository.DeleteData(item);
+            ClientViewModel.AllClients = App.DB.ClientRepository.GetAllData();           
             ClientViewModel.SelectedClient = new Client();
         }
     }

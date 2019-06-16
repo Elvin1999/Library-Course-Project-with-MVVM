@@ -58,7 +58,6 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
                 }
             }
         }
-        public int No { get; set; } = 0;
         ObservableCollection<User> users;
         public ObservableCollection<User> GetAllData()
         {

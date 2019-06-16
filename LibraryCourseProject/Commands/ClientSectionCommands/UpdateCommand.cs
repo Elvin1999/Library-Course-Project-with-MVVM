@@ -25,21 +25,18 @@ namespace LibraryCourseProject.Commands.ClientSectionCommands
 
         public void Execute(object parameter)
         {
-            var item = ClientViewModel.AllClients.FirstOrDefault(x => x.Id == ClientViewModel.CurrentClient.Id);
-
+            var item = ClientViewModel.CurrentClient;
             if (item != null)
             {
-                var index = ClientViewModel.AllClients.IndexOf(item);
-                ClientViewModel.AllClients[index] = ClientViewModel.CurrentClient;
-                App.Config.Clients = new List<Client>(ClientViewModel.AllClients);
-                App.Config.SeriailizeClientsToJson();
+                App.DB.ClientRepository.UpdateData(item);
+                ClientViewModel.AllClients = App.DB.ClientRepository.GetAllData();
                 MessageBoxResult update = MessageBox.Show("updated");
                 ClientViewModel.CurrentClient = new Client();
                 ClientViewModel.SelectedClient = new Client();
             }
             else
             {
-                MessageBox.Show("You can not update this user");
+                MessageBox.Show("You can not update this client");
             }
         }
     }

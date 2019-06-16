@@ -33,7 +33,7 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
             try
             {
 
-                items = App.Config.DeserializeFilialsFromJson();
+                items = new List<Filial>(App.DB.FilialRepository.GetAllData());
             }
             catch (Exception)
             {

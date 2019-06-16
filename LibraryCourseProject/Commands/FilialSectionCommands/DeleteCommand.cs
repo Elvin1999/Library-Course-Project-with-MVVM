@@ -24,9 +24,9 @@ namespace LibraryCourseProject.Commands.FilialSectionCommands
         public void Execute(object parameter)
         {
             var item = FilialViewModel.SelectedFilial;
-            FilialViewModel.AllFilials.Remove(item);
-            App.Config.Filials = new List<Filial>(FilialViewModel.AllFilials);
-            App.Config.SeriailizeFilialsToJson();
+            App.DB.FilialRepository.DeleteData(item);
+            FilialViewModel.AllFilials = App.DB.FilialRepository.GetAllData();
+            
             FilialViewModel.SelectedFilial = new Filial();
         }
     }

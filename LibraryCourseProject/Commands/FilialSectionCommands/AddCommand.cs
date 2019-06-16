@@ -68,9 +68,8 @@ namespace LibraryCourseProject.Commands.FilialSectionCommands
                 if (item == null)
                 {
                     var newitem = FilialViewModel.CurrentFilial;
-                    FilialViewModel.AllFilials.Add(newitem);
-                    App.Config.Filials.Add(newitem);
-                    App.Config.SeriailizeFilialsToJson();
+                    App.DB.FilialRepository.AddData(newitem);
+                    FilialViewModel.AllFilials = App.DB.FilialRepository.GetAllData();
                     MessageBoxResult add = MessageBox.Show("Added");
                     FilialViewModel.CurrentFilial = new Filial();
                     FilialViewModel.SelectedFilial = new Filial();

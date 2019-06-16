@@ -24,22 +24,18 @@ namespace LibraryCourseProject.Commands.FilialSectionCommands
         }
         public void Execute(object parameter)
         {
-
-            var item = FilialViewModel.AllFilials.FirstOrDefault(x => x.Id == FilialViewModel.CurrentFilial.Id);
-
+            var item = FilialViewModel.CurrentFilial;
             if (item != null)
             {
-                var index = FilialViewModel.AllFilials.IndexOf(item);
-                FilialViewModel.AllFilials[index] = FilialViewModel.CurrentFilial;
-                App.Config.Filials = new List<Filial>(FilialViewModel.AllFilials);
-                App.Config.SeriailizeFilialsToJson();
+                App.DB.FilialRepository.UpdateData(item);
+                FilialViewModel.AllFilials = App.DB.FilialRepository.GetAllData();
                 MessageBoxResult update = MessageBox.Show("updated");
                 FilialViewModel.CurrentFilial = new Filial();
-                FilialViewModel.SelectedFilial = new Filial();
+                FilialViewModel.CurrentFilial = new Filial();
             }
             else
             {
-                MessageBox.Show("You can not update this user");
+                MessageBox.Show("You can not update this client");
             }
         }
     }

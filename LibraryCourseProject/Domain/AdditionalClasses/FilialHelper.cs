@@ -13,7 +13,7 @@ namespace LibraryCourseProject.Entities
         {
             try
             {
-                filials = App.Config.DeserializeFilialsFromJson();
+                filials = new List<Filial>(App.DB.FilialRepository.GetAllData());
             }
             catch (Exception)
             {
