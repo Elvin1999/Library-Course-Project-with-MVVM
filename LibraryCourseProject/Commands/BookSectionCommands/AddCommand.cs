@@ -60,6 +60,10 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
                 if (item == null)
                 {
                     var newitem = BookViewModel.CurrentBook;
+                    newitem.AuthorId = BookViewModel.CurrentBook.Author.Id;
+                    newitem.Author = null;
+                    newitem.GenreId = BookViewModel.CurrentBook.Author.Id;
+                    newitem.Genre = null;
                     App.DB.BookRepository.AddData(newitem);
                     BookViewModel.AllBooks = App.DB.BookRepository.GetAllData();
 
