@@ -60,9 +60,8 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
                 if (item == null)
                 {
                     var newitem = BookViewModel.CurrentBook;
-                    BookViewModel.AllBooks.Add(newitem);
-                    App.Config.Books.Add(newitem);
-                    App.Config.SeriailizeBooksToJson();
+                    App.DB.BookRepository.AddData(newitem);
+                    BookViewModel.AllBooks = App.DB.BookRepository.GetAllData();
 
                     MessageBoxResult add = MessageBox.Show("Added");
                     BookViewModel.CurrentBook = new Book();

@@ -25,9 +25,8 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
         public void Execute(object parameter)
         {
             var item = BookViewModel.SelectedBook;
-            BookViewModel.AllBooks.Remove(item);
-            App.Config.Books = new List<Book>(BookViewModel.AllBooks);
-            App.Config.SeriailizeBooksToJson();
+            App.DB.BookRepository.DeleteData(item);
+            BookViewModel.AllBooks = App.DB.BookRepository.GetAllData();
             BookViewModel.SelectedBook = new Book();
             BookViewModel.State = 1;
         }

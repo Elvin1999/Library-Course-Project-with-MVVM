@@ -13,7 +13,7 @@ namespace LibraryCourseProject.Entities
         {
             try
             {
-                books = App.Config.Books;
+                books = new List<Book>(App.DB.BookRepository.GetAllData());
             }
             catch (Exception)
             {

@@ -50,7 +50,8 @@ namespace LibraryCourseProject.Commands.SaleSectionCommands
             {
                 SaleViewModel.CurrentSale.Client = SaleViewModel.ClientViewModel.SelectedClient;
                 var saleitem = SaleViewModel.CurrentSale;
-                SaleViewModel.AllSales.Add(saleitem);
+                App.DB.SaleRepository.AddData(saleitem);
+                SaleViewModel.AllSales = App.DB.SaleRepository.GetAllData();
                 MessageBoxResult add = MessageBox.Show("Added");
                 SaleViewModel.CurrentSale = new Sale();
             }

@@ -31,7 +31,7 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
             try
             {
 
-                users = App.Config.DeserializeFromJson();
+                users = new List<User>(App.DB.UserRepository.GetAllData());
             }
             catch (Exception ex)
             {
@@ -39,13 +39,13 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
             }
             SaleViewModel saleViewModel = new SaleViewModel()
             {
-                AllSales = new ObservableCollection<Sale>()
+                AllSales = App.DB.SaleRepository.GetAllData()
             };
             try
             {
                 saleViewModel.ClientViewModel = new ClientViewModel();
-                var clients = App.Config.DeserializeClientsFromJson();
-                saleViewModel.ClientViewModel.AllClients = new ObservableCollection<Client>(clients);
+                var clients = App.DB.ClientRepository.GetAllData();
+                saleViewModel.ClientViewModel.AllClients = clients;
             }
             catch (Exception)
             {
@@ -71,7 +71,6 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
             {
 
             }
-
             SaleWindow saleWindow = new SaleWindow(saleViewModel);
             saleWindow.ShowDialog();
 

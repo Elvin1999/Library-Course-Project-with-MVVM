@@ -35,14 +35,15 @@ namespace LibraryCourseProject.Commands
                 if (items != null)
                 {
                     LoginViewModel.Users = new List<User>(items);
-                    user = LoginViewModel.Users.SingleOrDefault(x => x.Username == usernameFromClient && x.Password == passwordFromClient);
+                    user = LoginViewModel.Users.FirstOrDefault(x => x.Username == usernameFromClient && x.Password == passwordFromClient);
                     Permission permission = App.DB.PermissionRepository.GetData(Convert.ToInt32(user.PermissionId));
                     user.Permission = permission;
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+               // MessageBox.Show(ex.Message);
             }
             if (user != null)
             {

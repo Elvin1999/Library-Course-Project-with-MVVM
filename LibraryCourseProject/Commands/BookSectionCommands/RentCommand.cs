@@ -33,8 +33,8 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
             List<User> users = new List<User>();
             try
             {
-
-                users = App.Config.DeserializeFromJson();
+                
+                users = new List<User>(App.DB.UserRepository.GetAllData());
             }
             catch (Exception ex)
             {
@@ -42,13 +42,13 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
             }
             RentViewModel rentViewModel = new RentViewModel()
             {
-                AllRents = new ObservableCollection<Rent>()
+                AllRents = App.DB.RentRepository.GetAllData()
             };
             try
             {
                 rentViewModel.ClientViewModel = new ClientViewModel();
-                var clients = App.Config.DeserializeClientsFromJson();
-                rentViewModel.ClientViewModel.AllClients = new ObservableCollection<Client>(clients);
+                var clients = App.DB.ClientRepository.GetAllData();
+                rentViewModel.ClientViewModel.AllClients = clients;
             }
             catch (Exception)
             {
