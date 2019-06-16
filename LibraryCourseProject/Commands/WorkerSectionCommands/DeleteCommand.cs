@@ -26,9 +26,8 @@ namespace LibraryCourseProject.Commands.WorkerSectionCommands
         public void Execute(object parameter)
         {
             var item = WorkerViewModel.SelectedWorker;
-            WorkerViewModel.AllWorkers.Remove(item);
-            App.Config.Workers = new List<Worker>(WorkerViewModel.AllWorkers);
-            App.Config.SeriailizeWorkersToJson();
+            App.DB.WorkerRepository.DeleteData(item);
+            WorkerViewModel.AllWorkers = App.DB.WorkerRepository.GetAllData();
             WorkerViewModel.SelectedWorker = new Worker();
         }
     }

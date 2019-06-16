@@ -70,7 +70,7 @@
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1" Margin="0,-10">
-            <ListView ItemsSource="{Binding AllWorkers}" SelectedItem="{Binding SelectedWorker}" Width="650"
+            <ListView ItemsSource="{Binding AllWorkers}" SelectedItem="{Binding SelectedWorker}" Width="670"
                       Margin="66,-16,0,36" Background="{StaticResource FirstColor}" Height="300"
                       HorizontalAlignment="Left">
                 <ListView.View>

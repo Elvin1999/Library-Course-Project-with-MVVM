@@ -34,7 +34,7 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
             try
             {
 
-            workerViewModel.AllWorkers = App.DB.WorkerRepository.GetAllData();
+                workerViewModel.AllWorkers = App.DB.WorkerRepository.GetAllData();
                 workerViewModel.Filials = new List<Filial>(App.DB.FilialRepository.GetAllData());
             }
             catch (Exception ex)
@@ -42,36 +42,6 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
                 MessageBox.Show(ex.Message);
             }
 
-            //workerViewModel.Filials = new List<Filial>()
-            //{
-            //    new Filial()
-            //    {
-            //         Address="Nizami metrosu yaxinligi",
-            //          Id=0,
-            //           Name="Caspian plaza",
-            //            No=0,
-            //             Note="En boyuk filial",
-            //              OpeningDate=DateTime.Now
-            //    },
-            //    new Filial()
-            //    {
-            //         Address="Ehmedli metrosu yaxinligi",
-            //          Id=0,
-            //           Name="Ehmedli",
-            //            No=0,
-            //             Note="En kichik filial",
-            //              OpeningDate=DateTime.Now
-            //    },
-            //    new Filial()
-            //    {
-            //         Address="Gence",
-            //          Id=0,
-            //           Name="LIB plaza",
-            //            No=0,
-            //             Note="none",
-            //              OpeningDate=DateTime.Now
-            //    }
-            //};
             WorkerWindow workerWindow = new WorkerWindow(workerViewModel);
             workerWindow.ShowDialog();
         }

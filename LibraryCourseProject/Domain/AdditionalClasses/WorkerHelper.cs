@@ -13,7 +13,7 @@ namespace LibraryCourseProject.Entities
         {
             try
             {
-                workers = App.Config.DeserializeWorkersFromJson();
+                workers = new List<Worker>(App.DB.WorkerRepository.GetAllData());
             }
             catch (Exception)
             {

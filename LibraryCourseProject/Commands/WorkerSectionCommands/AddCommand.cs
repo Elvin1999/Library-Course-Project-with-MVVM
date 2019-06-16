@@ -57,9 +57,8 @@ namespace LibraryCourseProject.Commands.WorkerSectionCommands
                 if (item == null)
                 {
                     var newitem = WorkerViewModel.CurrentWorker;
-                    WorkerViewModel.AllWorkers.Add(newitem);
-                    App.Config.Workers.Add(newitem);
-                    App.Config.SeriailizeWorkersToJson();
+                    App.DB.WorkerRepository.AddData(newitem);
+                    WorkerViewModel.AllWorkers = App.DB.WorkerRepository.GetAllData();
                     MessageBoxResult add = MessageBox.Show("Added");
                     WorkerViewModel.CurrentWorker = new Worker();
                     WorkerViewModel.SelectedWorker = new Worker();

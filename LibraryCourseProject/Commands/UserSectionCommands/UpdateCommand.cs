@@ -26,7 +26,7 @@ namespace LibraryCourseProject.Commands.UserSectionCommands
         public void Execute(object parameter)
         {
             var item = UserViewModel.CurrentUser;
-            if (item != null)
+            if (item != null && UserViewModel.CurrentUser.Username != "admin")
             {
                 App.DB.UserRepository.UpdateData(item);
                 App.DB.PermissionRepository.UpdateData(item.Permission);
