@@ -22,6 +22,8 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
                 try
                 {
                     db.Books.Add(data);
+                    db.Entry(data.Author).State = EntityState.Unchanged;
+                    db.Entry(data.Genre).State = EntityState.Unchanged;
                     db.SaveChanges();
                 }
                 catch (DbEntityValidationException ex)

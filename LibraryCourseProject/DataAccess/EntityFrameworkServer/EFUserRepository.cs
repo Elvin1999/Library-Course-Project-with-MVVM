@@ -49,12 +49,12 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
                 {
                     db.Configuration.ValidateOnSaveEnabled = false;
                     db.Users.Attach(item);
+                    db.Entry(item.Permission).State = EntityState.Unchanged;
                     db.Entry(item).State = EntityState.Deleted;
                     db.SaveChanges();
                 }
                 catch (DbEntityValidationException ex)
                 {
-
                 }
             }
         }

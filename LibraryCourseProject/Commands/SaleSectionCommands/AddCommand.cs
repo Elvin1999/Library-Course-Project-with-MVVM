@@ -50,12 +50,12 @@ namespace LibraryCourseProject.Commands.SaleSectionCommands
             {
                 SaleViewModel.CurrentSale.Client = SaleViewModel.ClientViewModel.SelectedClient;
                 var saleitem = SaleViewModel.CurrentSale;
-                saleitem.BookId = SaleViewModel.CurrentSale.Book.Id;
-                saleitem.Book = null;
-                saleitem.UserId = SaleViewModel.CurrentSale.User.Id;
-                saleitem.User = null;
-                saleitem.ClientId = SaleViewModel.CurrentSale.Client.Id;
-                saleitem.Client = null;
+                //saleitem.BookId = SaleViewModel.CurrentSale.Book.Id;
+                //saleitem.Book = null;
+                //saleitem.UserId = SaleViewModel.CurrentSale.User.Id;
+                //saleitem.User = null;
+                //saleitem.ClientId = SaleViewModel.CurrentSale.Client.Id;
+                //saleitem.Client = null;
                 App.DB.SaleRepository.AddData(saleitem);
                 SaleViewModel.AllSales = App.DB.SaleRepository.GetAllData();
                 MessageBoxResult add = MessageBox.Show("Added");

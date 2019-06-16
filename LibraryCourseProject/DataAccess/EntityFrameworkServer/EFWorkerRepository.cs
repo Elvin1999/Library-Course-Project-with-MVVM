@@ -82,6 +82,7 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
                 try
                 {
                     db.Entry(data).State = EntityState.Modified;
+                    db.Entry(data.Filial).State = EntityState.Unchanged;
                     db.SaveChanges();
                 }
                 catch (Exception ex)

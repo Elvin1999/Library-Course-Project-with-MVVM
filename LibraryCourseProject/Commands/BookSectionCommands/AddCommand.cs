@@ -59,11 +59,7 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
 
                 if (item == null)
                 {
-                    var newitem = BookViewModel.CurrentBook;
-                    newitem.AuthorId = BookViewModel.CurrentBook.Author.Id;
-                    newitem.Author = null;
-                    newitem.GenreId = BookViewModel.CurrentBook.Genre.Id;
-                    newitem.Genre = null;
+                    var newitem = BookViewModel.CurrentBook;   
                     App.DB.BookRepository.AddData(newitem);
                     BookViewModel.AllBooks = App.DB.BookRepository.GetAllData();
                     MessageBoxResult add = MessageBox.Show("Added");

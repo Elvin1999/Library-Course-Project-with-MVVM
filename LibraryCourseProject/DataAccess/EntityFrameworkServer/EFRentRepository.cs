@@ -3,6 +3,7 @@ using LibraryCourseProject.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,9 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
                 try
                 {
                     db.Rents.Add(data);
+                    db.Entry(data.Book).State = EntityState.Unchanged;
+                    db.Entry(data.User).State = EntityState.Unchanged;
+                    db.Entry(data.Client).State = EntityState.Unchanged;
                     db.SaveChanges();
                 }
                 catch (DbEntityValidationException ex)
