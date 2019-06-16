@@ -62,7 +62,7 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
                     var newitem = BookViewModel.CurrentBook;
                     newitem.AuthorId = BookViewModel.CurrentBook.Author.Id;
                     newitem.Author = null;
-                    newitem.GenreId = BookViewModel.CurrentBook.Author.Id;
+                    newitem.GenreId = BookViewModel.CurrentBook.Genre.Id;
                     newitem.Genre = null;
                     App.DB.BookRepository.AddData(newitem);
                     BookViewModel.AllBooks = App.DB.BookRepository.GetAllData();
@@ -75,8 +75,6 @@ namespace LibraryCourseProject.Commands.BookSectionCommands
                     MessageBoxResult add = MessageBox.Show("Can not add this item, you can only update and delete");
                 }
             }
-
-
         }
     }
 }
