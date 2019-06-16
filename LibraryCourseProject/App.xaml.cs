@@ -9,7 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace LibraryCourseProject
+namespace LibraryCourseProject 
 {
     /// <summary>
     /// Interaction logic for App.xaml
