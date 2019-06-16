@@ -9,5 +9,6 @@ namespace LibraryCourseProject.Domain.Abstractions
 {
    public interface IAuthorRepository:IRepository<Author>
     {
+
     }
 }

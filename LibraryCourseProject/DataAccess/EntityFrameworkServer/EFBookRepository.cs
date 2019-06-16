@@ -20,10 +20,22 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
         {
             throw new NotImplementedException();
         }
-
+        ObservableCollection<Book> books;
         public ObservableCollection<Book> GetAllData()
         {
-            throw new NotImplementedException();
+            books = new ObservableCollection<Book>();
+            using (EFContext db = new EFContext())
+            {
+                db.Configuration.LazyLoadingEnabled = false;
+                var b1 = db.Books.Include("Genre").ToList();
+                var b2 = db.Books.Include("Author").ToList();
+                books = new ObservableCollection<Book>(db.Books.ToList());
+            }
+            for (int i = 0; i < books.Count; i++)
+            {
+                books[i].No = i + 1;
+            }
+            return books;
         }
 
         public Book GetData(int id)

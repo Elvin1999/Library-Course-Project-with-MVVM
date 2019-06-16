@@ -34,7 +34,7 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
             try
             {
 
-                items = App.Config.DeserializeBooksFromJson();
+                items = new List<Book>(App.DB.BookRepository.GetAllData());
             }
             catch (Exception)
             {
@@ -44,62 +44,64 @@ namespace LibraryCourseProject.Commands.MenuSectionCommands
 
                 bookViewModel.AllBooks = new ObservableCollection<Book>(items);
             }
-            bookViewModel.Authors = new List<Author>()
-            {
-                new Author(){
-                     Id=0,
-                      Name="John",
-                       No=1,
-                        Surname="Mie"
-                },
-                 new Author(){
-                     Id=1,
-                      Name="Jimmy",
-                       No=1,
-                        Surname="Don"
-                },
-                  new Author(){
-                     Id=2,
-                      Name="Mike",
-                       No=1,
-                        Surname="Mi"
-                }
+            bookViewModel.Authors = new List<Author>(App.DB.AuthorRepository.GetAllData());
+            bookViewModel.Genres = new List<Genre>(App.DB.GenreRepository.GetAllData());
+            //bookViewModel.Authors = new List<Author>()
+            //{
+            //    new Author(){
+            //         Id=0,
+            //          Name="John",
+            //           No=1,
+            //            Surname="Mie"
+            //    },
+            //     new Author(){
+            //         Id=1,
+            //          Name="Jimmy",
+            //           No=1,
+            //            Surname="Don"
+            //    },
+            //      new Author(){
+            //         Id=2,
+            //          Name="Mike",
+            //           No=1,
+            //            Surname="Mi"
+            //    }
 
-            };
-            bookViewModel.Genres = new List<Genre>()
-            {
-                new Genre()
-                {
-                     No=1, Name="Drama", Id=0
-                },
+            //};
+            //bookViewModel.Genres = new List<Genre>()
+            //{
+            //    new Genre()
+            //    {
+            //         No=1, Name="Drama", Id=0
+            //    },
 
-                new Genre()
-                {
-                     No=2, Name="Love", Id=1
-                },
+            //    new Genre()
+            //    {
+            //         No=2, Name="Love", Id=1
+            //    },
 
-                new Genre()
-                {
-                     No=3, Name="Crime", Id=2
-                }
-                ,
+            //    new Genre()
+            //    {
+            //         No=3, Name="Crime", Id=2
+            //    }
+            //    ,
 
-                new Genre()
-                {
-                     No=3, Name="Romance", Id=2
-                }
-                ,
+            //    new Genre()
+            //    {
+            //         No=3, Name="Romance", Id=2
+            //    }
+            //    ,
 
-                new Genre()
-                {
-                     No=3, Name="Satire", Id=2
-                },
+            //    new Genre()
+            //    {
+            //         No=3, Name="Satire", Id=2
+            //    },
 
-                new Genre()
-                {
-                     No=3, Name="Children's", Id=2
-                }
-            };
+            //    new Genre()
+            //    {
+            //         No=3, Name="Children's", Id=2
+            //    }
+            //};
             BookWindow bookWindow = new BookWindow(bookViewModel);
             bookWindow.ShowDialog();
         }

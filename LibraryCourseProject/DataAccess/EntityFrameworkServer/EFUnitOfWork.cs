@@ -20,9 +20,9 @@ namespace LibraryCourseProject.DataAccess.EntityFrameworkServer
         public IBookRepository BookRepository => new EFBookRepository();
 
         public IRentRepository RentRepository => new EFRentRepository();
-
         public ISaleRepository SaleRepository => new EFSaleRepository();
-        
+        public IAuthorRepository AuthorRepository => new EFAuthorRepository();
+        public IGenreRepository GenreRepository => new EFGenreRepository();
         public void SaveChanges()
         {
             
